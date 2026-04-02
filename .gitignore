@@ -17,3 +17,4 @@ strapi/types/
 
 # Claude
 .claude/
+strapi/package-lock.json
