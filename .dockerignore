@@ -1,0 +1,11 @@
+frontend/
+scripts/
+strapi/node_modules
+strapi/.tmp
+strapi/dist
+strapi/build
+strapi/.cache
+strapi/.strapi
+.env
+.git
+node_modules
