@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "LandingPage",
+    "description": "Programmatic landing pages for keyword targeting"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "keyword": {
+      "type": "string",
+      "required": true
+    },
+    "h1": {
+      "type": "string",
+      "required": true
+    },
+    "subheadline": {
+      "type": "string"
+    },
+    "body_copy": {
+      "type": "richtext"
+    },
+    "cta_text": {
+      "type": "string",
+      "default": "Start Free Trial"
+    },
+    "cta_url": {
+      "type": "string",
+      "default": "#"
+    },
+    "meta_description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["draft", "published"],
+      "default": "draft",
+      "required": true
+    }
+  }
+}

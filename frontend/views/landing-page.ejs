@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page.title %></title>
+  <meta name="description" content="<%= page.meta_description || '' %>">
+  <link rel="canonical" href="<%= baseUrl %>/<%= page.slug %>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= page.h1 %>">
+  <meta property="og:description" content="<%= page.meta_description || '' %>">
+  <meta property="og:url" content="<%= baseUrl %>/<%= page.slug %>">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4F46E5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-sm">N</span>
+        </div>
+        <span class="text-xl font-bold text-gray-900">NovaDash</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm text-gray-600 hover:text-gray-900">Features</a>
+        <a href="#" class="text-sm text-gray-600 hover:text-gray-900">Pricing</a>
+        <a href="#" class="text-sm text-gray-600 hover:text-gray-900">Docs</a>
+        <a href="<%= page.cta_url || '#' %>" class="text-sm bg-brand-600 text-white px-4 py-2 rounded-lg hover:bg-brand-700 transition">
+          <%= page.cta_text || 'Start Free Trial' %>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-20 md:py-32">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-block px-4 py-1.5 bg-brand-50 text-brand-600 text-sm font-medium rounded-full mb-6">
+        Your data, simplified.
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        <%= page.h1 %>
+      </h1>
+      <% if (page.subheadline) { %>
+        <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10">
+          <%= page.subheadline %>
+        </p>
+      <% } %>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="<%= page.cta_url || '#' %>" class="w-full sm:w-auto px-8 py-4 bg-brand-600 text-white text-lg font-semibold rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand-600/25">
+          <%= page.cta_text || 'Start Free Trial' %>
+        </a>
+        <a href="#" class="w-full sm:w-auto px-8 py-4 bg-gray-50 text-gray-700 text-lg font-semibold rounded-xl hover:bg-gray-100 transition">
+          See Demo →
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-gray-400">No credit card required · Free 14-day trial</p>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview Placeholder -->
+  <section class="pb-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-gray-900 rounded-2xl p-2 shadow-2xl">
+        <div class="bg-gray-800 rounded-xl p-8 min-h-[300px] flex items-center justify-center">
+          <div class="text-center">
+            <div class="flex justify-center gap-4 mb-6">
+              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30"></div>
+              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30"></div>
+              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30"></div>
+              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30 hidden sm:block"></div>
+            </div>
+            <div class="flex justify-center gap-4">
+              <div class="w-52 h-32 bg-brand-600/10 rounded-lg border border-brand-600/20"></div>
+              <div class="w-52 h-32 bg-brand-600/10 rounded-lg border border-brand-600/20 hidden sm:block"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section id="features" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything you need in one dashboard</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">Stop switching between tools. NovaDash brings all your data together so you can focus on what matters.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Real-Time Insights</h3>
+          <p class="text-gray-500 leading-relaxed">Get instant answers from your data. No waiting for reports — just ask and NovaDash delivers.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Unified Data Sources</h3>
+          <p class="text-gray-500 leading-relaxed">Connect all your tools in one place. From CRMs to ad platforms, everything lives in a single view.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">AI-Powered Analysis</h3>
+          <p class="text-gray-500 leading-relaxed">Our AI spots trends, anomalies, and opportunities you'd miss. Like having a data analyst that never sleeps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof / Stats -->
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-4xl md:text-5xl font-bold text-brand-600">2,500+</p>
+          <p class="text-sm text-gray-500 mt-2">Teams using NovaDash</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-bold text-brand-600">10M+</p>
+          <p class="text-sm text-gray-500 mt-2">Data points processed daily</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-bold text-brand-600">85%</p>
+          <p class="text-sm text-gray-500 mt-2">Faster reporting</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-bold text-brand-600">4.9/5</p>
+          <p class="text-sm text-gray-500 mt-2">Average user rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Up and running in 3 steps</h2>
+        <p class="text-lg text-gray-500">No engineering team required. Get started in minutes, not months.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Connect Your Data</h3>
+          <p class="text-gray-500">Link your existing tools — Google Ads, HubSpot, Salesforce, Stripe, and 50+ more integrations.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Ask Questions</h3>
+          <p class="text-gray-500">Type plain-English questions like "What's my best performing campaign this month?" and get instant answers.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Make Decisions</h3>
+          <p class="text-gray-500">Get AI-powered recommendations and share dashboards with your team to move faster together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body Copy Section -->
+  <section class="py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed">
+        <%- page.body_copy || '' %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Ready to simplify your data?
+      </h2>
+      <p class="text-lg text-gray-500 mb-8">
+        Join thousands of teams using NovaDash to make smarter decisions, faster.
+      </p>
+      <a href="<%= page.cta_url || '#' %>" class="inline-block px-8 py-4 bg-brand-600 text-white text-lg font-semibold rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand-600/25">
+        <%= page.cta_text || 'Start Free Trial' %>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-brand-600 rounded flex items-center justify-center">
+            <span class="text-white font-bold text-xs">N</span>
+          </div>
+          <span class="font-semibold text-gray-900">NovaDash</span>
+        </div>
+        <div class="flex gap-8 text-sm text-gray-500">
+          <a href="#" class="hover:text-gray-900">Privacy</a>
+          <a href="#" class="hover:text-gray-900">Terms</a>
+          <a href="#" class="hover:text-gray-900">Contact</a>
+          <a href="/sitemap.xml" class="hover:text-gray-900">Sitemap</a>
+        </div>
+        <p class="text-sm text-gray-400">&copy; 2026 NovaDash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

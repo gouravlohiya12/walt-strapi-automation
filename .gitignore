@@ -1,0 +1,19 @@
+node_modules/
+.env
+.tmp/
+build/
+dist/
+.cache/
+*.log
+.DS_Store
+
+# Strapi
+strapi/.tmp/
+strapi/dist/
+strapi/.cache/
+strapi/build/
+strapi/.strapi/
+strapi/types/
+
+# Claude
+.claude/
