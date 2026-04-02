@@ -40,34 +40,44 @@ export default {
 
     // Set public permissions for LandingPage find and findOne
     try {
-      const publicRole = await strapi
-        .query("plugin::users-permissions.role")
-        .findOne({ where: { type: "public" } });
+      const pluginService = strapi.plugin("users-permissions").service("role");
+      const roles = await pluginService.find();
+      const publicRole = roles.find((r) => r.type === "public");
 
       console.log(`[bootstrap] Public role found: ${!!publicRole}`);
 
       if (publicRole) {
-        const permissions = await strapi
-          .query("plugin::users-permissions.permission")
-          .findMany({ where: { role: publicRole.id } });
+        const roleDetail = await pluginService.findOne(publicRole.id);
+        const permissions = roleDetail.permissions || {};
 
-        const existingActions = permissions.map((p) => p.action);
-        console.log(`[bootstrap] Existing permissions: ${existingActions.length}`);
+        const landingPerms =
+          permissions?.["api::landing-page"]?.controllers?.["landing-page"] || {};
 
-        const needed = [
-          "api::landing-page.landing-page.find",
-          "api::landing-page.landing-page.findOne",
-        ];
+        const findEnabled = landingPerms?.find?.enabled === true;
+        const findOneEnabled = landingPerms?.findOne?.enabled === true;
 
-        for (const action of needed) {
-          if (!existingActions.includes(action)) {
-            await strapi.query("plugin::users-permissions.permission").create({
-              data: { action, role: publicRole.id },
-            });
-            console.log(`[bootstrap] Added public permission: ${action}`);
-          } else {
-            console.log(`[bootstrap] Permission already exists: ${action}`);
-          }
+        console.log(`[bootstrap] find=${findEnabled}, findOne=${findOneEnabled}`);
+
+        if (!findEnabled || !findOneEnabled) {
+          // Build updated permissions object
+          const updatedPermissions = {
+            ...permissions,
+            "api::landing-page": {
+              controllers: {
+                "landing-page": {
+                  find: { enabled: true },
+                  findOne: { enabled: true },
+                },
+              },
+            },
+          };
+
+          await pluginService.updateRole(publicRole.id, {
+            permissions: updatedPermissions,
+          });
+          console.log("[bootstrap] Updated public permissions for landing-page");
+        } else {
+          console.log("[bootstrap] Public permissions already set");
         }
       }
     } catch (err) {
