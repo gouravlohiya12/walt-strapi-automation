@@ -94,7 +94,12 @@ app.get("/:slug", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Frontend running at http://localhost:${PORT}`);
-  console.log(`Strapi URL: ${STRAPI_URL}`);
-});
+// Start server locally (Vercel uses the exported app)
+if (process.env.VERCEL !== "1") {
+  app.listen(PORT, () => {
+    console.log(`Frontend running at http://localhost:${PORT}`);
+    console.log(`Strapi URL: ${STRAPI_URL}`);
+  });
+}
+
+module.exports = app;
