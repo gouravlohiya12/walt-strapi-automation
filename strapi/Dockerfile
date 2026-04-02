@@ -4,11 +4,11 @@ RUN apt-get update && apt-get install -y libatomic1 && rm -rf /var/lib/apt/lists
 
 WORKDIR /app
 
-COPY strapi/package.json ./
+COPY package.json ./
 
 RUN npm install
 
-COPY strapi/ ./
+COPY . .
 
 RUN npm run build
 
