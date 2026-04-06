@@ -15,6 +15,11 @@ strapi/build/
 strapi/.strapi/
 strapi/types/
 
+# Google Service Account Keys
+*.iam.gserviceaccount.com.json
+apt-task-*.json
+google-service-account.json
+
 # Claude
 .claude/
 strapi/package-lock.json
