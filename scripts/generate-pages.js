@@ -30,9 +30,9 @@ if (!ANTHROPIC_API_KEY) {
 
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 
-const SYSTEM_PROMPT = `You are a landing page copywriter for NovaDash, an AI-powered analytics dashboard.
-Brand voice: confident, clear, modern. Tagline: "Your data, simplified."
-The copy should feel premium but approachable — like talking to a smart friend who happens to be a data expert.
+const SYSTEM_PROMPT = `You are a landing page copywriter for BrightFlow, an AI-powered project management tool.
+Brand voice: confident, clear, modern. Tagline: "Work smarter, ship faster."
+The copy should feel premium but approachable — like talking to a smart friend who happens to be a productivity expert.
 Never use filler words. Every sentence should earn its place.`;
 
 function buildUserPrompt(keyword) {
@@ -41,7 +41,7 @@ function buildUserPrompt(keyword) {
 Return a JSON object with these fields:
 - h1: A compelling headline (max 10 words) that speaks directly to someone searching "${keyword}"
 - subheadline: A supporting line (max 20 words) that adds value beyond the h1
-- body_copy: 2 paragraphs of persuasive copy (150-250 words total) in HTML format using <p> tags. Address the pain point, then position NovaDash as the solution.
+- body_copy: 2 paragraphs of persuasive copy (150-250 words total) in HTML format using <p> tags. Address the pain point, then position BrightFlow as the solution.
 - cta_text: A call-to-action button label (2-5 words)
 - meta_description: SEO meta description (max 160 characters) that includes the keyword naturally
 
@@ -59,7 +59,7 @@ function toSlug(keyword) {
 
 function toTitle(keyword) {
   const capitalized = keyword.replace(/\b\w/g, (c) => c.toUpperCase());
-  return `${capitalized} — NovaDash`;
+  return `${capitalized} — BrightFlow`;
 }
 
 async function sleep(ms) {
@@ -147,7 +147,7 @@ async function main() {
   }
 
   const keywords = JSON.parse(fs.readFileSync(keywordsPath, "utf-8"));
-  console.log(`\n🚀 NovaDash Landing Page Generator`);
+  console.log(`\n🚀 BrightFlow Landing Page Generator`);
   console.log(`   Keywords: ${keywords.length}`);
   console.log(`   Strapi: ${STRAPI_URL}`);
   console.log(`   Force overwrite: ${forceOverwrite}`);

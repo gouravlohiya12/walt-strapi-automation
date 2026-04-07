@@ -6,126 +6,139 @@ const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
 
 const pages = [
   {
-    title: "AI Dashboard For Marketing — NovaDash",
-    slug: "ai-dashboard-for-marketing",
-    keyword: "ai dashboard for marketing",
-    h1: "Your Marketing Data, One AI Dashboard",
-    subheadline: "Stop drowning in spreadsheets. Get real-time marketing insights that actually drive revenue.",
-    body_copy: "<p>Marketing teams juggle dozens of tools — Google Ads, Meta, HubSpot, email platforms, analytics suites. Each one generates data, but none of them talk to each other. The result? Hours wasted pulling reports, reconciling numbers, and building dashboards that are outdated by the time they're finished.</p><p>NovaDash connects every marketing tool in your stack and turns scattered data into a single, AI-powered dashboard. Ask plain-English questions like \"Which campaign drove the most signups last week?\" and get instant answers with visualizations. Our AI spots trends you'd miss, flags anomalies before they become problems, and recommends where to shift budget for maximum impact. No SQL. No data engineering. Just clarity.</p>",
+    title: "AI Project Management Tool — BrightFlow",
+    slug: "ai-project-management-tool",
+    keyword: "ai project management tool",
+    h1: "Project Management That Thinks Ahead",
+    subheadline: "BrightFlow uses AI to prioritize tasks, predict bottlenecks, and keep your team shipping on schedule.",
+    body_copy: "<p>Project management tools have barely changed in a decade. You still manually drag cards, update statuses, and chase people for updates. Meanwhile, deadlines slip, priorities shift, and nobody has a clear picture of what's actually on track. The tool that was supposed to create order is just another thing to maintain.</p><p>BrightFlow is different. It's a project management tool with AI at its core — not bolted on as an afterthought. BrightFlow watches your team's workflow and automatically reprioritizes tasks when deadlines shift. It flags blockers before they stall a sprint. It tells you which projects are at risk based on velocity patterns, not gut feelings. Ask it \"What should the team focus on this week?\" and get an answer backed by data. Less time managing the tool, more time doing the work.</p>",
     cta_text: "Start Free Trial",
     cta_url: "#",
-    meta_description: "NovaDash is the AI dashboard for marketing teams. Unify your data, get instant insights, and make smarter decisions — no analysts required.",
+    meta_description: "BrightFlow is the AI project management tool that auto-prioritizes tasks, predicts bottlenecks, and helps your team ship faster. Try it free.",
     status: "published"
   },
   {
-    title: "AI Dashboard For Sales — NovaDash",
-    slug: "ai-dashboard-for-sales",
-    keyword: "ai dashboard for sales",
-    h1: "Close More Deals With AI-Powered Sales Data",
-    subheadline: "See your entire pipeline, forecast revenue, and spot at-risk deals — all in one dashboard.",
-    body_copy: "<p>Your CRM has the data. Your spreadsheets have the forecasts. Your team meetings have the context. But nowhere does it all come together in a way that actually helps you sell more. Sales leaders spend more time reporting on pipeline than actually improving it.</p><p>NovaDash changes that. Connect your CRM, call tools, and revenue data into one AI-powered dashboard that gives you the full picture. Ask \"Which deals are most likely to close this quarter?\" or \"Where are reps losing deals in the funnel?\" and get answers instantly. NovaDash's AI analyzes patterns across your entire sales history to surface insights that move the needle — not just charts that look good in board decks.</p>",
-    cta_text: "Try It Free",
-    cta_url: "#",
-    meta_description: "NovaDash is the AI dashboard built for sales teams. Unify pipeline data, forecast revenue accurately, and close more deals with AI-driven insights.",
-    status: "published"
-  },
-  {
-    title: "AI Dashboard For Startups — NovaDash",
-    slug: "ai-dashboard-for-startups",
-    keyword: "ai dashboard for startups",
-    h1: "The Analytics Dashboard Startups Actually Use",
-    subheadline: "Enterprise-grade insights without the enterprise-grade headcount. Built for lean teams.",
-    body_copy: "<p>You're a 15-person startup. You can't afford a data team, but you're generating more data than ever — from product analytics and ad spend to revenue metrics and customer feedback. Investors want dashboards. Your team needs answers. And nobody has time to wrestle with Looker or build something from scratch.</p><p>NovaDash was built for exactly this moment. Connect your tools in minutes — Stripe, Google Analytics, your CRM, your ad platforms — and let AI do the heavy lifting. Ask questions in plain English, get instant charts and insights, and share dashboards with your team or your board. No setup fees, no data engineer required, no six-month implementation. Just the answers you need to move fast and make smart bets with limited runway.</p>",
+    title: "Project Management For Startups — BrightFlow",
+    slug: "project-management-for-startups",
+    keyword: "project management for startups",
+    h1: "Ship Fast Without the Chaos",
+    subheadline: "Built for lean teams that move fast. No enterprise bloat, no month-long setup — just clarity.",
+    body_copy: "<p>When you're a 10-person startup, everyone wears five hats. You don't have a dedicated project manager, and you definitely don't have time to learn a complex tool with 200 features you'll never use. But without some system, things fall through the cracks — tasks get duplicated, deadlines get missed, and the weekly standup becomes a 45-minute confusion session.</p><p>BrightFlow was built for teams like yours. Set it up in five minutes, import from Notion or Trello if you want, and let AI handle the overhead. BrightFlow auto-assigns priorities based on your sprint goals, sends smart reminders before things slip, and gives founders a real-time view of what every team member is working on. No gantt charts nobody reads. No permission matrices. Just a clean workspace that helps small teams punch above their weight.</p>",
     cta_text: "Get Started Free",
     cta_url: "#",
-    meta_description: "NovaDash gives startups an AI-powered analytics dashboard without needing a data team. Connect your tools, ask questions, get answers instantly.",
+    meta_description: "BrightFlow is project management built for startups. Fast setup, AI-powered prioritization, and zero bloat. Get your lean team shipping faster.",
     status: "published"
   },
   {
-    title: "Free AI Dashboard Tool — NovaDash",
-    slug: "free-ai-dashboard-tool",
-    keyword: "free ai dashboard tool",
-    h1: "The Free AI Dashboard That Replaces Your Spreadsheets",
-    subheadline: "Connect your data, ask questions in plain English, and get instant visual answers. Free to start.",
-    body_copy: "<p>Most dashboard tools either cost a fortune or require a computer science degree to set up. You shouldn't need to learn SQL or hire a contractor just to understand your own business data. If you've been living in spreadsheets because the alternatives are too expensive or too complex, there's a better way.</p><p>NovaDash gives you a free AI-powered dashboard that anyone can use. Connect your data sources — Google Sheets, Stripe, your CRM, ad platforms — and start asking questions. \"What was our revenue trend last quarter?\" \"Which channel has the lowest CAC?\" NovaDash generates visualizations and insights instantly. Start free with generous limits, and scale up only when your data needs grow. No credit card, no commitment, no catch.</p>",
-    cta_text: "Start Free",
-    cta_url: "#",
-    meta_description: "Try NovaDash — a free AI dashboard tool that connects your data and answers questions instantly. No SQL, no setup fees, no credit card required.",
-    status: "published"
-  },
-  {
-    title: "AI Dashboard For Ecommerce — NovaDash",
-    slug: "ai-dashboard-for-ecommerce",
-    keyword: "ai dashboard for ecommerce",
-    h1: "Run Your Ecommerce Store on Smarter Data",
-    subheadline: "Unify Shopify, ads, email, and analytics into one AI dashboard that drives revenue.",
-    body_copy: "<p>Ecommerce moves fast. Between managing inventory, running ads, optimizing product pages, and handling customer support, the last thing you need is another hour spent pulling reports from five different platforms. But without clear data, you're guessing — and guessing gets expensive when you're spending real money on ads and inventory.</p><p>NovaDash pulls your Shopify, Google Ads, Meta Ads, Klaviyo, and analytics data into one intelligent dashboard. See your true ROAS across channels, identify your best-performing products, track customer lifetime value, and spot trends before your competitors do. Ask questions like \"Which products had the highest margin last month?\" or \"Where am I wasting ad spend?\" and get actionable answers in seconds. Built for ecommerce operators who'd rather grow their store than build dashboards.</p>",
-    cta_text: "Start Free Trial",
-    cta_url: "#",
-    meta_description: "NovaDash is the AI dashboard for ecommerce. Unify Shopify, ads, and analytics data to see real ROAS, track LTV, and grow revenue smarter.",
-    status: "published"
-  },
-  {
-    title: "AI Analytics Dashboard — NovaDash",
-    slug: "ai-analytics-dashboard",
-    keyword: "ai analytics dashboard",
-    h1: "Analytics That Think, Not Just Display",
-    subheadline: "Go beyond charts. NovaDash uses AI to find insights, spot anomalies, and recommend action.",
-    body_copy: "<p>Traditional analytics dashboards show you what happened. They're great at displaying numbers, but terrible at telling you what those numbers mean. You still have to connect the dots yourself — and in a world where data volume doubles every year, that's becoming impossible for humans to do alone.</p><p>NovaDash is an analytics dashboard with AI at its core. It doesn't just visualize your data — it actively analyzes it. It finds correlations across datasets you'd never think to compare. It alerts you to anomalies before they become crises. It recommends specific actions based on patterns in your data. Ask it anything — \"Why did conversion drop last Tuesday?\" \"What's driving our best customer segment?\" — and get answers that would take an analyst days to produce. This is what analytics was always supposed to be.</p>",
-    cta_text: "Try NovaDash Free",
-    cta_url: "#",
-    meta_description: "NovaDash is an AI analytics dashboard that goes beyond charts. Get automated insights, anomaly detection, and plain-English answers from your data.",
-    status: "published"
-  },
-  {
-    title: "AI Dashboard For Agencies — NovaDash",
-    slug: "ai-dashboard-for-agencies",
-    keyword: "ai dashboard for agencies",
-    h1: "One Dashboard For Every Client. Powered by AI.",
-    subheadline: "Stop building custom reports for each client. NovaDash auto-generates insights across all accounts.",
-    body_copy: "<p>Agency life means managing data across dozens of clients, each with their own tech stack, their own KPIs, and their own expectations for reporting. You spend Monday mornings pulling numbers from fifteen platforms just to fill a slide deck. Your team is burning hours on reporting that should be spent on strategy.</p><p>NovaDash lets you connect every client's data sources into dedicated dashboards — each one powered by AI that does the analysis for you. Auto-generate weekly performance summaries, flag underperforming campaigns, and answer client questions in seconds instead of hours. Share live dashboards with clients so they can self-serve basic questions. Your team gets time back. Your clients get better insights. And you can finally scale without hiring another analyst for every five accounts.</p>",
-    cta_text: "Start Free Trial",
-    cta_url: "#",
-    meta_description: "NovaDash helps agencies manage client data with AI-powered dashboards. Auto-generate reports, flag issues, and scale without extra headcount.",
-    status: "published"
-  },
-  {
-    title: "Real-Time AI Dashboard — NovaDash",
-    slug: "real-time-ai-dashboard",
-    keyword: "real-time ai dashboard",
-    h1: "Real-Time Data. Real-Time AI Insights.",
-    subheadline: "Watch your metrics update live and let AI alert you the moment something needs attention.",
-    body_copy: "<p>Stale data is dangerous data. When your dashboard refreshes once a day — or worse, requires someone to manually update it — you're making decisions on yesterday's reality. In fast-moving environments like paid advertising, ecommerce, and SaaS, an hour of bad data can cost thousands.</p><p>NovaDash delivers real-time data streaming into an AI-powered dashboard that never sleeps. Your metrics update continuously, and NovaDash's AI monitors every data point for anomalies, trends, and opportunities. The moment your CPA spikes, your conversion rate drops, or a new traffic source starts performing — you'll know. Set custom alerts or let the AI decide what's worth flagging. Combine real-time visibility with intelligent analysis and you stop reacting to problems. You start preventing them.</p>",
-    cta_text: "See It Live",
-    cta_url: "#",
-    meta_description: "NovaDash is a real-time AI dashboard with live data streaming and intelligent alerts. Spot anomalies, track metrics, and act faster than ever.",
-    status: "published"
-  },
-  {
-    title: "AI Dashboard For Small Business — NovaDash",
-    slug: "ai-dashboard-for-small-business",
-    keyword: "ai dashboard for small business",
-    h1: "Big Business Insights. Small Business Simplicity.",
-    subheadline: "No analysts, no consultants, no complexity. Just connect your tools and ask questions.",
-    body_copy: "<p>Small business owners wear every hat. You're the CEO, the marketer, the salesperson, and apparently also the data analyst. You know your numbers matter — revenue trends, customer acquisition costs, which products are actually profitable — but who has time to build dashboards when you're also handling payroll and customer support?</p><p>NovaDash was designed for business owners who need answers, not another tool to learn. Connect the platforms you already use — QuickBooks, Stripe, Google Analytics, your email tool — and start asking questions in plain English. \"Am I profitable this month?\" \"Which marketing channel brings the best customers?\" \"What are my top products by margin?\" NovaDash gives you clear, visual answers in seconds. It's like having a data analyst on your team, without the salary. Finally, make data-driven decisions without the data science degree.</p>",
+    title: "Project Management For Remote Teams — BrightFlow",
+    slug: "project-management-for-remote-teams",
+    keyword: "project management for remote teams",
+    h1: "Keep Your Remote Team Aligned, Not Micromanaged",
+    subheadline: "Async-first project management with AI that bridges time zones and keeps work flowing.",
+    body_copy: "<p>Remote work broke the old playbook. You can't tap someone on the shoulder to ask about a task. You can't read the room in a standup that half the team joins at midnight their time. Traditional project management tools assume everyone's in the same office — they weren't designed for teams spread across four continents and eight time zones.</p><p>BrightFlow is built async-first. Every task has full context — goals, dependencies, decisions, and discussions — so anyone can pick up work without a Slack thread. AI generates daily progress summaries for each time zone, flags tasks that are blocked or stalling, and automatically adjusts priorities when scope changes. Managers get visibility without micromanaging. Team members get clarity without meetings. Whether your team is fully remote or hybrid, BrightFlow makes distance disappear.</p>",
     cta_text: "Try It Free",
     cta_url: "#",
-    meta_description: "NovaDash gives small businesses an AI-powered dashboard. Connect your tools, ask questions in plain English, and get insights — no data team needed.",
+    meta_description: "BrightFlow is async-first project management for remote teams. AI-powered updates, smart prioritization, and full visibility across time zones.",
     status: "published"
   },
   {
-    title: "Custom AI Dashboard Builder — NovaDash",
-    slug: "custom-ai-dashboard-builder",
-    keyword: "custom ai dashboard builder",
-    h1: "Build Custom Dashboards in Minutes, Not Months",
-    subheadline: "Drag, drop, and ask — NovaDash lets you create tailored dashboards with zero code.",
-    body_copy: "<p>Every team has different questions, different KPIs, and different ways they want to see data. Cookie-cutter dashboards don't cut it. But building custom dashboards traditionally means weeks of development time, expensive BI tools, and constant maintenance as your data sources change.</p><p>NovaDash is a custom dashboard builder with AI at its foundation. Start with a blank canvas or a template, connect your data sources, and build exactly what you need. Drag widgets, set filters, choose visualizations — or just tell the AI what you want to see and it builds it for you. \"Show me monthly revenue by channel with a comparison to last year\" turns into a polished dashboard widget in seconds. Every dashboard updates in real-time, can be shared with your team, and gets smarter as NovaDash learns which metrics matter most to you.</p>",
-    cta_text: "Build Your Dashboard",
+    title: "Free Project Management Software — BrightFlow",
+    slug: "free-project-management-software",
+    keyword: "free project management software",
+    h1: "Free Project Management That Actually Works",
+    subheadline: "No credit card. No limits on projects. Just a powerful workspace with AI built in.",
+    body_copy: "<p>Most free project management tools are either too basic to be useful or so limited they're just a gateway to an upsell. You hit the user cap in a week, the features you actually need are paywalled, and suddenly you're paying $15/user/month for something that's barely better than a shared spreadsheet.</p><p>BrightFlow's free tier is genuinely generous — unlimited projects, up to 10 team members, and full access to AI features. Create tasks, set deadlines, track progress, and let BrightFlow's AI handle prioritization and smart reminders. No storage limits on attachments, no feature gates that cripple your workflow. We built the free plan to be a real tool, not a demo. When your team grows beyond 10, upgrade for more seats and advanced analytics. But for most small teams, free is all you'll ever need.</p>",
+    cta_text: "Start Free",
     cta_url: "#",
-    meta_description: "NovaDash is a custom AI dashboard builder. Create tailored dashboards in minutes with drag-and-drop and AI — no code or data engineering required.",
+    meta_description: "BrightFlow offers free project management software with AI features, unlimited projects, and up to 10 users. No credit card, no catch.",
+    status: "published"
+  },
+  {
+    title: "AI Task Management — BrightFlow",
+    slug: "ai-task-management",
+    keyword: "ai task management",
+    h1: "Tasks That Manage Themselves",
+    subheadline: "BrightFlow's AI auto-prioritizes, assigns, and tracks tasks so your team can focus on real work.",
+    body_copy: "<p>You create a task. You assign it. You set a due date. Then you spend the rest of the week following up — is it started? Is it blocked? Did the priority change because of that new client request? Task management shouldn't be a full-time job, but for most teams it secretly is. Someone is always updating boards, chasing statuses, and reshuffling priorities.</p><p>BrightFlow automates the busywork. When a new task comes in, AI evaluates urgency, team capacity, and existing deadlines to suggest the right owner and priority. As work progresses, BrightFlow detects when tasks are at risk and nudges the right people. It learns your team's patterns — who's fastest at what, which tasks tend to get stuck — and gets smarter over time. You still make the decisions. BrightFlow just makes sure nothing falls through the cracks while you do.</p>",
+    cta_text: "Start Free Trial",
+    cta_url: "#",
+    meta_description: "BrightFlow is AI task management that auto-prioritizes, assigns, and tracks work. Less overhead, fewer dropped balls, faster delivery.",
+    status: "published"
+  },
+  {
+    title: "Project Management For Agencies — BrightFlow",
+    slug: "project-management-for-agencies",
+    keyword: "project management for agencies",
+    h1: "Manage Every Client. Ship Every Deadline.",
+    subheadline: "One workspace for all your clients — with AI that keeps projects on track and teams at capacity.",
+    body_copy: "<p>Agency project management is a special kind of chaos. You're juggling 15 clients, each with their own timelines, deliverables, and feedback cycles. Your team is split across accounts, and nobody knows who has bandwidth until someone misses a deadline. The tools built for product teams don't work when every week brings a different mix of projects.</p><p>BrightFlow is built for agencies. Create separate workspaces per client, track time and deliverables in one view, and let AI balance workloads across your team. BrightFlow knows who's overloaded and who has capacity. It flags projects where timelines are slipping and suggests resource shifts before deadlines are at risk. Give clients a read-only portal to check progress — no more weekly status emails. Scale your agency without scaling your overhead.</p>",
+    cta_text: "Start Free Trial",
+    cta_url: "#",
+    meta_description: "BrightFlow is project management built for agencies. Manage multiple clients, balance workloads with AI, and never miss a deadline.",
+    status: "published"
+  },
+  {
+    title: "Team Collaboration Tool — BrightFlow",
+    slug: "team-collaboration-tool",
+    keyword: "team collaboration tool",
+    h1: "Collaboration Without the Noise",
+    subheadline: "Replace scattered Slack threads and lost docs with one workspace where work actually happens.",
+    body_copy: "<p>Your team uses Slack for communication, Google Docs for documents, Figma for designs, Jira for tasks, and email for everything that falls through the cracks. Context is everywhere and nowhere. Decisions get made in threads nobody can find. Files live in three different places. And every new project starts with the same question: \"Where should we put this?\"</p><p>BrightFlow is a collaboration tool that puts tasks, discussions, files, and decisions in one place — attached to the work, not scattered across apps. Comment directly on tasks. Share files where they're relevant. Make decisions and have them automatically logged so nobody asks \"wait, did we decide that?\" three weeks later. AI summarizes long threads, highlights action items from discussions, and keeps everyone on the same page — literally. Less tool-switching, less context-switching, more shipping.</p>",
+    cta_text: "Try BrightFlow Free",
+    cta_url: "#",
+    meta_description: "BrightFlow is a team collaboration tool that combines tasks, docs, and discussions in one AI-powered workspace. Less noise, more progress.",
+    status: "published"
+  },
+  {
+    title: "Project Planning Software — BrightFlow",
+    slug: "project-planning-software",
+    keyword: "project planning software",
+    h1: "Plan Projects in Minutes, Not Meetings",
+    subheadline: "Describe your project and let AI build the plan — tasks, timelines, dependencies, and milestones.",
+    body_copy: "<p>Project planning is supposed to set you up for success, but most teams spend more time planning than executing. You're in a room with a whiteboard, mapping dependencies, estimating timelines, and negotiating scope — only to have the plan fall apart two weeks in when reality hits. The gap between the plan and the work is where projects go to die.</p><p>BrightFlow reimagines planning. Describe your project in plain English — \"Launch the new marketing site by end of Q2, involves design, copy, dev, and QA\" — and BrightFlow's AI generates a structured plan with tasks, dependencies, milestones, and realistic timelines based on your team's historical velocity. Adjust anything, drag to reschedule, and watch the entire plan update intelligently. As work progresses, BrightFlow continuously re-forecasts your delivery date. Plans that stay alive, not plans that collect dust.</p>",
+    cta_text: "Start Planning Free",
+    cta_url: "#",
+    meta_description: "BrightFlow is project planning software with AI. Describe your project and get an instant plan with tasks, timelines, and dependencies. Try free.",
+    status: "published"
+  },
+  {
+    title: "Project Management For Small Business — BrightFlow",
+    slug: "project-management-for-small-business",
+    keyword: "project management for small business",
+    h1: "Run Your Business, Not Your Project Tool",
+    subheadline: "Simple, powerful project management that small teams actually stick with. AI handles the rest.",
+    body_copy: "<p>Small business owners don't need a project management certification — they need their team to stop dropping the ball. You've tried spreadsheets, sticky notes, maybe even a tool like Monday or Asana. But those tools are built for project managers, not for the restaurant owner tracking a renovation, the marketing agency managing five clients, or the contractor coordinating three crews.</p><p>BrightFlow is project management that stays out of your way. Create projects in seconds, add tasks with due dates, and let AI handle reminders and prioritization. No training required — if you can use a to-do list, you can use BrightFlow. It tracks what your team is working on, alerts you when something's overdue, and gives you a simple dashboard showing where everything stands. Built for people who run businesses, not Gantt charts.</p>",
+    cta_text: "Try It Free",
+    cta_url: "#",
+    meta_description: "BrightFlow is project management for small business. Simple setup, AI-powered task tracking, and zero learning curve. Free to start.",
+    status: "published"
+  },
+  {
+    title: "Agile Project Management Tool — BrightFlow",
+    slug: "agile-project-management-tool",
+    keyword: "agile project management tool",
+    h1: "Agile That Adapts as Fast as You Do",
+    subheadline: "Sprints, kanban, backlog — plus AI that spots blockers and keeps velocity high.",
+    body_copy: "<p>Your team does agile. Sort of. You have sprints, but planning takes half a day. You have a backlog, but it's 400 items nobody's groomed in months. You do retros, but the same problems come up every two weeks. The agile tools on the market give you boards and burndown charts, but they don't actually help you get better at agile.</p><p>BrightFlow is an agile project management tool with AI that actively improves your process. It auto-generates sprint plans based on backlog priority and team capacity. It monitors velocity in real-time and flags when a sprint is at risk — not after the fact, but while there's still time to adjust. It analyzes retro patterns and suggests specific process changes. Kanban or scrum, your choice. BrightFlow supports both with views that adapt to how your team actually works. Stop doing agile theatre. Start shipping with real agility.</p>",
+    cta_text: "Start Free Trial",
+    cta_url: "#",
+    meta_description: "BrightFlow is an agile project management tool with AI-powered sprint planning, real-time velocity tracking, and smart backlog grooming. Try free.",
     status: "published"
   }
 ];
+
+async function checkExistingPage(slug) {
+  try {
+    const res = await axios.get(
+      `${STRAPI_URL}/api/landing-pages?filters[slug][$eq]=${encodeURIComponent(slug)}`,
+      { headers: { Authorization: `Bearer ${STRAPI_API_TOKEN}` } }
+    );
+    const data = res.data.data || [];
+    return data.length > 0 ? data[0] : null;
+  } catch {
+    return null;
+  }
+}
 
 async function createPage(data) {
   const res = await axios.post(
@@ -141,17 +154,56 @@ async function createPage(data) {
   return res.data;
 }
 
+async function deletePage(documentId) {
+  await axios.delete(
+    `${STRAPI_URL}/api/landing-pages/${documentId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+      },
+    }
+  );
+}
+
 async function main() {
-  console.log(`\n🚀 NovaDash Landing Page Seeder`);
+  console.log(`\n🚀 BrightFlow Landing Page Seeder`);
   console.log(`   Pages to create: ${pages.length}`);
   console.log(`   Strapi: ${STRAPI_URL}\n`);
 
+  // Check for --clean flag to wipe existing pages first
+  if (process.argv.includes("--clean")) {
+    console.log("🧹 Cleaning existing pages...\n");
+    try {
+      const res = await axios.get(
+        `${STRAPI_URL}/api/landing-pages?pagination[pageSize]=100`,
+        { headers: { Authorization: `Bearer ${STRAPI_API_TOKEN}` } }
+      );
+      const existing = res.data.data || [];
+      for (const page of existing) {
+        await deletePage(page.documentId);
+        console.log(`   Deleted: /${page.slug}`);
+      }
+      console.log(`   Removed ${existing.length} page(s)\n`);
+    } catch (err) {
+      console.log(`   Warning: Could not clean pages — ${err.message}\n`);
+    }
+  }
+
   let created = 0;
+  let skipped = 0;
   let failed = 0;
 
   for (let i = 0; i < pages.length; i++) {
     const page = pages[i];
     const progress = `[${i + 1}/${pages.length}]`;
+
+    // Check for existing
+    const existing = await checkExistingPage(page.slug);
+    if (existing) {
+      console.log(`${progress} ⏭  Skipped (exists): /${page.slug}`);
+      skipped++;
+      continue;
+    }
 
     try {
       await createPage(page);
@@ -164,7 +216,7 @@ async function main() {
   }
 
   console.log(`\n────────────────────────────────`);
-  console.log(`📊 Summary: ${created} created, ${failed} failed`);
+  console.log(`📊 Summary: ${created} created, ${skipped} skipped, ${failed} failed`);
   console.log(`────────────────────────────────\n`);
 }
 
