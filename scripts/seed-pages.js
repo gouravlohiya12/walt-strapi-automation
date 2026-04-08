@@ -6,123 +6,123 @@ const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
 
 const pages = [
   {
-    title: "AI Project Management Tool — BrightFlow",
-    slug: "ai-project-management-tool",
-    keyword: "ai project management tool",
-    h1: "Project Management That Thinks Ahead",
-    subheadline: "BrightFlow uses AI to prioritize tasks, predict bottlenecks, and keep your team shipping on schedule.",
-    body_copy: "<p>Project management tools have barely changed in a decade. You still manually drag cards, update statuses, and chase people for updates. Meanwhile, deadlines slip, priorities shift, and nobody has a clear picture of what's actually on track. The tool that was supposed to create order is just another thing to maintain.</p><p>BrightFlow is different. It's a project management tool with AI at its core — not bolted on as an afterthought. BrightFlow watches your team's workflow and automatically reprioritizes tasks when deadlines shift. It flags blockers before they stall a sprint. It tells you which projects are at risk based on velocity patterns, not gut feelings. Ask it \"What should the team focus on this week?\" and get an answer backed by data. Less time managing the tool, more time doing the work.</p>",
+    title: "AI Customer Support — Nexora",
+    slug: "ai-customer-support",
+    keyword: "ai customer support",
+    h1: "Customer Support That Never Sleeps",
+    subheadline: "Nexora's AI resolves 70% of tickets instantly — so your team can focus on the conversations that matter.",
+    body_copy: "<p>Customer expectations have changed. They want answers in minutes, not hours. They want help at 2am on a Sunday, not just during business hours. They want to message you on whatever channel is convenient for them — chat, email, social, phone — and they never want to repeat themselves. Meeting these expectations with a human-only team is impossible without burning out your agents or burning through your budget.</p><p>Nexora is AI customer support built for the modern era. It learns from your knowledge base, past tickets, and product docs to resolve common questions automatically — with the accuracy and tone your brand demands. When the AI can't help, it hands off to a human with full context: the customer's history, what was already tried, and a suggested response. Your team spends less time on password resets and shipping inquiries, and more time on the complex issues that build loyalty. The result? Faster responses, happier customers, and a support team that actually scales.</p>",
     cta_text: "Start Free Trial",
     cta_url: "#",
-    meta_description: "BrightFlow is the AI project management tool that auto-prioritizes tasks, predicts bottlenecks, and helps your team ship faster. Try it free.",
+    meta_description: "Nexora is AI customer support that resolves 70% of tickets automatically. Faster responses, happier customers, lower costs. Try free for 14 days.",
     status: "published"
   },
   {
-    title: "Project Management For Startups — BrightFlow",
-    slug: "project-management-for-startups",
-    keyword: "project management for startups",
-    h1: "Ship Fast Without the Chaos",
-    subheadline: "Built for lean teams that move fast. No enterprise bloat, no month-long setup — just clarity.",
-    body_copy: "<p>When you're a 10-person startup, everyone wears five hats. You don't have a dedicated project manager, and you definitely don't have time to learn a complex tool with 200 features you'll never use. But without some system, things fall through the cracks — tasks get duplicated, deadlines get missed, and the weekly standup becomes a 45-minute confusion session.</p><p>BrightFlow was built for teams like yours. Set it up in five minutes, import from Notion or Trello if you want, and let AI handle the overhead. BrightFlow auto-assigns priorities based on your sprint goals, sends smart reminders before things slip, and gives founders a real-time view of what every team member is working on. No gantt charts nobody reads. No permission matrices. Just a clean workspace that helps small teams punch above their weight.</p>",
+    title: "AI Chatbot For Website — Nexora",
+    slug: "ai-chatbot-for-website",
+    keyword: "ai chatbot for website",
+    h1: "An AI Chatbot That Actually Helps",
+    subheadline: "Not another dumb bot. Nexora understands your product and resolves real customer issues in real time.",
+    body_copy: "<p>Most website chatbots are glorified FAQ search bars. They match keywords, spit out canned responses, and frustrate customers until they demand a human agent. You spent money implementing it, and all it did was add one more step between your customer and the help they need. That's not AI — that's a bad menu system.</p><p>Nexora's chatbot is fundamentally different. It understands context, handles multi-turn conversations, and actually resolves issues — not just deflects them. It processes refunds, checks order status, troubleshoots product issues, and knows when to escalate. Train it once on your docs and it keeps learning from every conversation. It speaks your brand's tone, works 24/7, and handles hundreds of simultaneous conversations without breaking a sweat. Install it in minutes with a single code snippet. Watch your support queue shrink by the end of the first week.</p>",
+    cta_text: "Add to Your Site",
+    cta_url: "#",
+    meta_description: "Nexora's AI chatbot for websites resolves real customer issues, not just FAQs. Understands context, handles multi-turn conversations. Install in minutes.",
+    status: "published"
+  },
+  {
+    title: "Customer Support Software For Startups — Nexora",
+    slug: "customer-support-software-for-startups",
+    keyword: "customer support software for startups",
+    h1: "Startup-Grade Support Without the Enterprise Price",
+    subheadline: "Give your early customers incredible support — without hiring a full team to do it.",
+    body_copy: "<p>When you're a startup, every customer interaction matters. A bad support experience doesn't just lose one customer — it loses the referral chain behind them. But you can't afford five support agents when you're still finding product-market fit. You need to deliver amazing support at a scale of one or two people, and that means you need the right tool, not just the cheapest one.</p><p>Nexora is built for startups that punch above their weight. Start free, set up in minutes, and let AI handle the volume while your small team handles the nuance. Nexora learns your product from your docs and starts resolving tickets immediately. Shared inbox keeps email, chat, and social organized. Smart routing makes sure urgent issues get seen first. And when your startup scales from 100 customers to 10,000? Nexora scales with you — same tool, same team, just more AI handling the load. No rip-and-replace, no migration pain.</p>",
     cta_text: "Get Started Free",
     cta_url: "#",
-    meta_description: "BrightFlow is project management built for startups. Fast setup, AI-powered prioritization, and zero bloat. Get your lean team shipping faster.",
+    meta_description: "Nexora is customer support software built for startups. AI-powered, free to start, and scales with you. Deliver great support without a big team.",
     status: "published"
   },
   {
-    title: "Project Management For Remote Teams — BrightFlow",
-    slug: "project-management-for-remote-teams",
-    keyword: "project management for remote teams",
-    h1: "Keep Your Remote Team Aligned, Not Micromanaged",
-    subheadline: "Async-first project management with AI that bridges time zones and keeps work flowing.",
-    body_copy: "<p>Remote work broke the old playbook. You can't tap someone on the shoulder to ask about a task. You can't read the room in a standup that half the team joins at midnight their time. Traditional project management tools assume everyone's in the same office — they weren't designed for teams spread across four continents and eight time zones.</p><p>BrightFlow is built async-first. Every task has full context — goals, dependencies, decisions, and discussions — so anyone can pick up work without a Slack thread. AI generates daily progress summaries for each time zone, flags tasks that are blocked or stalling, and automatically adjusts priorities when scope changes. Managers get visibility without micromanaging. Team members get clarity without meetings. Whether your team is fully remote or hybrid, BrightFlow makes distance disappear.</p>",
+    title: "Helpdesk Software — Nexora",
+    slug: "helpdesk-software",
+    keyword: "helpdesk software",
+    h1: "The Helpdesk That Closes Tickets For You",
+    subheadline: "AI-powered helpdesk that auto-resolves, auto-routes, and auto-prioritizes — so your agents don't have to.",
+    body_copy: "<p>Your current helpdesk is basically a fancy email inbox. Tickets come in, someone reads them, someone assigns them, someone responds. The tool manages the queue but it doesn't actually reduce it. You're paying for software that organizes work but doesn't do any of it. Meanwhile, your agents drown in repetitive questions while complex issues wait in line behind password resets.</p><p>Nexora is helpdesk software that actively works alongside your team. AI reads every incoming ticket and auto-resolves the ones it can handle — which is about 70% of them. The rest get intelligently routed to the right agent based on skill, workload, and urgency. Priority is set automatically based on customer value, issue severity, and SLA timelines. Your agents open their queue to find only the tickets that actually need human judgment, each pre-loaded with context and suggested responses. Less busywork, faster resolution, better CSAT.</p>",
+    cta_text: "Start Free Trial",
+    cta_url: "#",
+    meta_description: "Nexora is AI-powered helpdesk software that auto-resolves 70% of tickets. Smart routing, auto-prioritization, and faster resolution. Try free.",
+    status: "published"
+  },
+  {
+    title: "AI Customer Service Tool — Nexora",
+    slug: "ai-customer-service-tool",
+    keyword: "ai customer service tool",
+    h1: "AI That Delivers Service, Not Excuses",
+    subheadline: "Nexora resolves issues, processes requests, and escalates intelligently — like your best agent, at scale.",
+    body_copy: "<p>The promise of AI in customer service has been oversold. Most tools just add a chatbot that deflects questions and frustrates customers. Real customer service means actually resolving problems — processing a refund, updating an order, troubleshooting a technical issue, knowing when to say sorry and when to escalate. Most AI tools can't do any of that.</p><p>Nexora can. It connects to your systems — your CRM, order management, billing platform — and takes real action on behalf of customers. It doesn't just say \"I'll pass this to a team member.\" It checks the order status, processes the return, updates the address, and confirms the change. When it encounters something it can't handle, it escalates with full context so the human agent picks up right where the AI left off. Your customers get faster resolution. Your agents get fewer repetitive tasks. And your support costs stop growing linearly with your customer base.</p>",
+    cta_text: "See It In Action",
+    cta_url: "#",
+    meta_description: "Nexora is an AI customer service tool that actually resolves issues — not just deflects. Connects to your systems, takes action, and escalates smartly.",
+    status: "published"
+  },
+  {
+    title: "Live Chat Software — Nexora",
+    slug: "live-chat-software",
+    keyword: "live chat software",
+    h1: "Live Chat That Converts and Supports",
+    subheadline: "AI-powered live chat that answers questions, captures leads, and resolves issues — all in real time.",
+    body_copy: "<p>Live chat is the fastest way to lose or win a customer. When someone's on your site with a question, you have about 30 seconds before they leave. If your chat widget shows \"We'll get back to you in 24 hours,\" you've already lost them. But staffing a live chat team 24/7 costs a fortune, and most questions are the same five things asked different ways.</p><p>Nexora's live chat is AI-first, human-backed. When a visitor opens the chat, AI responds instantly with accurate, helpful answers drawn from your knowledge base. It handles product questions, pricing inquiries, order lookups, and technical troubleshooting in real time. For sales conversations, it qualifies leads and books meetings. When a conversation needs a human touch, it routes to the right agent with full context. Your visitors get instant help. Your sales team gets qualified leads. Your support team handles fewer interruptions. One widget, three wins.</p>",
+    cta_text: "Try Live Chat Free",
+    cta_url: "#",
+    meta_description: "Nexora live chat software combines AI and human agents for instant, 24/7 customer support. Answer questions, capture leads, resolve issues in real time.",
+    status: "published"
+  },
+  {
+    title: "Customer Support For Ecommerce — Nexora",
+    slug: "customer-support-for-ecommerce",
+    keyword: "customer support for ecommerce",
+    h1: "Ecommerce Support That Drives Revenue",
+    subheadline: "Resolve \"where's my order\" in seconds. Convert browsing shoppers into buyers. Scale without hiring.",
+    body_copy: "<p>Ecommerce support is 80% the same questions on repeat: Where's my order? Can I return this? Do you ship to my country? What size should I get? Your support team answers these hundreds of times a day while the interesting problems — and the revenue-generating conversations — get buried in the queue. Meanwhile, potential buyers with pre-sale questions abandon their carts because nobody's there to answer.</p><p>Nexora is built for ecommerce. It plugs into Shopify, WooCommerce, and your shipping providers to answer order status, return, and tracking questions automatically. No human needed. Pre-sale questions get AI-powered instant answers that keep shoppers moving toward checkout. Product recommendations, size guides, shipping estimates — all handled in real time. Nexora even detects high-value customers and VIPs, routing them to your best agents. The result: fewer tickets, higher conversion, and a support team that focuses on the 20% of conversations that actually need them.</p>",
+    cta_text: "Start Free Trial",
+    cta_url: "#",
+    meta_description: "Nexora is customer support for ecommerce. Auto-resolve order questions, convert shoppers with instant answers, and scale support without hiring.",
+    status: "published"
+  },
+  {
+    title: "AI Ticketing System — Nexora",
+    slug: "ai-ticketing-system",
+    keyword: "ai ticketing system",
+    h1: "A Ticketing System That Solves Tickets",
+    subheadline: "Auto-classify, auto-route, auto-resolve. Nexora turns your ticket queue into a ticket solution engine.",
+    body_copy: "<p>Traditional ticketing systems are filing cabinets with a search bar. Tickets come in, get tagged, sit in a queue, and wait for a human to read them. The system doesn't understand the ticket, doesn't know who should handle it, and certainly doesn't try to resolve it. You're paying for organization, not resolution. And as volume grows, you just hire more people to read more tickets.</p><p>Nexora rethinks ticketing from the ground up. Every incoming ticket is read by AI that understands intent, urgency, and sentiment. Simple issues are resolved immediately — no queue, no wait. Complex issues are classified, prioritized by business impact, and routed to the agent with the right skills and availability. Duplicate tickets are merged automatically. Trending issues trigger alerts before they become incidents. Your agents see a queue of pre-triaged, context-rich tickets instead of a wall of unread emails. Resolution times drop. Agent satisfaction goes up. And your ticketing system finally earns its subscription fee.</p>",
+    cta_text: "Start Free Trial",
+    cta_url: "#",
+    meta_description: "Nexora is an AI ticketing system that auto-classifies, auto-routes, and auto-resolves support tickets. Smarter queues, faster resolution. Try free.",
+    status: "published"
+  },
+  {
+    title: "Customer Support For SaaS — Nexora",
+    slug: "customer-support-for-saas",
+    keyword: "customer support for saas",
+    h1: "SaaS Support That Reduces Churn",
+    subheadline: "Turn support from a cost center into a retention engine. AI that saves accounts, not just closes tickets.",
+    body_copy: "<p>In SaaS, support isn't just about answering questions — it's about keeping customers. Every unanswered ticket is a churn risk. Every slow response erodes trust. Every \"I'll escalate this\" without follow-through pushes someone closer to canceling. Your support team isn't just solving problems — they're fighting for revenue. But most support tools don't understand that context.</p><p>Nexora is customer support built for SaaS economics. It integrates with your product data to understand each customer's health score, plan tier, and usage patterns. High-value accounts get priority routing. At-risk customers get proactive outreach. AI handles onboarding questions, feature explanations, and technical troubleshooting so your team can focus on the conversations that directly impact retention and expansion. Track support-influenced churn, measure time-to-value, and identify product gaps from ticket patterns. Nexora turns support data into retention intelligence.</p>",
     cta_text: "Try It Free",
     cta_url: "#",
-    meta_description: "BrightFlow is async-first project management for remote teams. AI-powered updates, smart prioritization, and full visibility across time zones.",
+    meta_description: "Nexora is customer support for SaaS companies. AI-powered ticket resolution, churn prevention, and retention analytics. Reduce churn, not headcount.",
     status: "published"
   },
   {
-    title: "Free Project Management Software — BrightFlow",
-    slug: "free-project-management-software",
-    keyword: "free project management software",
-    h1: "Free Project Management That Actually Works",
-    subheadline: "No credit card. No limits on projects. Just a powerful workspace with AI built in.",
-    body_copy: "<p>Most free project management tools are either too basic to be useful or so limited they're just a gateway to an upsell. You hit the user cap in a week, the features you actually need are paywalled, and suddenly you're paying $15/user/month for something that's barely better than a shared spreadsheet.</p><p>BrightFlow's free tier is genuinely generous — unlimited projects, up to 10 team members, and full access to AI features. Create tasks, set deadlines, track progress, and let BrightFlow's AI handle prioritization and smart reminders. No storage limits on attachments, no feature gates that cripple your workflow. We built the free plan to be a real tool, not a demo. When your team grows beyond 10, upgrade for more seats and advanced analytics. But for most small teams, free is all you'll ever need.</p>",
-    cta_text: "Start Free",
-    cta_url: "#",
-    meta_description: "BrightFlow offers free project management software with AI features, unlimited projects, and up to 10 users. No credit card, no catch.",
-    status: "published"
-  },
-  {
-    title: "AI Task Management — BrightFlow",
-    slug: "ai-task-management",
-    keyword: "ai task management",
-    h1: "Tasks That Manage Themselves",
-    subheadline: "BrightFlow's AI auto-prioritizes, assigns, and tracks tasks so your team can focus on real work.",
-    body_copy: "<p>You create a task. You assign it. You set a due date. Then you spend the rest of the week following up — is it started? Is it blocked? Did the priority change because of that new client request? Task management shouldn't be a full-time job, but for most teams it secretly is. Someone is always updating boards, chasing statuses, and reshuffling priorities.</p><p>BrightFlow automates the busywork. When a new task comes in, AI evaluates urgency, team capacity, and existing deadlines to suggest the right owner and priority. As work progresses, BrightFlow detects when tasks are at risk and nudges the right people. It learns your team's patterns — who's fastest at what, which tasks tend to get stuck — and gets smarter over time. You still make the decisions. BrightFlow just makes sure nothing falls through the cracks while you do.</p>",
+    title: "Automated Customer Support — Nexora",
+    slug: "automated-customer-support",
+    keyword: "automated customer support",
+    h1: "Automate Support Without Losing the Human Touch",
+    subheadline: "Nexora automates the repetitive work so your team can be more human where it counts.",
+    body_copy: "<p>Automation in customer support has a bad reputation — and honestly, it's deserved. Most automation means phone trees nobody wants to navigate, chatbots that can't understand plain English, and canned responses that make customers feel like a ticket number. The goal was efficiency, but the result was frustration. No wonder people mash zero to get a human.</p><p>Nexora automates differently. It handles the genuinely repetitive stuff — order status checks, password resets, billing questions, feature how-tos — with AI that actually understands the question and gives a real answer. Not a menu. Not a link to your help center. A real, contextual, helpful response. And for everything the AI can't handle, it creates a seamless handoff to a human agent who has the full conversation history and a suggested response ready to go. Your customers never feel like they're talking to a robot. Your agents never feel like they are one. That's automation done right.</p>",
     cta_text: "Start Free Trial",
     cta_url: "#",
-    meta_description: "BrightFlow is AI task management that auto-prioritizes, assigns, and tracks work. Less overhead, fewer dropped balls, faster delivery.",
-    status: "published"
-  },
-  {
-    title: "Project Management For Agencies — BrightFlow",
-    slug: "project-management-for-agencies",
-    keyword: "project management for agencies",
-    h1: "Manage Every Client. Ship Every Deadline.",
-    subheadline: "One workspace for all your clients — with AI that keeps projects on track and teams at capacity.",
-    body_copy: "<p>Agency project management is a special kind of chaos. You're juggling 15 clients, each with their own timelines, deliverables, and feedback cycles. Your team is split across accounts, and nobody knows who has bandwidth until someone misses a deadline. The tools built for product teams don't work when every week brings a different mix of projects.</p><p>BrightFlow is built for agencies. Create separate workspaces per client, track time and deliverables in one view, and let AI balance workloads across your team. BrightFlow knows who's overloaded and who has capacity. It flags projects where timelines are slipping and suggests resource shifts before deadlines are at risk. Give clients a read-only portal to check progress — no more weekly status emails. Scale your agency without scaling your overhead.</p>",
-    cta_text: "Start Free Trial",
-    cta_url: "#",
-    meta_description: "BrightFlow is project management built for agencies. Manage multiple clients, balance workloads with AI, and never miss a deadline.",
-    status: "published"
-  },
-  {
-    title: "Team Collaboration Tool — BrightFlow",
-    slug: "team-collaboration-tool",
-    keyword: "team collaboration tool",
-    h1: "Collaboration Without the Noise",
-    subheadline: "Replace scattered Slack threads and lost docs with one workspace where work actually happens.",
-    body_copy: "<p>Your team uses Slack for communication, Google Docs for documents, Figma for designs, Jira for tasks, and email for everything that falls through the cracks. Context is everywhere and nowhere. Decisions get made in threads nobody can find. Files live in three different places. And every new project starts with the same question: \"Where should we put this?\"</p><p>BrightFlow is a collaboration tool that puts tasks, discussions, files, and decisions in one place — attached to the work, not scattered across apps. Comment directly on tasks. Share files where they're relevant. Make decisions and have them automatically logged so nobody asks \"wait, did we decide that?\" three weeks later. AI summarizes long threads, highlights action items from discussions, and keeps everyone on the same page — literally. Less tool-switching, less context-switching, more shipping.</p>",
-    cta_text: "Try BrightFlow Free",
-    cta_url: "#",
-    meta_description: "BrightFlow is a team collaboration tool that combines tasks, docs, and discussions in one AI-powered workspace. Less noise, more progress.",
-    status: "published"
-  },
-  {
-    title: "Project Planning Software — BrightFlow",
-    slug: "project-planning-software",
-    keyword: "project planning software",
-    h1: "Plan Projects in Minutes, Not Meetings",
-    subheadline: "Describe your project and let AI build the plan — tasks, timelines, dependencies, and milestones.",
-    body_copy: "<p>Project planning is supposed to set you up for success, but most teams spend more time planning than executing. You're in a room with a whiteboard, mapping dependencies, estimating timelines, and negotiating scope — only to have the plan fall apart two weeks in when reality hits. The gap between the plan and the work is where projects go to die.</p><p>BrightFlow reimagines planning. Describe your project in plain English — \"Launch the new marketing site by end of Q2, involves design, copy, dev, and QA\" — and BrightFlow's AI generates a structured plan with tasks, dependencies, milestones, and realistic timelines based on your team's historical velocity. Adjust anything, drag to reschedule, and watch the entire plan update intelligently. As work progresses, BrightFlow continuously re-forecasts your delivery date. Plans that stay alive, not plans that collect dust.</p>",
-    cta_text: "Start Planning Free",
-    cta_url: "#",
-    meta_description: "BrightFlow is project planning software with AI. Describe your project and get an instant plan with tasks, timelines, and dependencies. Try free.",
-    status: "published"
-  },
-  {
-    title: "Project Management For Small Business — BrightFlow",
-    slug: "project-management-for-small-business",
-    keyword: "project management for small business",
-    h1: "Run Your Business, Not Your Project Tool",
-    subheadline: "Simple, powerful project management that small teams actually stick with. AI handles the rest.",
-    body_copy: "<p>Small business owners don't need a project management certification — they need their team to stop dropping the ball. You've tried spreadsheets, sticky notes, maybe even a tool like Monday or Asana. But those tools are built for project managers, not for the restaurant owner tracking a renovation, the marketing agency managing five clients, or the contractor coordinating three crews.</p><p>BrightFlow is project management that stays out of your way. Create projects in seconds, add tasks with due dates, and let AI handle reminders and prioritization. No training required — if you can use a to-do list, you can use BrightFlow. It tracks what your team is working on, alerts you when something's overdue, and gives you a simple dashboard showing where everything stands. Built for people who run businesses, not Gantt charts.</p>",
-    cta_text: "Try It Free",
-    cta_url: "#",
-    meta_description: "BrightFlow is project management for small business. Simple setup, AI-powered task tracking, and zero learning curve. Free to start.",
-    status: "published"
-  },
-  {
-    title: "Agile Project Management Tool — BrightFlow",
-    slug: "agile-project-management-tool",
-    keyword: "agile project management tool",
-    h1: "Agile That Adapts as Fast as You Do",
-    subheadline: "Sprints, kanban, backlog — plus AI that spots blockers and keeps velocity high.",
-    body_copy: "<p>Your team does agile. Sort of. You have sprints, but planning takes half a day. You have a backlog, but it's 400 items nobody's groomed in months. You do retros, but the same problems come up every two weeks. The agile tools on the market give you boards and burndown charts, but they don't actually help you get better at agile.</p><p>BrightFlow is an agile project management tool with AI that actively improves your process. It auto-generates sprint plans based on backlog priority and team capacity. It monitors velocity in real-time and flags when a sprint is at risk — not after the fact, but while there's still time to adjust. It analyzes retro patterns and suggests specific process changes. Kanban or scrum, your choice. BrightFlow supports both with views that adapt to how your team actually works. Stop doing agile theatre. Start shipping with real agility.</p>",
-    cta_text: "Start Free Trial",
-    cta_url: "#",
-    meta_description: "BrightFlow is an agile project management tool with AI-powered sprint planning, real-time velocity tracking, and smart backlog grooming. Try free.",
+    meta_description: "Nexora delivers automated customer support that actually works. AI resolves repetitive issues while keeping the human touch for complex conversations.",
     status: "published"
   }
 ];
@@ -166,7 +166,7 @@ async function deletePage(documentId) {
 }
 
 async function main() {
-  console.log(`\n🚀 BrightFlow Landing Page Seeder`);
+  console.log(`\n🚀 Nexora Landing Page Seeder`);
   console.log(`   Pages to create: ${pages.length}`);
   console.log(`   Strapi: ${STRAPI_URL}\n`);
 
@@ -197,7 +197,6 @@ async function main() {
     const page = pages[i];
     const progress = `[${i + 1}/${pages.length}]`;
 
-    // Check for existing
     const existing = await checkExistingPage(page.slug);
     if (existing) {
       console.log(`${progress} ⏭  Skipped (exists): /${page.slug}`);

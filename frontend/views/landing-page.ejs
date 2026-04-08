@@ -21,218 +21,397 @@
         extend: {
           colors: {
             brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              200: '#bfdbfe',
-              300: '#93c5fd',
-              400: '#60a5fa',
-              500: '#3b82f6',
-              600: '#2563EB',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7C3AED',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
             }
           }
         }
       }
     }
   </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .gradient-hero {
+        background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #ddd6fe 100%);
+      }
+      .gradient-cta {
+        background: linear-gradient(135deg, #7C3AED 0%, #5b21b6 100%);
+      }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 antialiased">
 
-  <!-- Header -->
-  <header class="border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-sm">B</span>
+  <!-- ========== SECTION 1: Header ========== -->
+  <header class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-100 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 gradient-cta rounded-xl flex items-center justify-center shadow-md shadow-brand-600/20">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
         </div>
-        <span class="text-xl font-bold text-gray-900">BrightFlow</span>
+        <span class="text-xl font-bold text-gray-900 tracking-tight">Nexora</span>
       </a>
       <nav class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm text-gray-600 hover:text-gray-900">Features</a>
-        <a href="#" class="text-sm text-gray-600 hover:text-gray-900">Pricing</a>
-        <a href="#" class="text-sm text-gray-600 hover:text-gray-900">Docs</a>
-        <a href="<%= page.cta_url || '#' %>" class="text-sm bg-brand-600 text-white px-4 py-2 rounded-lg hover:bg-brand-700 transition">
+        <a href="#features" class="text-sm text-gray-600 hover:text-gray-900 transition">Features</a>
+        <a href="#how-it-works" class="text-sm text-gray-600 hover:text-gray-900 transition">How It Works</a>
+        <a href="#testimonials" class="text-sm text-gray-600 hover:text-gray-900 transition">Testimonials</a>
+        <a href="#faq" class="text-sm text-gray-600 hover:text-gray-900 transition">FAQ</a>
+        <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition">Pricing</a>
+        <a href="<%= page.cta_url || '#' %>" class="text-sm gradient-cta text-white px-5 py-2.5 rounded-lg hover:opacity-90 transition shadow-md shadow-brand-600/20 font-medium">
           <%= page.cta_text || 'Start Free Trial' %>
         </a>
       </nav>
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+      <a href="#features" class="block text-sm text-gray-600">Features</a>
+      <a href="#how-it-works" class="block text-sm text-gray-600">How It Works</a>
+      <a href="#testimonials" class="block text-sm text-gray-600">Testimonials</a>
+      <a href="#faq" class="block text-sm text-gray-600">FAQ</a>
+      <a href="<%= page.cta_url || '#' %>" class="block text-center gradient-cta text-white px-5 py-2.5 rounded-lg font-medium"><%= page.cta_text || 'Start Free Trial' %></a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="py-20 md:py-32">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-block px-4 py-1.5 bg-brand-50 text-brand-600 text-sm font-medium rounded-full mb-6">
-        Work smarter, ship faster.
+  <!-- ========== SECTION 2: Hero ========== -->
+  <section class="gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur border border-brand-200 text-brand-700 text-sm font-medium rounded-full mb-8 shadow-sm">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        Support that scales with you.
       </div>
-      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] mb-6 tracking-tight">
         <%= page.h1 %>
       </h1>
       <% if (page.subheadline) { %>
-        <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10">
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
           <%= page.subheadline %>
         </p>
       <% } %>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="<%= page.cta_url || '#' %>" class="w-full sm:w-auto px-8 py-4 bg-brand-600 text-white text-lg font-semibold rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand-600/25">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+        <a href="<%= page.cta_url || '#' %>" class="w-full sm:w-auto px-8 py-4 gradient-cta text-white text-lg font-semibold rounded-xl hover:opacity-90 transition shadow-xl shadow-brand-600/25">
           <%= page.cta_text || 'Start Free Trial' %>
         </a>
-        <a href="#" class="w-full sm:w-auto px-8 py-4 bg-gray-50 text-gray-700 text-lg font-semibold rounded-xl hover:bg-gray-100 transition">
-          See Demo →
+        <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 text-lg font-semibold rounded-xl hover:bg-gray-50 transition border border-gray-200 shadow-sm">
+          Watch Demo →
         </a>
       </div>
-      <p class="mt-4 text-sm text-gray-400">No credit card required · Free 14-day trial</p>
-    </div>
-  </section>
-
-  <!-- Dashboard Preview Placeholder -->
-  <section class="pb-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="bg-gray-900 rounded-2xl p-2 shadow-2xl">
-        <div class="bg-gray-800 rounded-xl p-8 min-h-[300px] flex items-center justify-center">
-          <div class="text-center">
-            <div class="flex justify-center gap-4 mb-6">
-              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30"></div>
-              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30"></div>
-              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30"></div>
-              <div class="w-24 h-16 bg-brand-600/20 rounded-lg border border-brand-600/30 hidden sm:block"></div>
-            </div>
-            <div class="flex justify-center gap-4">
-              <div class="w-52 h-32 bg-brand-600/10 rounded-lg border border-brand-600/20"></div>
-              <div class="w-52 h-32 bg-brand-600/10 rounded-lg border border-brand-600/20 hidden sm:block"></div>
-            </div>
-          </div>
-        </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          No credit card required
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          14-day free trial
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Setup in 5 minutes
+        </span>
       </div>
     </div>
   </section>
 
-  <!-- Features Grid -->
-  <section id="features" class="py-20 bg-gray-50">
+  <!-- ========== SECTION 3: Logos Bar ========== -->
+  <section class="py-16 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-center text-sm font-medium text-gray-400 uppercase tracking-wider mb-10">Trusted by 3,000+ support teams worldwide</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        <div class="text-2xl font-bold text-gray-300 tracking-tight">Shopify</div>
+        <div class="text-2xl font-bold text-gray-300 tracking-tight">Stripe</div>
+        <div class="text-2xl font-bold text-gray-300 tracking-tight">Notion</div>
+        <div class="text-2xl font-bold text-gray-300 tracking-tight">Webflow</div>
+        <div class="text-2xl font-bold text-gray-300 tracking-tight">Linear</div>
+        <div class="text-2xl font-bold text-gray-300 tracking-tight">Vercel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 4: Features Grid ========== -->
+  <section id="features" class="py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything your team needs to ship</h2>
-        <p class="text-lg text-gray-500 max-w-2xl mx-auto">Stop juggling tools. BrightFlow brings tasks, timelines, and team collaboration into one AI-powered workspace.</p>
+        <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Features</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-5 tracking-tight">Everything your support team needs</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">Nexora combines AI automation with human empathy to deliver fast, personal support at any scale.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl border border-gray-200">
-          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
+          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Task Prioritization</h3>
-          <p class="text-gray-500 leading-relaxed">BrightFlow's AI learns your workflow and auto-prioritizes tasks based on deadlines, dependencies, and team capacity.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">AI-First Chatbot</h3>
+          <p class="text-gray-500 leading-relaxed">Resolves 70% of tickets automatically using your knowledge base. Learns from every conversation and gets smarter over time.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-200">
-          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
+          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Team Collaboration</h3>
-          <p class="text-gray-500 leading-relaxed">Real-time updates, comments, and file sharing. Keep everyone aligned without endless meetings or Slack threads.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Unified Inbox</h3>
+          <p class="text-gray-500 leading-relaxed">Email, chat, social, and phone — all in one inbox. Never lose a conversation or make a customer repeat themselves again.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-200">
-          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
+          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Project Analytics</h3>
-          <p class="text-gray-500 leading-relaxed">Track velocity, spot bottlenecks, and predict delivery dates. AI-powered insights that help your team ship on time.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Analytics</h3>
+          <p class="text-gray-500 leading-relaxed">Track resolution time, CSAT, agent performance, and ticket trends. AI surfaces insights so you fix problems before they escalate.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Social Proof / Stats -->
-  <section class="py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <p class="text-4xl md:text-5xl font-bold text-brand-600">3,200+</p>
-          <p class="text-sm text-gray-500 mt-2">Teams on BrightFlow</p>
-        </div>
-        <div>
-          <p class="text-4xl md:text-5xl font-bold text-brand-600">5M+</p>
-          <p class="text-sm text-gray-500 mt-2">Tasks completed</p>
-        </div>
-        <div>
-          <p class="text-4xl md:text-5xl font-bold text-brand-600">40%</p>
-          <p class="text-sm text-gray-500 mt-2">Faster delivery</p>
-        </div>
-        <div>
-          <p class="text-4xl md:text-5xl font-bold text-brand-600">4.8/5</p>
-          <p class="text-sm text-gray-500 mt-2">Average user rating</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="py-20 bg-gray-50">
+  <!-- ========== SECTION 5: How It Works ========== -->
+  <section id="how-it-works" class="py-24 bg-gray-50">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Up and running in 3 steps</h2>
-        <p class="text-lg text-gray-500">No consultants needed. Get your team started in minutes.</p>
+        <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">How It Works</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-5 tracking-tight">Live in 5 minutes, not 5 months</h2>
+        <p class="text-lg text-gray-500">No consultants. No migration projects. Just connect and go.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-12">
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">1</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Import Your Projects</h3>
-          <p class="text-gray-500">Bring in existing work from Jira, Asana, Trello, Notion, or start fresh. One-click migration.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">2</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Let AI Organize</h3>
-          <p class="text-gray-500">BrightFlow's AI structures your tasks, sets priorities, identifies dependencies, and builds your timeline.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">3</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Ship With Confidence</h3>
-          <p class="text-gray-500">Track progress in real-time, get AI alerts on blockers, and deliver projects on time — every time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Body Copy Section -->
-  <section class="py-20">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-        <%- page.body_copy || '' %>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Ready to ship faster?
-      </h2>
-      <p class="text-lg text-gray-500 mb-8">
-        Join thousands of teams using BrightFlow to deliver projects on time, every time.
-      </p>
-      <a href="<%= page.cta_url || '#' %>" class="inline-block px-8 py-4 bg-brand-600 text-white text-lg font-semibold rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand-600/25">
-        <%= page.cta_text || 'Start Free Trial' %>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-gray-100 py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-2">
-          <div class="w-6 h-6 bg-brand-600 rounded flex items-center justify-center">
-            <span class="text-white font-bold text-xs">B</span>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative bg-white p-8 rounded-2xl border border-gray-200 text-center">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25">1</div>
+          <div class="pt-4">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Connect Your Channels</h3>
+            <p class="text-gray-500 leading-relaxed">Link email, live chat, social media, and phone. One-click integrations with Slack, Zendesk, Intercom, and 40+ tools.</p>
           </div>
-          <span class="font-semibold text-gray-900">BrightFlow</span>
         </div>
-        <div class="flex gap-8 text-sm text-gray-500">
-          <a href="#" class="hover:text-gray-900">Privacy</a>
-          <a href="#" class="hover:text-gray-900">Terms</a>
-          <a href="#" class="hover:text-gray-900">Contact</a>
-          <a href="/sitemap.xml" class="hover:text-gray-900">Sitemap</a>
+        <div class="relative bg-white p-8 rounded-2xl border border-gray-200 text-center">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25">2</div>
+          <div class="pt-4">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Train Your AI</h3>
+            <p class="text-gray-500 leading-relaxed">Upload your docs, FAQ, or past tickets. Nexora's AI builds a knowledge base and starts resolving common questions instantly.</p>
+          </div>
         </div>
-        <p class="text-sm text-gray-400">&copy; 2026 BrightFlow. All rights reserved.</p>
+        <div class="relative bg-white p-8 rounded-2xl border border-gray-200 text-center">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25">3</div>
+          <div class="pt-4">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Scale With Confidence</h3>
+            <p class="text-gray-500 leading-relaxed">AI handles the repetitive stuff. Your team focuses on complex issues. Response times drop, CSAT goes up, costs stay flat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 6: Testimonials ========== -->
+  <section id="testimonials" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Testimonials</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Loved by support teams</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-1 mb-4">
+            <% for (let i = 0; i < 5; i++) { %>
+              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <% } %>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-6">"We cut our first response time from 4 hours to 8 minutes. Nexora's AI handles the easy stuff so our team can focus on the hard problems."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm">SR</span></div>
+            <div>
+              <p class="text-sm font-semibold text-gray-900">Sarah Rodriguez</p>
+              <p class="text-xs text-gray-400">Head of Support, ScaleUp</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-1 mb-4">
+            <% for (let i = 0; i < 5; i++) { %>
+              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <% } %>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-6">"We went from 3 support agents to 1 agent + Nexora handling 500 tickets/day. The ROI was obvious within the first month."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm">MK</span></div>
+            <div>
+              <p class="text-sm font-semibold text-gray-900">Michael Kim</p>
+              <p class="text-xs text-gray-400">COO, CartFlow</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-1 mb-4">
+            <% for (let i = 0; i < 5; i++) { %>
+              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <% } %>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-6">"The AI actually understands our product. It doesn't just deflect — it resolves. Our CSAT went from 3.8 to 4.7 in two months."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm">EP</span></div>
+            <div>
+              <p class="text-sm font-semibold text-gray-900">Elena Petrova</p>
+              <p class="text-xs text-gray-400">VP Support, DataNest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 7: Stats ========== -->
+  <section class="py-24 bg-gray-900">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">The numbers speak for themselves</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">70%</p>
+          <p class="text-sm text-gray-400 mt-2">Tickets auto-resolved</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">3,200+</p>
+          <p class="text-sm text-gray-400 mt-2">Support teams</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">8 min</p>
+          <p class="text-sm text-gray-400 mt-2">Avg first response</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">4.9/5</p>
+          <p class="text-sm text-gray-400 mt-2">Customer rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Body Copy (dynamic from CMS) ========== -->
+  <% if (page.body_copy) { %>
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed prose-headings:text-gray-900 prose-a:text-brand-600">
+        <%- page.body_copy %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- ========== SECTION 8: FAQ ========== -->
+  <section id="faq" class="py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">FAQ</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-lg font-semibold text-gray-900">How quickly can I set up Nexora?</span>
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-500 leading-relaxed">Most teams go live within 5 minutes. Connect your channels, upload your knowledge base docs, and Nexora's AI starts handling tickets immediately. No engineering required.</div>
+        </details>
+        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-lg font-semibold text-gray-900">What if the AI can't answer a question?</span>
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-500 leading-relaxed">Nexora automatically escalates to a human agent with full context — the customer's history, what the AI already tried, and a suggested response. No dropped balls, no lost context.</div>
+        </details>
+        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-lg font-semibold text-gray-900">Does it work with my existing tools?</span>
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-500 leading-relaxed">Yes. Nexora integrates with Slack, Zendesk, Intercom, HubSpot, Salesforce, Shopify, and 40+ other platforms. Migrating from another tool? We handle the import for you.</div>
+        </details>
+        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-lg font-semibold text-gray-900">Is there a free plan?</span>
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-500 leading-relaxed">We offer a 14-day free trial with full features — no credit card required. After that, plans start at $29/month for small teams. Enterprise pricing is available for larger organizations.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 9: CTA ========== -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="gradient-cta rounded-3xl p-12 md:p-16 text-center shadow-2xl shadow-brand-600/20">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
+          Ready to transform your support?
+        </h2>
+        <p class="text-lg text-brand-200 mb-10 max-w-xl mx-auto">
+          Join 3,200+ teams using Nexora to deliver faster, smarter support. Start your free trial today.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="<%= page.cta_url || '#' %>" class="w-full sm:w-auto px-8 py-4 bg-white text-brand-700 text-lg font-bold rounded-xl hover:bg-gray-50 transition shadow-lg">
+            <%= page.cta_text || 'Start Free Trial' %>
+          </a>
+          <a href="#" class="w-full sm:w-auto px-8 py-4 border-2 border-white/30 text-white text-lg font-semibold rounded-xl hover:bg-white/10 transition">
+            Talk to Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 10: Footer ========== -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-5">
+            <div class="w-7 h-7 gradient-cta rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <span class="font-bold text-gray-900">Nexora</span>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">AI-powered customer support that scales with you.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-4">Product</h4>
+          <ul class="space-y-2.5 text-sm text-gray-500">
+            <li><a href="#features" class="hover:text-gray-900 transition">Features</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Pricing</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Integrations</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-4">Resources</h4>
+          <ul class="space-y-2.5 text-sm text-gray-500">
+            <li><a href="#" class="hover:text-gray-900 transition">Documentation</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Blog</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Help Center</a></li>
+            <li><a href="/sitemap.xml" class="hover:text-gray-900 transition">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-4">Company</h4>
+          <ul class="space-y-2.5 text-sm text-gray-500">
+            <li><a href="#" class="hover:text-gray-900 transition">About</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Careers</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Privacy</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 Nexora. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="text-gray-400 hover:text-gray-600 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+          <a href="#" class="text-gray-400 hover:text-gray-600 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="#" class="text-gray-400 hover:text-gray-600 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
       </div>
     </div>
   </footer>
