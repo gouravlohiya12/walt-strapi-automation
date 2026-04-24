@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raising Kids — Christian Sexuality</title>
+  <meta name="description" content="How to Disciple Your Kids in Biblical Sexuality — without the fear, shame, or awkward lectures. An 8-episode on-demand video course for parents of children ages 3–12.">
+  <link rel="canonical" href="<%= baseUrl %>/raising-kids">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Disciple Your Kids in Biblical Sexuality">
+  <meta property="og:description" content="The step-by-step system to becoming the 'First Voice' and 'Safety Anchor' for your child.">
+  <meta property="og:url" content="<%= baseUrl %>/raising-kids">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="<%= baseUrl %>/images/raising-kids/course-devices.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Disciple Your Kids in Biblical Sexuality">
+  <meta name="twitter:description" content="The step-by-step system to becoming the 'First Voice' and 'Safety Anchor' for your child.">
+  <meta name="twitter:image" content="<%= baseUrl %>/images/raising-kids/course-devices.webp">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#e9d985',
+              green: '#439A86',
+              orange: '#BF4E30',
+              teal: '#3F8F7F',
+              cream: '#FBF5E7',
+              dark: '#1e2721',
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+            display: ['Merriweather', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    h1, h2, h3, h4, h5 { font-family: 'Merriweather', Georgia, serif; }
+    .x-icon::before {
+      content: "✕";
+      color: #BF4E30;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .check-icon::before {
+      content: "✓";
+      color: #439A86;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .skew-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .skew-section::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: inherit;
+      transform: skewY(-2deg);
+      transform-origin: top left;
+      z-index: -1;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary { list-style: none; }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Christian Sexuality: Raising Kids",
+      "description": "An 8-episode on-demand video course for parents of children ages 3–12.",
+      "provider": { "@type": "Organization", "name": "Christian Sexuality" },
+      "offers": { "@type": "Offer", "price": "99", "priceCurrency": "USD" }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 w-full bg-white border-b border-gray-100 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center">
+        <img src="/images/raising-kids/logo.svg" alt="Christian Sexuality" class="h-12 w-auto" onerror="this.outerHTML='<span class=\'text-xl font-bold text-brand-orange\'>Christian Sexuality</span>'"/>
+      </a>
+      <div class="flex items-center gap-4">
+        <button id="menu-btn" class="p-2 text-gray-700" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a href="<%= ctaUrl %>" class="bg-brand-orange text-white px-6 py-3 rounded font-bold uppercase text-sm tracking-wide hover:opacity-90 transition">BUY NOW</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-gray-900 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/raising-kids/hero.webp" alt="Family" class="w-full h-full object-cover opacity-60">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32 text-center text-white">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+        HOW TO DISCIPLE YOUR KIDS<br>IN BIBLICAL SEXUALITY
+      </h1>
+      <h3 class="text-xl md:text-3xl font-normal italic mb-8 text-white/90">
+        (Without the Fear, Shame, or Awkward Lectures)
+      </h3>
+      <p class="text-base md:text-lg max-w-3xl mx-auto mb-10 text-white/90 leading-relaxed">
+        The Step-By-Step System to Becoming the "First Voice" &amp; "Safety Anchor" for Your Child… Even if You Don't Feel Qualified.
+      </p>
+      <a href="<%= ctaUrl %>" class="inline-block bg-brand-orange text-white px-8 py-4 rounded font-bold uppercase tracking-wide text-base md:text-lg hover:opacity-90 transition shadow-xl">
+        START THE CONVERSATION ( <s class="opacity-70">$197</s> $99 TODAY)
+      </a>
+      <p class="text-sm text-white/80 mt-3 italic">for a limited time</p>
+      <p class="text-sm mt-4"><a href="#" class="text-white underline hover:text-brand-yellow">Buying for a group?</a></p>
+    </div>
+    <!-- Diagonal cut bottom -->
+    <div class="absolute bottom-0 left-0 right-0 h-16" style="background: linear-gradient(to bottom right, transparent 49%, #e9d985 50%);"></div>
+  </section>
+
+  <!-- Gold Standard Section -->
+  <section class="bg-brand-yellow py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-3xl md:text-5xl font-display font-bold leading-tight mb-8 text-gray-900">
+        Wherever our kids learn about something first becomes their "gold standard"—the authority they compare everything else to.
+      </p>
+      <ul class="space-y-3 text-xl md:text-2xl text-gray-900 mb-8">
+        <li class="x-icon">The Playground?</li>
+        <li class="x-icon">Their Peers?</li>
+        <li class="x-icon">The Internet?</li>
+        <li class="check-icon">Or You?</li>
+      </ul>
+      <p class="text-base md:text-lg text-gray-800 leading-relaxed">
+        <strong class="text-brand-green">The Truth:</strong> Most parents feel inadequate ("I'll say it wrong"). So we stay silent. But silence <em>is</em> a choice. It leaves the door open for the world to step in.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Talk is a Myth -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-12">"The Talk" is a Myth.</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <% const myths = [
+          { icon: 'icon-chat.png', title: 'Old Way:', body: 'One awkward, 100-minute "Sex Talk" that everyone dreads.' },
+          { icon: 'icon-refresh.png', title: 'New Way:', body: '100 one-minute conversations woven naturally into everyday life.' },
+          { icon: 'icon-heart.png', title: 'The Goal:', body: 'Not just "giving information," but building trust. When you have a warm, safe relationship, your child comes to you first.' }
+        ]; myths.forEach(function(m) { %>
+          <div>
+            <div class="w-16 h-16 mb-5">
+              <img src="/images/raising-kids/<%= m.icon %>" alt="" class="w-full h-full object-contain">
+            </div>
+            <h4 class="text-xl font-display font-bold text-gray-900 mb-3"><%= m.title %></h4>
+            <p class="text-base text-gray-700 leading-relaxed"><%= m.body %></p>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Banner (Teal) -->
+  <section class="bg-brand-teal py-20 text-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-2xl md:text-4xl font-display italic mb-2 font-normal">Introducing:</h3>
+      <h2 class="text-4xl md:text-7xl lg:text-8xl font-display font-black leading-[1.05]">
+        Christian Sexuality:<br>Raising Kids
+      </h2>
+    </div>
+  </section>
+
+  <!-- Course Intro: Two-column -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-xl md:text-2xl font-display font-bold text-gray-900 mb-5 uppercase leading-snug">
+          AN 8-EPISODE ON-DEMAND VIDEO COURSE FOR PARENTS OF CHILDREN AGES 3–12.
+        </h3>
+        <p class="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
+          We don't just give you the biology. We give you the theology and the posture to walk into these conversations without fear.
+        </p>
+        <h5 class="text-lg font-bold text-gray-900 mb-3">Our Core Philosophy:</h5>
+        <p class="text-base text-gray-700 leading-relaxed">
+          Sex isn't just "sexy" (as the world often defines it). Sex is sacred.<br>
+          It is a covenant renewal ceremony that mirrors Christ and the Church.
+        </p>
+      </div>
+      <div>
+        <img src="/images/raising-kids/course-devices.webp" alt="Course on devices" class="w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="bg-brand-yellow py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-12 text-center">Your Roadmap to Confidence</h2>
+      <div class="space-y-0">
+        <% const roadmap = [
+          { n: '01', title: 'Introduction: Getting Started (13 minutes)', body: 'Setting the foundation for confident, grace-filled conversations.' },
+          { n: '02', title: 'Episode 1: How Much Am I Worth? (26 minutes)', body: "Gospel Identity — Anchoring kids' worth on Christ, not their body." },
+          { n: '03', title: 'Episode 2: Can Two Girls Marry Each Other? (30 minutes)', body: "Marriage & Singleness — Teaching sex as a picture of God's covenant love." },
+          { n: '04', title: 'Episode 3: What Makes Me a Boy or a Girl? (20 minutes)', body: 'Gender — Discussing male and female with compassion and clarity.' },
+          { n: '05', title: 'Episode 4: Where Do Babies Come From? (38 minutes)', body: 'Biology & Mechanics — Age-appropriate scripts for "How babies are made".' },
+          { n: '06', title: 'Episode 5: Why Does That Guy Look Like a Girl? (22 minutes)', body: 'Engaging People — Loving neighbors (including LGBTQ+ neighbors) who live differently, without compromising convictions.' },
+          { n: '07', title: 'Episode 6: Is My Teacher Always Right? (35 minutes)', body: 'Engaging Systems — Navigating school, media, and cultural narratives.' },
+          { n: '08', title: 'Episode 7: Do I Have to Hug Them? (28 minutes)', body: 'Body Autonomy — Teaching boundaries ("Good touch/Bad touch") to keep kids safe.' },
+          { n: '09', title: 'Episode 8: Can I Have a Cellphone? (25 minutes)', body: 'Digital Discipleship — Preparing our kids for a world of screens and pornography.' },
+          { n: '10', title: 'Conclusion (11 minutes)', body: "Let's keep the door open to conversations with our kids." }
+        ]; roadmap.forEach(function(r) { %>
+          <div class="flex gap-5 items-start py-5 border-b border-gray-900/10 last:border-0">
+            <span class="text-3xl md:text-4xl font-display font-bold text-gray-900 shrink-0 w-16"><%= r.n %>.</span>
+            <div class="flex-1">
+              <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1"><%= r.title %></h4>
+              <p class="text-sm md:text-base text-gray-700 leading-relaxed"><%= r.body %></p>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Your Guides -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="/images/raising-kids/guides.webp" alt="Laurie and Matt Krieg" class="w-full h-auto rounded-sm shadow-md">
+      </div>
+      <div>
+        <h3 class="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-6 uppercase">Meet Your Guides</h3>
+        <div class="space-y-5">
+          <div>
+            <h4 class="text-lg font-bold text-gray-900">Laurie Krieg:</h4>
+            <p class="text-base text-gray-700">Director of Parent Programs and Discipleship at the Center for Faith, Sexuality &amp; Gender.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-gray-900">Matt Krieg:</h4>
+            <p class="text-base text-gray-700">Licensed mental health therapist specializing in sexuality and addiction.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-gray-900">Theology + Therapy:</h4>
+            <p class="text-base text-gray-700">We combine biblical truth with psychological insight.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-gray-900">Fellow Parents:</h4>
+            <p class="text-base text-gray-700">We are raising three kids right now. We know it's messy. We know it's hard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest Experts -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h4 class="text-base font-bold text-gray-900 uppercase tracking-wider mb-8">Guest Experts</h4>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <% const experts = [
+          { img: 'expert-1.webp', name: 'Preston & Jackie Hill Perry' },
+          { img: 'expert-2.webp', name: 'Dr. Curt Thompson' },
+          { img: 'expert-3.webp', name: 'Dr. Dan Allender' },
+          { img: 'expert-4.webp', name: 'John Mark Comer' },
+          { img: 'expert-5.webp', name: 'Jon Tyson' }
+        ]; experts.forEach(function(e) { %>
+          <figure class="text-center">
+            <div class="aspect-square w-full overflow-hidden mb-3 bg-gray-200 rounded-sm">
+              <img src="/images/raising-kids/<%= e.img %>" alt="<%= e.name %>" class="w-full h-full object-cover">
+            </div>
+            <figcaption class="text-sm font-medium text-gray-800"><%= e.name %></figcaption>
+          </figure>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equip Yourself (Pricing) -->
+  <section class="bg-brand-teal py-20 text-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-3xl md:text-5xl font-display italic mb-10 font-normal">Equip Yourself Today</h3>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="space-y-6">
+          <% const bullets1 = [
+            { icon: 'icon-play.png', title: '8 Video Episodes:', body: 'Watch at your own pace.' },
+            { icon: 'icon-file.png', title: 'Discussion Guides:', body: '"Cut-and-paste" scripts for hard questions.' },
+            { icon: 'icon-calendar.png', title: '18-Month Access:', body: 'Take your time.' }
+          ]; bullets1.forEach(function(b) { %>
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 shrink-0 bg-white/10 rounded-full p-2">
+                <img src="/images/raising-kids/<%= b.icon %>" alt="" class="w-full h-full object-contain invert brightness-0 filter" style="filter:brightness(0) invert(1)">
+              </div>
+              <div>
+                <h4 class="text-lg font-bold mb-1"><%= b.title %></h4>
+                <p class="text-sm text-white/90"><%= b.body %></p>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+        <div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 shrink-0 bg-white/10 rounded-full p-2">
+              <img src="/images/raising-kids/icon-star.png" alt="" class="w-full h-full object-contain" style="filter:brightness(0) invert(1)">
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-2">Bonus Resources:</h4>
+              <p class="text-sm text-white/90 mb-3"><strong class="text-white">Expert Interviews:</strong> Dr. Dan Allender, John Mark Comer, Preston &amp; Jackie Hill Perry, and Dr. Julia Sadusky.</p>
+              <p class="text-sm text-white/90 mb-3"><strong class="text-white">Pronouns Webinar:</strong> A deep dive into today's complex gender conversations.</p>
+              <p class="text-sm text-white/90"><strong class="text-white">Audio Guide:</strong> "Protecting Our Kids In A Wild World" feat. Dr. Julia Sadusky.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-10 text-center md:text-left">
+        <div>
+          <h4 class="text-xl md:text-3xl font-display mb-2">Total Value:</h4>
+          <span class="text-5xl md:text-7xl font-display font-bold"><s class="opacity-70">$197</s></span>
+        </div>
+        <div>
+          <h4 class="text-xl md:text-3xl font-display mb-2">Your Price:</h4>
+          <span class="text-5xl md:text-7xl font-display font-bold">$99</span>
+        </div>
+      </div>
+
+      <p class="text-xl md:text-2xl font-display italic mb-8 leading-snug">
+        We Are Serving Our Kids, and We Are Preaching the Gospel to Them.
+      </p>
+
+      <a href="<%= ctaUrl %>" class="inline-block bg-brand-orange text-white px-8 py-4 rounded font-bold uppercase tracking-wide hover:opacity-90 transition shadow-lg">
+        Start The Conversation — $99
+      </a>
+      <p class="mt-4"><a href="#" class="text-white/90 underline hover:text-brand-yellow text-sm">Buying for a group?</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-12">Common Questions</h2>
+      <div class="space-y-3">
+        <% const faqs = [
+          { q: 'My kids are young (3-5). Is this asking too much?', a: "Not at all. You start small. You aren't explaining intercourse; you're laying the foundation of <em>identity</em> and <em>trust</em>." },
+          { q: 'I have a messy sexual past. Can I still teach this?', a: "Yes. Your story matters. God can transform your past into a powerful tool for discipleship. We help you process your own story so you don't transmit shame to your kids." },
+          { q: 'What about single parents?', a: 'Discipling a heart happens regardless of marital status. These videos speak to all kinds of families, including single-parent homes and blended families.' }
+        ]; faqs.forEach(function(item) { %>
+          <details class="group bg-brand-yellow rounded-sm border border-gray-900/10 overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-gray-900 text-base md:text-lg">
+              <span><%= item.q %></span>
+              <svg class="w-5 h-5 text-gray-900 group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-gray-800 leading-relaxed border-t border-gray-900/10 pt-4"><%- item.a %></div>
+          </details>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 md:py-28 bg-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl md:text-7xl lg:text-8xl font-display font-light text-brand-yellow leading-tight mb-8" style="color:#d4b84a;">
+        Your Silence Is<br>An Answer.
+      </h2>
+      <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-10 leading-relaxed uppercase tracking-wide">
+        Step In. Be the Safety Anchor. Give Your Kids a Vision for Sexuality That Is Beautiful, Sacred, and True.
+      </h3>
+      <a href="<%= ctaUrl %>" class="inline-block bg-brand-orange text-white px-8 py-4 rounded font-bold uppercase tracking-wide hover:opacity-90 transition shadow-lg">
+        Join The Course <s class="opacity-70">$197</s> $99
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <img src="/images/raising-kids/footer-logo.png" alt="Christian Sexuality" class="mx-auto h-20 w-auto mb-6">
+      <p class="text-sm text-white/80 mb-6">
+        A collaborative resource from <a href="https://centerforfaith.com" target="_blank" rel="noopener" class="underline hover:text-brand-yellow">The Center for Faith, Sexuality &amp; Gender</a>
+      </p>
+      <div class="flex justify-center gap-5 mb-6">
+        <a href="#" class="text-brand-orange hover:opacity-80 transition" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 12 24" fill="currentColor"><path d="M3 8H0V12H3V24H8V12H11.642L12 8H8V6.333C8 5.378 8.192 5 9.115 5H12V0H8.192C4.596 0 3 1.583 3 4.615V8Z"/></svg>
+        </a>
+        <a href="#" class="text-brand-orange hover:opacity-80 transition" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM12 0C8.741 0 8.333 0.014 7.053 0.072C2.695 0.272 0.273 2.69 0.073 7.052C0.014 8.333 0 8.741 0 12C0 15.259 0.014 15.668 0.072 16.948C0.272 21.306 2.69 23.728 7.052 23.928C8.333 23.986 8.741 24 12 24C15.259 24 15.668 23.986 16.948 23.928C21.302 23.728 23.73 21.31 23.927 16.948C23.986 15.668 24 15.259 24 12C24 8.741 23.986 8.333 23.928 7.053C23.732 2.699 21.311 0.273 16.949 0.073C15.668 0.014 15.259 0 12 0ZM12 5.838C8.597 5.838 5.838 8.597 5.838 12C5.838 15.403 8.597 18.163 12 18.163C15.403 18.163 18.162 15.404 18.162 12C18.162 8.597 15.403 5.838 12 5.838ZM12 16C9.791 16 8 14.21 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12C16 14.21 14.209 16 12 16ZM18.406 4.155C17.61 4.155 16.965 4.8 16.965 5.595C16.965 6.39 17.61 7.035 18.406 7.035C19.201 7.035 19.845 6.39 19.845 5.595C19.845 4.8 19.201 4.155 18.406 4.155Z"/></svg>
+        </a>
+        <a href="#" class="text-brand-orange hover:opacity-80 transition" aria-label="YouTube">
+          <svg width="24" height="24" viewBox="0 0 24 18" fill="currentColor"><path d="M19.615 0.184125C16.011 -0.0618748 7.984 -0.0608748 4.385 0.184125C0.488 0.450125 0.029 2.80412 0 9.00012C0.029 15.1851 0.484 17.5491 4.385 17.8161C7.985 18.0611 16.011 18.0621 19.615 17.8161C23.512 17.5501 23.971 15.1961 24 9.00012C23.971 2.81512 23.516 0.451125 19.615 0.184125ZM9 13.0001V5.00013L17 8.99312L9 13.0001Z"/></svg>
+        </a>
+      </div>
+      <a href="#" class="text-xs text-white/60 hover:text-white/80 underline">Terms of Service</a>
+      <p class="text-xs text-white/60 mt-6">&copy; 2026 Christian Sexuality</p>
+    </div>
+  </footer>
+
+</body>
+</html>
