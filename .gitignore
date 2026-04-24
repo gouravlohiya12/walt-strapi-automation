@@ -23,3 +23,6 @@ google-service-account.json
 # Claude
 .claude/
 strapi/package-lock.json
+
+# Local backups (not for git)
+backups/

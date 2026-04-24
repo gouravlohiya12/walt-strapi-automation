@@ -1,9 +1,11 @@
 require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const express = require("express");
+const compression = require("compression");
 const axios = require("axios");
 const path = require("path");
 
 const app = express();
+app.use(compression());
 const PORT = process.env.PORT || 3000;
 const STRAPI_URL = process.env.STRAPI_URL || "http://localhost:1337";
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
@@ -69,6 +71,21 @@ app.get("/sitemap.xml", async (req, res) => {
     console.error("Error generating sitemap:", err.message);
     res.status(500).send("Error generating sitemap");
   }
+});
+
+// Christian Sexuality — Raising Kids course landing page (clone template)
+app.get("/raising-kids", (req, res) => {
+  res.render("raising-kids", {
+    baseUrl: BASE_URL,
+    ctaUrl: process.env.RAISING_KIDS_CTA_URL || "https://courses.christian-sexuality.com/cart/add_product/3339719?price_id=4243848",
+  });
+});
+
+// robots.txt
+app.get("/robots.txt", (req, res) => {
+  res.type("text/plain").send(
+    `User-agent: *\nAllow: /\n\nSitemap: ${BASE_URL}/sitemap.xml\n`
+  );
 });
 
 // Landing page by slug

@@ -1,20 +1,7 @@
 #!/usr/bin/env node
-
-/**
- * Submit sitemap to Google Search Console
- *
- * Prerequisites:
- * 1. Create a Google Cloud project at https://console.cloud.google.com
- * 2. Enable "Google Search Console API"
- * 3. Create a Service Account and download the JSON key file
- * 4. Add the service account email as a user in Google Search Console
- *    (Settings → Users and permissions → Add user → Full permission)
- * 5. Set GOOGLE_SERVICE_ACCOUNT_KEY path and GOOGLE_SITE_URL in .env
- *
- * Usage:
- *   node scripts/submit-sitemap.js
- *   node scripts/submit-sitemap.js --check   # Check sitemap status only
- */
+// Submit sitemap.xml to Google Search Console.
+// Usage: node scripts/submit-sitemap.js [--check]
+// Setup: see README — requires GOOGLE_SERVICE_ACCOUNT_KEY and GOOGLE_SITE_URL.
 
 require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const { google } = require("googleapis");

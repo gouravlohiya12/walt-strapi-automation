@@ -127,16 +127,15 @@ const pages = [
   }
 ];
 
-async function checkExistingPage(slug) {
+async function fetchExistingSlugs() {
   try {
     const res = await axios.get(
-      `${STRAPI_URL}/api/landing-pages?filters[slug][$eq]=${encodeURIComponent(slug)}`,
+      `${STRAPI_URL}/api/landing-pages?fields[0]=slug&pagination[pageSize]=100`,
       { headers: { Authorization: `Bearer ${STRAPI_API_TOKEN}` } }
     );
-    const data = res.data.data || [];
-    return data.length > 0 ? data[0] : null;
+    return new Set((res.data.data || []).map((p) => p.slug));
   } catch {
-    return null;
+    return new Set();
   }
 }
 
@@ -170,8 +169,9 @@ async function main() {
   console.log(`   Pages to create: ${pages.length}`);
   console.log(`   Strapi: ${STRAPI_URL}\n`);
 
-  // Check for --clean flag to wipe existing pages first
-  if (process.argv.includes("--clean")) {
+  const cleanMode = process.argv.includes("--clean");
+
+  if (cleanMode) {
     console.log("🧹 Cleaning existing pages...\n");
     try {
       const res = await axios.get(
@@ -189,6 +189,9 @@ async function main() {
     }
   }
 
+  // After --clean nothing exists, so skip the lookup entirely.
+  const existingSlugs = cleanMode ? new Set() : await fetchExistingSlugs();
+
   let created = 0;
   let skipped = 0;
   let failed = 0;
@@ -197,8 +200,7 @@ async function main() {
     const page = pages[i];
     const progress = `[${i + 1}/${pages.length}]`;
 
-    const existing = await checkExistingPage(page.slug);
-    if (existing) {
+    if (existingSlugs.has(page.slug)) {
       console.log(`${progress} ⏭  Skipped (exists): /${page.slug}`);
       skipped++;
       continue;

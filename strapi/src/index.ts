@@ -1,17 +1,14 @@
 // import type { Core } from '@strapi/strapi';
 
+const ADMIN_EMAIL = process.env.ADMIN_BOOTSTRAP_EMAIL || "admin@starkautomations.com";
+const ADMIN_PASSWORD = process.env.ADMIN_BOOTSTRAP_PASSWORD || "Admin123!";
+
 export default {
   register(/* { strapi }: { strapi: Core.Strapi } */) {},
 
   async bootstrap({ strapi }) {
-    console.log("[bootstrap] Starting bootstrap...");
-
-    // Auto-create admin user if none exists
     try {
-      const adminCount = await strapi.db
-        .query("admin::user")
-        .count();
-      console.log(`[bootstrap] Admin users found: ${adminCount}`);
+      const adminCount = await strapi.db.query("admin::user").count();
 
       if (adminCount === 0) {
         const superAdminRole = await strapi.db
@@ -19,71 +16,58 @@ export default {
           .findOne({ where: { code: "strapi-super-admin" } });
 
         if (superAdminRole) {
-          const hashedPassword = await strapi.service("admin::auth").hashPassword("Admin123!");
+          const hashedPassword = await strapi.service("admin::auth").hashPassword(ADMIN_PASSWORD);
           await strapi.db.query("admin::user").create({
             data: {
               firstname: "Admin",
               lastname: "User",
-              email: "admin@starkautomations.com",
+              email: ADMIN_EMAIL,
               password: hashedPassword,
               isActive: true,
               blocked: false,
               roles: [superAdminRole.id],
             },
           });
-          console.log("[bootstrap] Created admin user: admin@starkautomations.com");
+          console.log(`[bootstrap] Created admin user: ${ADMIN_EMAIL}`);
         }
       }
     } catch (err) {
       console.error("[bootstrap] Error creating admin:", err);
     }
 
-    // Set public permissions for LandingPage find and findOne
     try {
       const pluginService = strapi.plugin("users-permissions").service("role");
       const roles = await pluginService.find();
       const publicRole = roles.find((r) => r.type === "public");
+      if (!publicRole) return;
 
-      console.log(`[bootstrap] Public role found: ${!!publicRole}`);
+      const roleDetail = await pluginService.findOne(publicRole.id);
+      const permissions = roleDetail.permissions || {};
+      const landingPerms =
+        permissions?.["api::landing-page"]?.controllers?.["landing-page"] || {};
 
-      if (publicRole) {
-        const roleDetail = await pluginService.findOne(publicRole.id);
-        const permissions = roleDetail.permissions || {};
-
-        const landingPerms =
-          permissions?.["api::landing-page"]?.controllers?.["landing-page"] || {};
-
-        const findEnabled = landingPerms?.find?.enabled === true;
-        const findOneEnabled = landingPerms?.findOne?.enabled === true;
-
-        console.log(`[bootstrap] find=${findEnabled}, findOne=${findOneEnabled}`);
-
-        if (!findEnabled || !findOneEnabled) {
-          // Build updated permissions object
-          const updatedPermissions = {
-            ...permissions,
-            "api::landing-page": {
-              controllers: {
-                "landing-page": {
-                  find: { enabled: true },
-                  findOne: { enabled: true },
-                },
-              },
-            },
-          };
-
-          await pluginService.updateRole(publicRole.id, {
-            permissions: updatedPermissions,
-          });
-          console.log("[bootstrap] Updated public permissions for landing-page");
-        } else {
-          console.log("[bootstrap] Public permissions already set");
-        }
+      if (landingPerms?.find?.enabled === true && landingPerms?.findOne?.enabled === true) {
+        return;
       }
+
+      const updatedPermissions = {
+        ...permissions,
+        "api::landing-page": {
+          controllers: {
+            "landing-page": {
+              find: { enabled: true },
+              findOne: { enabled: true },
+            },
+          },
+        },
+      };
+
+      await pluginService.updateRole(publicRole.id, {
+        permissions: updatedPermissions,
+      });
+      console.log("[bootstrap] Updated public permissions for landing-page");
     } catch (err) {
       console.error("[bootstrap] Error setting permissions:", err);
     }
-
-    console.log("[bootstrap] Bootstrap complete.");
   },
 };

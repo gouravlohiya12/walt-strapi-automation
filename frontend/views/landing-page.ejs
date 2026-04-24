@@ -7,11 +7,20 @@
   <meta name="description" content="<%= page.meta_description || '' %>">
   <link rel="canonical" href="<%= baseUrl %>/<%= page.slug %>">
 
+  <meta name="robots" content="index, follow">
+
   <!-- Open Graph -->
   <meta property="og:title" content="<%= page.h1 %>">
   <meta property="og:description" content="<%= page.meta_description || '' %>">
   <meta property="og:url" content="<%= baseUrl %>/<%= page.slug %>">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="<%= baseUrl %>/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= page.h1 %>">
+  <meta name="twitter:description" content="<%= page.meta_description || '' %>">
+  <meta name="twitter:image" content="<%= baseUrl %>/og-image.png">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -47,10 +56,103 @@
       }
     }
   </style>
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "<%= page.h1 %>",
+      "description": "<%= page.meta_description || '' %>",
+      "url": "<%= baseUrl %>/<%= page.slug %>"
+    }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly can I set up Nexora?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most teams go live within 5 minutes. Connect your channels, upload your knowledge base docs, and Nexora's AI starts handling tickets immediately. No engineering required." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the AI can't answer a question?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nexora automatically escalates to a human agent with full context — the customer's history, what the AI already tried, and a suggested response." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with my existing tools?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nexora integrates with Slack, Zendesk, Intercom, HubSpot, Salesforce, Shopify, and 40+ other platforms." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free plan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We offer a 14-day free trial with full features — no credit card required. After that, plans start at $29/month for small teams." }
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="bg-white text-gray-900 antialiased">
 
-  <!-- ========== SECTION 1: Header ========== -->
+<%
+  const logos = ['Shopify', 'Stripe', 'Notion', 'Webflow', 'Linear', 'Vercel'];
+  const features = [
+    {
+      title: 'AI-First Chatbot',
+      body: 'Resolves 70% of tickets automatically using your knowledge base. Learns from every conversation and gets smarter over time.',
+      svg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>',
+    },
+    {
+      title: 'Unified Inbox',
+      body: 'Email, chat, social, and phone — all in one inbox. Never lose a conversation or make a customer repeat themselves again.',
+      svg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>',
+    },
+    {
+      title: 'Smart Analytics',
+      body: 'Track resolution time, CSAT, agent performance, and ticket trends. AI surfaces insights so you fix problems before they escalate.',
+      svg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>',
+    },
+  ];
+  const steps = [
+    { title: 'Connect Your Channels', body: 'Link email, live chat, social media, and phone. One-click integrations with Slack, Zendesk, Intercom, and 40+ tools.' },
+    { title: 'Train Your AI', body: "Upload your docs, FAQ, or past tickets. Nexora's AI builds a knowledge base and starts resolving common questions instantly." },
+    { title: 'Scale With Confidence', body: 'AI handles the repetitive stuff. Your team focuses on complex issues. Response times drop, CSAT goes up, costs stay flat.' },
+  ];
+  const testimonials = [
+    {
+      quote: '"We cut our first response time from 4 hours to 8 minutes. Nexora\'s AI handles the easy stuff so our team can focus on the hard problems."',
+      initials: 'SR', name: 'Sarah Rodriguez', role: 'Head of Support, ScaleUp',
+    },
+    {
+      quote: '"We went from 3 support agents to 1 agent + Nexora handling 500 tickets/day. The ROI was obvious within the first month."',
+      initials: 'MK', name: 'Michael Kim', role: 'COO, CartFlow',
+    },
+    {
+      quote: '"The AI actually understands our product. It doesn\'t just deflect — it resolves. Our CSAT went from 3.8 to 4.7 in two months."',
+      initials: 'EP', name: 'Elena Petrova', role: 'VP Support, DataNest',
+    },
+  ];
+  const stats = [
+    { value: '70%', label: 'Tickets auto-resolved' },
+    { value: '3,200+', label: 'Support teams' },
+    { value: '8 min', label: 'Avg first response' },
+    { value: '4.9/5', label: 'Customer rating' },
+  ];
+  const faqs = [
+    { q: 'How quickly can I set up Nexora?', a: "Most teams go live within 5 minutes. Connect your channels, upload your knowledge base docs, and Nexora's AI starts handling tickets immediately. No engineering required." },
+    { q: "What if the AI can't answer a question?", a: 'Nexora automatically escalates to a human agent with full context — the customer\'s history, what the AI already tried, and a suggested response. No dropped balls, no lost context.' },
+    { q: 'Does it work with my existing tools?', a: 'Yes. Nexora integrates with Slack, Zendesk, Intercom, HubSpot, Salesforce, Shopify, and 40+ other platforms. Migrating from another tool? We handle the import for you.' },
+    { q: 'Is there a free plan?', a: 'We offer a 14-day free trial with full features — no credit card required. After that, plans start at $29/month for small teams. Enterprise pricing is available for larger organizations.' },
+  ];
+%>
+
+  <!-- Header -->
   <header class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-100 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5">
@@ -84,7 +186,7 @@
     </div>
   </header>
 
-  <!-- ========== SECTION 2: Hero ========== -->
+  <!-- Hero -->
   <section class="gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur border border-brand-200 text-brand-700 text-sm font-medium rounded-full mb-8 shadow-sm">
@@ -124,22 +226,19 @@
     </div>
   </section>
 
-  <!-- ========== SECTION 3: Logos Bar ========== -->
+  <!-- Logos Bar -->
   <section class="py-16 border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-center text-sm font-medium text-gray-400 uppercase tracking-wider mb-10">Trusted by 3,000+ support teams worldwide</p>
       <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-        <div class="text-2xl font-bold text-gray-300 tracking-tight">Shopify</div>
-        <div class="text-2xl font-bold text-gray-300 tracking-tight">Stripe</div>
-        <div class="text-2xl font-bold text-gray-300 tracking-tight">Notion</div>
-        <div class="text-2xl font-bold text-gray-300 tracking-tight">Webflow</div>
-        <div class="text-2xl font-bold text-gray-300 tracking-tight">Linear</div>
-        <div class="text-2xl font-bold text-gray-300 tracking-tight">Vercel</div>
+        <% logos.forEach(function(name) { %>
+          <div class="text-2xl font-bold text-gray-300 tracking-tight"><%= name %></div>
+        <% }); %>
       </div>
     </div>
   </section>
 
-  <!-- ========== SECTION 4: Features Grid ========== -->
+  <!-- Features Grid -->
   <section id="features" class="py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
@@ -148,32 +247,20 @@
         <p class="text-lg text-gray-500 max-w-2xl mx-auto">Nexora combines AI automation with human empathy to deliver fast, personal support at any scale.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
-          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        <% features.forEach(function(f) { %>
+          <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
+            <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><%- f.svg %></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3"><%= f.title %></h3>
+            <p class="text-gray-500 leading-relaxed"><%= f.body %></p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">AI-First Chatbot</h3>
-          <p class="text-gray-500 leading-relaxed">Resolves 70% of tickets automatically using your knowledge base. Learns from every conversation and gets smarter over time.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
-          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Unified Inbox</h3>
-          <p class="text-gray-500 leading-relaxed">Email, chat, social, and phone — all in one inbox. Never lose a conversation or make a customer repeat themselves again.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5 transition-all duration-300">
-          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Analytics</h3>
-          <p class="text-gray-500 leading-relaxed">Track resolution time, CSAT, agent performance, and ticket trends. AI surfaces insights so you fix problems before they escalate.</p>
-        </div>
+        <% }); %>
       </div>
     </div>
   </section>
 
-  <!-- ========== SECTION 5: How It Works ========== -->
+  <!-- How It Works -->
   <section id="how-it-works" class="py-24 bg-gray-50">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
@@ -182,32 +269,18 @@
         <p class="text-lg text-gray-500">No consultants. No migration projects. Just connect and go.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="relative bg-white p-8 rounded-2xl border border-gray-200 text-center">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25">1</div>
-          <div class="pt-4">
-            <h3 class="text-lg font-bold text-gray-900 mb-3">Connect Your Channels</h3>
-            <p class="text-gray-500 leading-relaxed">Link email, live chat, social media, and phone. One-click integrations with Slack, Zendesk, Intercom, and 40+ tools.</p>
+        <% steps.forEach(function(step, i) { %>
+          <div class="relative bg-white p-8 pt-12 rounded-2xl border border-gray-200 text-center">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25"><%= i + 1 %></div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3"><%= step.title %></h3>
+            <p class="text-gray-500 leading-relaxed"><%= step.body %></p>
           </div>
-        </div>
-        <div class="relative bg-white p-8 rounded-2xl border border-gray-200 text-center">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25">2</div>
-          <div class="pt-4">
-            <h3 class="text-lg font-bold text-gray-900 mb-3">Train Your AI</h3>
-            <p class="text-gray-500 leading-relaxed">Upload your docs, FAQ, or past tickets. Nexora's AI builds a knowledge base and starts resolving common questions instantly.</p>
-          </div>
-        </div>
-        <div class="relative bg-white p-8 rounded-2xl border border-gray-200 text-center">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 gradient-cta text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/25">3</div>
-          <div class="pt-4">
-            <h3 class="text-lg font-bold text-gray-900 mb-3">Scale With Confidence</h3>
-            <p class="text-gray-500 leading-relaxed">AI handles the repetitive stuff. Your team focuses on complex issues. Response times drop, CSAT goes up, costs stay flat.</p>
-          </div>
-        </div>
+        <% }); %>
       </div>
     </div>
   </section>
 
-  <!-- ========== SECTION 6: Testimonials ========== -->
+  <!-- Testimonials -->
   <section id="testimonials" class="py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
@@ -215,83 +288,45 @@
         <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Loved by support teams</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <div class="flex items-center gap-1 mb-4">
-            <% for (let i = 0; i < 5; i++) { %>
-              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <% } %>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-6">"We cut our first response time from 4 hours to 8 minutes. Nexora's AI handles the easy stuff so our team can focus on the hard problems."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm">SR</span></div>
-            <div>
-              <p class="text-sm font-semibold text-gray-900">Sarah Rodriguez</p>
-              <p class="text-xs text-gray-400">Head of Support, ScaleUp</p>
+        <% testimonials.forEach(function(t) { %>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+            <div class="flex items-center gap-1 mb-4">
+              <% for (let i = 0; i < 5; i++) { %>
+                <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <% } %>
+            </div>
+            <p class="text-gray-600 leading-relaxed mb-6"><%= t.quote %></p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm"><%= t.initials %></span></div>
+              <div>
+                <p class="text-sm font-semibold text-gray-900"><%= t.name %></p>
+                <p class="text-xs text-gray-400"><%= t.role %></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <div class="flex items-center gap-1 mb-4">
-            <% for (let i = 0; i < 5; i++) { %>
-              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <% } %>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-6">"We went from 3 support agents to 1 agent + Nexora handling 500 tickets/day. The ROI was obvious within the first month."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm">MK</span></div>
-            <div>
-              <p class="text-sm font-semibold text-gray-900">Michael Kim</p>
-              <p class="text-xs text-gray-400">COO, CartFlow</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <div class="flex items-center gap-1 mb-4">
-            <% for (let i = 0; i < 5; i++) { %>
-              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <% } %>
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-6">"The AI actually understands our product. It doesn't just deflect — it resolves. Our CSAT went from 3.8 to 4.7 in two months."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center"><span class="text-brand-700 font-bold text-sm">EP</span></div>
-            <div>
-              <p class="text-sm font-semibold text-gray-900">Elena Petrova</p>
-              <p class="text-xs text-gray-400">VP Support, DataNest</p>
-            </div>
-          </div>
-        </div>
+        <% }); %>
       </div>
     </div>
   </section>
 
-  <!-- ========== SECTION 7: Stats ========== -->
+  <!-- Stats -->
   <section class="py-24 bg-gray-900">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">The numbers speak for themselves</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">70%</p>
-          <p class="text-sm text-gray-400 mt-2">Tickets auto-resolved</p>
-        </div>
-        <div>
-          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">3,200+</p>
-          <p class="text-sm text-gray-400 mt-2">Support teams</p>
-        </div>
-        <div>
-          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">8 min</p>
-          <p class="text-sm text-gray-400 mt-2">Avg first response</p>
-        </div>
-        <div>
-          <p class="text-4xl md:text-5xl font-extrabold text-brand-400">4.9/5</p>
-          <p class="text-sm text-gray-400 mt-2">Customer rating</p>
-        </div>
+        <% stats.forEach(function(s) { %>
+          <div>
+            <p class="text-4xl md:text-5xl font-extrabold text-brand-400"><%= s.value %></p>
+            <p class="text-sm text-gray-400 mt-2"><%= s.label %></p>
+          </div>
+        <% }); %>
       </div>
     </div>
   </section>
 
-  <!-- ========== Body Copy (dynamic from CMS) ========== -->
+  <!-- Body Copy (dynamic from CMS) -->
   <% if (page.body_copy) { %>
   <section class="py-24">
     <div class="max-w-3xl mx-auto px-6">
@@ -302,7 +337,7 @@
   </section>
   <% } %>
 
-  <!-- ========== SECTION 8: FAQ ========== -->
+  <!-- FAQ -->
   <section id="faq" class="py-24 bg-gray-50">
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-center mb-16">
@@ -310,39 +345,20 @@
         <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Common questions</h2>
       </div>
       <div class="space-y-4">
-        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="text-lg font-semibold text-gray-900">How quickly can I set up Nexora?</span>
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-500 leading-relaxed">Most teams go live within 5 minutes. Connect your channels, upload your knowledge base docs, and Nexora's AI starts handling tickets immediately. No engineering required.</div>
-        </details>
-        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="text-lg font-semibold text-gray-900">What if the AI can't answer a question?</span>
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-500 leading-relaxed">Nexora automatically escalates to a human agent with full context — the customer's history, what the AI already tried, and a suggested response. No dropped balls, no lost context.</div>
-        </details>
-        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="text-lg font-semibold text-gray-900">Does it work with my existing tools?</span>
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-500 leading-relaxed">Yes. Nexora integrates with Slack, Zendesk, Intercom, HubSpot, Salesforce, Shopify, and 40+ other platforms. Migrating from another tool? We handle the import for you.</div>
-        </details>
-        <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="text-lg font-semibold text-gray-900">Is there a free plan?</span>
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-500 leading-relaxed">We offer a 14-day free trial with full features — no credit card required. After that, plans start at $29/month for small teams. Enterprise pricing is available for larger organizations.</div>
-        </details>
+        <% faqs.forEach(function(item) { %>
+          <details class="group bg-white rounded-2xl border border-gray-200 overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="text-lg font-semibold text-gray-900"><%= item.q %></span>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-500 leading-relaxed"><%= item.a %></div>
+          </details>
+        <% }); %>
       </div>
     </div>
   </section>
 
-  <!-- ========== SECTION 9: CTA ========== -->
+  <!-- CTA -->
   <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="gradient-cta rounded-3xl p-12 md:p-16 text-center shadow-2xl shadow-brand-600/20">
@@ -364,7 +380,7 @@
     </div>
   </section>
 
-  <!-- ========== SECTION 10: Footer ========== -->
+  <!-- Footer -->
   <footer class="border-t border-gray-200 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 py-16">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">

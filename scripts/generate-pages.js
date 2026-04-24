@@ -86,6 +86,20 @@ async function generateCopy(keyword, retries = 0) {
       }
     }
 
+    // Quality checks
+    const keywordLower = keyword.toLowerCase();
+    const allText = `${parsed.h1} ${parsed.subheadline} ${parsed.body_copy} ${parsed.meta_description}`.toLowerCase();
+    if (!allText.includes(keywordLower) && !allText.includes(keywordLower.replace(/ /g, "-"))) {
+      throw new Error(`Keyword "${keyword}" not found in generated copy`);
+    }
+    const bodyWords = parsed.body_copy.replace(/<[^>]+>/g, "").split(/\s+/).length;
+    if (bodyWords < 80) {
+      throw new Error(`body_copy too thin (${bodyWords} words, minimum 80)`);
+    }
+    if (parsed.meta_description.length > 160) {
+      throw new Error(`meta_description too long (${parsed.meta_description.length} chars, max 160)`);
+    }
+
     return parsed;
   } catch (err) {
     if (retries < MAX_RETRIES) {

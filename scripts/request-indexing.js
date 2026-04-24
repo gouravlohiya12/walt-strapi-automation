@@ -1,24 +1,7 @@
 #!/usr/bin/env node
-
-/**
- * Request Google indexing for published landing pages
- *
- * Uses the Google Web Search Indexing API to request URL indexing.
- * This is faster than waiting for Google to discover pages via sitemap.
- *
- * Prerequisites:
- * 1. Create a Google Cloud project at https://console.cloud.google.com
- * 2. Enable "Web Search Indexing API"
- * 3. Create a Service Account and download the JSON key file
- * 4. Add the service account email as an owner in Google Search Console
- *    (Settings → Users and permissions → Add user → Owner permission)
- * 5. Set GOOGLE_SERVICE_ACCOUNT_KEY path and GOOGLE_SITE_URL in .env
- *
- * Usage:
- *   node scripts/request-indexing.js                              # All published pages
- *   node scripts/request-indexing.js --slug ai-dashboard-for-marketing  # Single page
- *   node scripts/request-indexing.js --status                     # Check indexing status
- */
+// Submit landing page URLs to the Google Indexing API.
+// Usage: node scripts/request-indexing.js [--slug <slug>] [--status]
+// Setup: see README — requires GOOGLE_SERVICE_ACCOUNT_KEY and GOOGLE_SITE_URL.
 
 require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const { google } = require("googleapis");
