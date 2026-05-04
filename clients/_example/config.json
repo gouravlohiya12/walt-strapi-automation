@@ -1,0 +1,32 @@
+{
+  "_comment": "This is the EXAMPLE client. Do not modify or delete. The AI uses this as a reference for the structure.",
+  "slug": "_example",
+  "name": "Example Brand Inc.",
+  "business_type": "AI-powered productivity software for small business owners",
+  "audience": "Solopreneurs and small business owners (5-50 employees) who feel overwhelmed by manual work",
+  "default_cta_url": "https://example.com/checkout",
+  "colors": {
+    "primary": "#1F2833",
+    "accent": "#BF4E30",
+    "neutral": "#E9D985",
+    "secondary": "#439A86",
+    "background": "#FFFFFF",
+    "text": "#73777b"
+  },
+  "fonts": {
+    "heading": "Poppins",
+    "body": "Source Sans Pro"
+  },
+  "logo": "assets/logo.svg",
+  "footer_logo": "assets/footer-logo.png",
+  "domain": null,
+  "social": {
+    "facebook": null,
+    "instagram": null,
+    "youtube": null,
+    "twitter": null,
+    "linkedin": null
+  },
+  "tagline": "Work smarter, not harder.",
+  "created_at": "2026-05-01"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "cold-outbound",
+  "display_name": "B2B Cold Outbound / SaaS Services",
+  "description": "Dark-themed B2B services landing page with hero+social proof, value prop, 3-up service breakdown, tech stack grid, 3-tier pricing, final CTA, and footer. Modeled on agency / cold-email service sites.",
+  "best_for": [
+    "B2B agencies",
+    "Cold-email / outbound services",
+    "AI automation agencies",
+    "SaaS service tiers",
+    "Done-for-you offerings"
+  ],
+  "sections": [
+    "header",
+    "hero",
+    "value_prop",
+    "services",
+    "tech_stack",
+    "pricing",
+    "final_cta",
+    "footer"
+  ],
+  "design_tokens": {
+    "background_uses": "page background — usually dark navy or near-black",
+    "primary_uses": "headlines, body text on dark bg (typically white)",
+    "accent_uses": "CTAs, highlight tier, stat numbers, hover states (typically yellow/gold)",
+    "secondary_uses": "secondary accents, hover gradients",
+    "neutral_uses": "card backgrounds, dividers (slightly lighter than bg)",
+    "text_uses": "muted body copy"
+  },
+  "fonts": {
+    "heading_fallback": "Inter",
+    "body_fallback": "Inter"
+  },
+  "version": "1.0.0"
+}

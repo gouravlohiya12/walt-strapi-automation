@@ -1,0 +1,31 @@
+{
+  "slug": "stark-automations",
+  "name": "Automation Wizards",
+  "business_type": "AI-powered cold outbound email automation for B2B sales teams",
+  "audience": "SDRs, AEs, founders, and business development teams scaling outbound prospecting across North America, Europe, UAE, and India",
+  "default_cta_url": "https://calendly.com/jaskaran-hkk/30min",
+  "colors": {
+    "primary": "#0C072D",
+    "accent": "#6956E9",
+    "neutral": "#FFFFFF",
+    "secondary": "#0C072D",
+    "background": "#FFFFFF",
+    "text": "#4B5563"
+  },
+  "fonts": {
+    "heading": "Plus Jakarta Sans",
+    "body": "Inter"
+  },
+  "logo": "https://starkautomations.com/wp-content/uploads/2024/08/Untitled-design-4_processed.png",
+  "footer_logo": "https://starkautomations.com/wp-content/uploads/2024/08/Untitled-design-5.png",
+  "domain": "starkautomations.com",
+  "social": {
+    "facebook": null,
+    "instagram": null,
+    "youtube": null,
+    "twitter": null,
+    "linkedin": null
+  },
+  "tagline": "Ace your Outbound with Cold Automations",
+  "created_at": "2026-05-05"
+}

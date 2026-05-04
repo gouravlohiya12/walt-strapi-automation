@@ -1,0 +1,162 @@
+{
+  "slug": "stark-automations",
+  "template": "cold-outbound",
+  "status": "published",
+  "title": "Automation Wizards — Ace your Outbound with Cold Automations",
+  "client_slug": "stark-automations",
+  "created_at": "2026-05-05",
+  "last_edited": "2026-05-05",
+  "content": {
+    "nav_links": [
+      { "label": "Home", "href": "#top" },
+      { "label": "Automations", "href": "#automations" },
+      { "label": "Tech Stack", "href": "#tech-stack" }
+    ],
+    "header_cta": { "label": "Contact Us", "href": "https://calendly.com/jaskaran-hkk/30min" },
+    "location_strip": "North America, Europe, UAE, India",
+    "hero": {
+      "h1_line_1": "Ace Your Outbound",
+      "h1_line_2": "with Cold Automations",
+      "cta_text": "Request a Demo",
+      "social_proof_badge": { "value": "10K+", "label": "Prospects reached" },
+      "strip_card": {
+        "body": "Unlock the biggest EVER source of B2B Sales for your business with automated cold outbound systems. Automate a proven outbound process and reach the best of your prospects all on auto-pilot every day.",
+        "cta_text": "Explore me How"
+      }
+    },
+    "value_prop": {
+      "title": "Fully Customized and Personalized Outreach",
+      "body": "Imagine hiring the best of SDRs and AEs and doubling your current sales team. We help you do that with AI powered automations that are as sophisticated as your best outreach ideas.",
+      "testimonial": {
+        "name": "CSO",
+        "role": "Outreach Wizards",
+        "image": "https://starkautomations.com/wp-content/uploads/2024/08/ceo-W8UDE5T.jpg"
+      },
+      "cta_text": "Let's Talk"
+    },
+    "review_avatars": [
+      "https://starkautomations.com/wp-content/uploads/2024/08/review-B3X9P3L.jpg",
+      "https://starkautomations.com/wp-content/uploads/2024/08/review-EB45RVP.jpg",
+      "https://starkautomations.com/wp-content/uploads/2024/08/review-4ZDFMBD.jpg"
+    ],
+    "hero_slideshow": [
+      "https://starkautomations.com/wp-content/uploads/2024/08/smart-home-technology-wall-system-and-couple-with-digital-screen-for-room-lighting-safety-securit-e1688826078951.jpg",
+      "https://starkautomations.com/wp-content/uploads/2024/08/tablet-sofa-and-couple-with-smart-home-technology-for-thermostat-heating-apartment-security-netwo.jpg",
+      "https://starkautomations.com/wp-content/uploads/2024/08/controlling-smart-home-with-a-digital-tablet.jpg"
+    ],
+    "phone_mockup": "https://starkautomations.com/wp-content/uploads/2024/08/mockup-phone-816x1024.png",
+    "services_title": "What all can we automate for you",
+    "services": [
+      {
+        "title": "Domain Setup and Email Warmup",
+        "body": "When you are sending 1000s of emails everyday, you could need 100s of emails, domains, and other linked assets. This eventually becomes a full-time job. We help you automate the full system on creating 30 new emails to always a click away!",
+        "cta": "I love it, show me how",
+        "dark": false
+      },
+      {
+        "title": "Prospect List Building",
+        "body": "Have prospects on LinkedIn or LinkedIn Sales Navigator? Thinking of scraping data from a website and pitching founders of that prospect list? Want to pitch to founders of companies within a specific argument stack on their website? We help you automate anything that you can imagine to build the perfect and active list of prospects.",
+        "cta": "I love it, show me how",
+        "dark": true
+      },
+      {
+        "title": "Personalization beyond your imagination",
+        "body": "How about talking about your prospect's latest promotions, job change, or even the latest seminar they attended in your subject line and cold email? We help you build AI-driven cold email copywriting that bases its data from latest LinkedIn posts, news, or other data available online.",
+        "cta": "I love it, show me how",
+        "dark": false
+      }
+    ],
+    "tech_stack": {
+      "title": "Some of the Gems in our Tech Stack",
+      "tools": [
+        "Clay",
+        "Instantly.ai",
+        "Smartlead",
+        "LinkedIn Sales Navigator",
+        "Apollo.io",
+        "Drop Contact",
+        "Make.com"
+      ]
+    },
+    "pricing": {
+      "title": "Choose your level of automation",
+      "subtitle": "Depending on where you are in your journey, we can customize our offerings to match what your business needs at the moment.",
+      "tiers": [
+        {
+          "name": "Starter AI",
+          "highlight": false,
+          "features": [
+            "List Building",
+            "AI cold email copywriting",
+            "Automatic scraping",
+            "Automated email set up"
+          ]
+        },
+        {
+          "name": "Revv up",
+          "highlight": true,
+          "features": [
+            "AI Personalization",
+            "AI Campaign Creation",
+            "List Building",
+            "AI cold email copywriting",
+            "Automatic scraping",
+            "Automated email set up"
+          ]
+        },
+        {
+          "name": "Crush it",
+          "highlight": false,
+          "features": [
+            "Automated ABM",
+            "Automated Cold Cadences",
+            "Automated A/B testing",
+            "AI Personalization",
+            "AI Campaign Creation",
+            "List Building",
+            "AI cold email copywriting",
+            "Automatic scraping",
+            "Automated email set up"
+          ]
+        }
+      ]
+    },
+    "final_cta": {
+      "title": "No More Copy Paste SOPs that never work",
+      "body": "Supercharge your business development efforts with AI and let the future of technology do for you that would have been possible with a team of 100+ people just a decade ago.",
+      "cta_text": "Let's Talk Business"
+    },
+    "footer": {
+      "tagline": "Experience the future of smart B2B outbound automations.",
+      "columns": [
+        {
+          "title": "Useful Links",
+          "links": [
+            { "label": "Home", "href": "#top" },
+            { "label": "Automations", "href": "#automations" },
+            { "label": "Tech Stack", "href": "#tech-stack" }
+          ]
+        },
+        {
+          "title": "Support",
+          "links": [
+            { "label": "Privacy Policy", "href": "/privacy" }
+          ]
+        },
+        {
+          "title": "Our Company",
+          "links": [
+            { "label": "North America, Europe, UAE, India", "href": "#" },
+            { "label": "Schedule a Meet", "href": "#contact" }
+          ]
+        }
+      ],
+      "copyright": "© 2026 · Automation Wizards"
+    },
+    "cta_url": "https://calendly.com/stark-automations/intro"
+  },
+  "seo": {
+    "meta_title": "Automation Wizards — AI Cold Outbound for B2B Sales",
+    "meta_description": "Done-for-you cold email automation built on AI personalization, multi-channel sequences, and bullet-proof deliverability. Book qualified B2B meetings on autopilot."
+  }
+}

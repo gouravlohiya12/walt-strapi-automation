@@ -1,0 +1,265 @@
+{
+  "$schema": "content-schema-v1",
+  "template": "raising-kids",
+  "description": "Fields the AI must fill per page using this template. Use this as the source of truth when generating copy.",
+  "fields": {
+    "h1": {
+      "type": "string",
+      "required": true,
+      "max_words": 12,
+      "guidance": "Main hero headline. ALL CAPS. Benefit-driven. 2 lines (use a <br> mid-way). Speaks directly to the searcher's intent."
+    },
+    "h1_sub": {
+      "type": "string",
+      "required": true,
+      "max_words": 10,
+      "guidance": "Italic subhead in parens, addresses the objection. Pattern: '(Without the X, Y, or Z)'. Example: '(Without the Fear, Shame, or Awkward Lectures)'."
+    },
+    "hero_body": {
+      "type": "string",
+      "required": true,
+      "max_words": 30,
+      "guidance": "Single sentence under hero. Spell out the transformation in plain words. The 'becoming the X' or 'system to do Y' phrasing works well."
+    },
+    "cta_text": {
+      "type": "string",
+      "required": true,
+      "max_words": 8,
+      "guidance": "Primary button text. Action-driven, often includes the offer/price. Example: 'START THE CONVERSATION ($197 $99 TODAY)'."
+    },
+    "gold_standard_intro": {
+      "type": "string",
+      "required": true,
+      "max_words": 30,
+      "guidance": "The big yellow-section paragraph. Pattern: 'Wherever your X first learns about Y, that becomes their Z'. Establishes authority anchor."
+    },
+    "gold_standard_options": {
+      "type": "array",
+      "required": true,
+      "min_items": 4,
+      "max_items": 4,
+      "guidance": "Always exactly 4. First 3 are negative options (with X-icon), last is positive ('Or You?' style — gets check icon). Each is short — 2-4 words.",
+      "example": ["The Playground?", "Their Peers?", "The Internet?", "Or You?"]
+    },
+    "gold_standard_truth": {
+      "type": "string",
+      "required": true,
+      "max_words": 35,
+      "guidance": "Starts with bold 'The Truth:' (in accent color). Brief paragraph that names the inadequacy parents/users feel and reframes it."
+    },
+    "myth_title": {
+      "type": "string",
+      "required": true,
+      "max_words": 5,
+      "guidance": "'X is a Myth' or similar reframing headline. Sets up the 3-column comparison."
+    },
+    "myth_columns": {
+      "type": "array",
+      "required": true,
+      "min_items": 3,
+      "max_items": 3,
+      "schema": {
+        "title": "string (e.g., 'Old Way:', 'New Way:', 'The Goal:')",
+        "body": "string, max 25 words",
+        "icon": "string — chat | refresh | heart | OR a Heroicon name"
+      },
+      "guidance": "3 columns. Pattern: Old Way / New Way / The Goal. Old Way describes pain, New Way describes the alternative, The Goal describes the destination outcome."
+    },
+    "intro_banner_subtitle": {
+      "type": "string",
+      "required": true,
+      "max_words": 2,
+      "guidance": "Light-weight italic-feel intro. Usually just 'Introducing:'."
+    },
+    "intro_banner_title": {
+      "type": "string",
+      "required": true,
+      "max_words": 10,
+      "guidance": "The product/course name in big yellow letters on green. Format with a colon + line break — e.g., 'Brand Name: Page Topic'."
+    },
+    "course_intro_h3": {
+      "type": "string",
+      "required": true,
+      "max_words": 20,
+      "guidance": "ALL-CAPS uppercase intro to the offer. Format pattern: 'AN N-EPISODE/STEP/MODULE [thing] FOR [audience]'."
+    },
+    "course_intro_body": {
+      "type": "string",
+      "required": true,
+      "max_words": 50,
+      "guidance": "1-2 sentences. What makes this offer different from competitors. Often contrasts a generic 'just X' with the deeper 'X + Y'."
+    },
+    "core_philosophy_h5": {
+      "type": "string",
+      "required": true,
+      "max_words": 4,
+      "guidance": "'Our Core Philosophy:' or similar."
+    },
+    "core_philosophy_body": {
+      "type": "string",
+      "required": true,
+      "max_words": 50,
+      "guidance": "2-3 sentences explaining the underlying belief/worldview. Goes beyond features into meaning."
+    },
+    "roadmap_title": {
+      "type": "string",
+      "required": true,
+      "max_words": 6,
+      "guidance": "'Your Roadmap to X' style — names the destination."
+    },
+    "roadmap_items": {
+      "type": "array",
+      "required": true,
+      "min_items": 5,
+      "max_items": 12,
+      "default_count": 10,
+      "schema": {
+        "number": "string (e.g., '01', '02')",
+        "title": "string, max 12 words — episode/module title with optional duration",
+        "body": "string, max 25 words — hook line teasing the value"
+      },
+      "guidance": "Numbered curriculum. Each item: pattern 'Episode N: [Compelling Question]? (X minutes)' or 'Step N: [Outcome]'. Body teases the takeaway, not just lists topics."
+    },
+    "guides_title": {
+      "type": "string",
+      "required": true,
+      "max_words": 4,
+      "guidance": "'Meet Your Guides' or 'Meet Your Coach'."
+    },
+    "guides_image": {
+      "type": "string",
+      "required": false,
+      "guidance": "Path or URL to photo of the instructors. Usually a 2-person or team photo. If not provided, ask the user for one."
+    },
+    "guides_items": {
+      "type": "array",
+      "required": true,
+      "min_items": 1,
+      "max_items": 6,
+      "schema": {
+        "name": "string — REAL person's name (do NOT fabricate)",
+        "role": "string — short role title",
+        "bio": "string, max 25 words"
+      },
+      "guidance": "ALWAYS ask the user for real names + bios. Don't invent. Each entry is short — name + 1-line credibility marker."
+    },
+    "experts_section_title": {
+      "type": "string",
+      "required": false,
+      "default": "GUEST EXPERTS",
+      "max_words": 4
+    },
+    "experts": {
+      "type": "array",
+      "required": false,
+      "min_items": 0,
+      "max_items": 8,
+      "schema": {
+        "name": "string — REAL person's name",
+        "photo_url": "string — URL or path to their photo"
+      },
+      "guidance": "Optional social proof row. Real names + photos only. If client doesn't have any guest experts, set to empty array — the section can hide."
+    },
+    "pricing_section_title": {
+      "type": "string",
+      "required": true,
+      "max_words": 4,
+      "guidance": "'Equip Yourself Today', 'Join Now', 'Get Started Today' style."
+    },
+    "pricing_bullets": {
+      "type": "array",
+      "required": true,
+      "min_items": 3,
+      "max_items": 6,
+      "schema": {
+        "title": "string, max 5 words (with colon, e.g., '8 Video Episodes:')",
+        "body": "string, max 15 words",
+        "icon": "string — play | file | calendar | star | etc."
+      },
+      "guidance": "Left column of the pricing card. Concrete deliverables (videos, guides, access duration). Each is short."
+    },
+    "pricing_bonus_title": {
+      "type": "string",
+      "required": false,
+      "max_words": 3,
+      "default": "Bonus Resources:"
+    },
+    "pricing_bonus_items": {
+      "type": "array",
+      "required": false,
+      "min_items": 0,
+      "max_items": 5,
+      "schema": {
+        "label": "string (e.g., 'Expert Interviews:')",
+        "body": "string"
+      },
+      "guidance": "Right column of pricing card. Optional bonus content."
+    },
+    "total_value": {
+      "type": "string",
+      "required": true,
+      "max_words": 1,
+      "guidance": "Crossed-out 'value' price. Format: '$197'. ASK THE USER for actual numbers — do not invent."
+    },
+    "your_price": {
+      "type": "string",
+      "required": true,
+      "max_words": 1,
+      "guidance": "Actual selling price. Format: '$99'. ASK THE USER."
+    },
+    "pricing_tagline": {
+      "type": "string",
+      "required": true,
+      "max_words": 25,
+      "guidance": "Italic emotional statement under the prices. 1 sentence. About the mission, not the offer."
+    },
+    "pricing_button_text": {
+      "type": "string",
+      "required": true,
+      "max_words": 8,
+      "guidance": "CTA button in pricing card. Pattern: 'Action — $99' (with em dash)."
+    },
+    "faq_title": {
+      "type": "string",
+      "required": false,
+      "default": "Common Questions",
+      "max_words": 4
+    },
+    "faqs": {
+      "type": "array",
+      "required": true,
+      "min_items": 3,
+      "max_items": 7,
+      "default_count": 4,
+      "schema": {
+        "q": "string — the question, asked from the prospect's POV (max 15 words)",
+        "a": "string — the answer (max 50 words)"
+      },
+      "guidance": "Address the top 3-5 objections. Use real anxieties from the audience. Tone: warm, direct, reassuring. HTML <em> tags allowed in answers for emphasis."
+    },
+    "final_cta_title": {
+      "type": "string",
+      "required": true,
+      "max_words": 10,
+      "guidance": "Big light-weight (300 weight) yellow heading. Emotional. 2 lines. Pattern: '[Inaction Problem] Is/Was [Outcome].' or 'Your Silence Is An Answer.'"
+    },
+    "final_cta_subtitle": {
+      "type": "string",
+      "required": true,
+      "max_words": 30,
+      "guidance": "ALL-CAPS bold tagline below final CTA title. Calls them to action with imperatives."
+    },
+    "final_cta_button": {
+      "type": "string",
+      "required": true,
+      "max_words": 8,
+      "guidance": "Final button text. Often: 'Join The Course $197 $99'."
+    },
+    "meta_description": {
+      "type": "string",
+      "required": true,
+      "max_chars": 160,
+      "guidance": "SEO meta description. Includes the keyword naturally. Sells the click."
+    }
+  }
+}

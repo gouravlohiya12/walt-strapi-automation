@@ -20,8 +20,12 @@ strapi/types/
 apt-task-*.json
 google-service-account.json
 
-# Claude
-.claude/
+# Claude — track commands, ignore per-user settings/cache
+.claude/*
+!.claude/commands/
+!.claude/commands/**
+.claude/settings.local.json
+.claude/projects/
 strapi/package-lock.json
 
 # Local backups (not for git)

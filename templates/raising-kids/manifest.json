@@ -1,0 +1,46 @@
+{
+  "name": "raising-kids",
+  "display_name": "Course / Course Style Landing Page",
+  "description": "Long-form course-style landing page with hero, gold-standard authority section, 3-column myth/truth, green intro banner, course intro with devices image, numbered roadmap, guides, guest experts, contained pricing card, FAQ, final CTA, and footer.",
+  "best_for": [
+    "Online courses",
+    "Coaching programs",
+    "Membership offers",
+    "Digital products",
+    "High-trust info products"
+  ],
+  "sections": [
+    "header",
+    "hero",
+    "gold_standard",
+    "myth",
+    "intro_banner",
+    "course_intro",
+    "roadmap",
+    "guides",
+    "guest_experts",
+    "pricing",
+    "faq",
+    "final_cta",
+    "footer"
+  ],
+  "design_tokens": {
+    "primary_uses": "navigation, footer bg, headlines",
+    "accent_uses": "CTA buttons, hover states, link emphasis",
+    "neutral_uses": "yellow card backgrounds, accent in hero subtitle, final CTA heading",
+    "background_uses": "main page bg",
+    "text_uses": "body text"
+  },
+  "fonts": {
+    "heading_fallback": "Poppins",
+    "body_fallback": "Source Sans Pro"
+  },
+  "default_assets": {
+    "hero_image": "assets/hero.webp",
+    "course_devices_image": "assets/course-devices.webp",
+    "guides_image": "assets/guides.webp",
+    "logo_fallback": "assets/logo.svg"
+  },
+  "skew_style": "skew_both_left_to_right",
+  "version": "1.0.0"
+}

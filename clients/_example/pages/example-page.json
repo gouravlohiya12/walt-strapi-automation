@@ -1,0 +1,71 @@
+{
+  "_comment": "Example page showing the JSON structure. Copy this format for new pages.",
+  "slug": "example-page",
+  "keyword": "ai productivity software",
+  "template": "raising-kids",
+  "client": "_example",
+  "target_audience": "Small business owners drowning in repetitive tasks",
+  "cta_url": "https://example.com/checkout",
+  "status": "draft",
+  "created_at": "2026-05-01",
+  "last_edited": "2026-05-01",
+  "content": {
+    "h1": "WORK SMARTER<br>NOT HARDER",
+    "h1_sub": "(Without Hiring a Single New Employee)",
+    "hero_body": "The step-by-step system to reclaim 10+ hours a week using AI — even if you're not technical.",
+    "cta_text": "GET STARTED ($197 $99 TODAY)",
+    "gold_standard_intro": "Wherever your team learns to work first becomes their default — the way they'll do everything else from then on.",
+    "gold_standard_options": ["Generic Tutorials?", "Random Blog Posts?", "Trial and Error?", "A Real System?"],
+    "gold_standard_truth": "Most owners feel behind ('I should have learned this years ago'). So we stay stuck. But staying stuck is a choice. It leaves the door open for competitors to step in.",
+    "myth_title": "\"Productivity Tools\" Are a Myth.",
+    "myth_columns": [
+      {"icon": "icon-chat.png", "title": "Old Way:", "body": "Buy 12 different SaaS tools that don't talk to each other."},
+      {"icon": "icon-refresh.png", "title": "New Way:", "body": "Use AI to bridge the tools you already have, no migration needed."},
+      {"icon": "icon-heart.png", "title": "The Goal:", "body": "Not just 'using AI,' but building an operating system. When your business runs itself, you actually grow."}
+    ],
+    "intro_banner_subtitle": "Introducing:",
+    "intro_banner_title": "Example Brand:<br>AI Productivity",
+    "course_intro_h3": "AN 8-EPISODE ON-DEMAND VIDEO COURSE FOR BUSINESS OWNERS WITH 5–50 EMPLOYEES.",
+    "course_intro_body": "We don't just give you the prompts. We give you the framework and the workflows to integrate AI into your business without disrupting what already works.",
+    "core_philosophy_h5": "Our Core Philosophy:",
+    "core_philosophy_body": "AI isn't replacement — it's amplification. The owners who win in the next decade aren't the ones with the most tools. They're the ones with the clearest systems.",
+    "roadmap_title": "Your Roadmap to Confidence",
+    "roadmap_items": [
+      {"number": "01", "title": "Introduction: Where to Start (12 minutes)", "body": "Setting the foundation for an AI-powered business."},
+      {"number": "02", "title": "Episode 1: What Should I Automate First? (24 minutes)", "body": "How to spot the highest-value automation opportunities in your day-to-day."},
+      {"number": "03", "title": "Episode 2: Choosing the Right AI Tools (28 minutes)", "body": "A simple decision tree for picking tools without buyer's remorse."}
+    ],
+    "guides_title": "Meet Your Guides",
+    "guides_image": "assets/guides.webp",
+    "guides_items": [
+      {"name": "[NEEDS INPUT — real instructor name]", "role": "Founder", "bio": "[NEEDS INPUT — real bio, ~20 words]"}
+    ],
+    "experts_section_title": "GUEST EXPERTS",
+    "experts": [],
+    "pricing_section_title": "Equip Yourself Today",
+    "pricing_bullets": [
+      {"icon": "icon-play.png", "title": "8 Video Episodes:", "body": "Watch at your own pace, on any device."},
+      {"icon": "icon-file.png", "title": "Workflow Templates:", "body": "Cut-and-paste prompts for the most common tasks."},
+      {"icon": "icon-calendar.png", "title": "12-Month Access:", "body": "No rush, no expiration."}
+    ],
+    "pricing_bonus_title": "Bonus Resources:",
+    "pricing_bonus_items": [
+      {"label": "Office Hours:", "body": "Live monthly Q&A with the team."},
+      {"label": "Private Community:", "body": "Network with other owners going through the program."}
+    ],
+    "total_value": "$197",
+    "your_price": "$99",
+    "pricing_tagline": "We're Building Better Businesses, One Owner at a Time.",
+    "pricing_button_text": "Start Today — $99",
+    "faq_title": "Common Questions",
+    "faqs": [
+      {"q": "I'm not technical. Can I really do this?", "a": "Yes. The whole program is built for non-technical owners. No code required. We start with the basics — by the end you'll have the same skills as someone who's been using AI for years."},
+      {"q": "How is this different from YouTube tutorials?", "a": "YouTube gives you fragments. This gives you a system. We don't just show you what to do — we show you <em>why</em>, when, and how to adapt it to your specific business."},
+      {"q": "What if it doesn't work for my industry?", "a": "It works in any service or product business with employees. We've worked with law firms, agencies, e-commerce, and consulting practices. If you do anything repetitive, this works."}
+    ],
+    "final_cta_title": "Standing Still<br>Is Falling Behind.",
+    "final_cta_subtitle": "STEP IN. TAKE THE LEAD. GIVE YOUR TEAM THE SYSTEM TO WORK SMARTER, NOT HARDER.",
+    "final_cta_button": "Join The Course $197 $99",
+    "meta_description": "Learn how to use AI to reclaim 10+ hours a week in your business. 8-episode on-demand course built for non-technical owners. $99 today (was $197)."
+  }
+}
