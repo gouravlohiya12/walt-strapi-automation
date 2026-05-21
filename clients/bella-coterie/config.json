@@ -1,0 +1,32 @@
+{
+  "slug": "bella-coterie",
+  "name": "Bella Coterie",
+  "business_type": "Luxury bamboo bedding — DTC e-commerce",
+  "audience": "Hot sleepers, eco-conscious consumers, women 28-55 seeking premium bedding that combines luxury, cooling comfort, and sustainability",
+  "default_cta_url": "https://bellacoterie.com/products/bella-coterie-luxury-bamboo-queen-size-duvet-cover-set-organically-grown-ultra-soft-cooling-two-luxury-pillow-shams-viscose-bedding-made-from-bamboo-no-insert-charcoal-grey",
+  "colors": {
+    "primary": "#121212",
+    "accent": "#C58763",
+    "secondary": "#FDF3ED",
+    "background": "#FBFAF9",
+    "text": "#121212",
+    "neutral": "#FFFFFF"
+  },
+  "fonts": {
+    "heading": "Playfair Display",
+    "body": "Proxima Nova",
+    "accent": "Montserrat"
+  },
+  "logo": "/images/bella-coterie/logo.png",
+  "favicon": "/images/bella-coterie/logo.png",
+  "domain": "bellacoterie.com",
+  "social": {
+    "facebook": "https://www.facebook.com/people/Bella-Coterie/100086185742069/",
+    "instagram": null,
+    "youtube": null,
+    "twitter": null,
+    "linkedin": null
+  },
+  "tagline": "Sleep should be enjoyed, not endured.",
+  "created_at": "2026-05-22"
+}

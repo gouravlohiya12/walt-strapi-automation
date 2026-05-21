@@ -1,0 +1,230 @@
+{
+  "slug": "luxury-bamboo-duvet",
+  "template": "bella-coterie-duvet",
+  "status": "published",
+  "title": "Bella Coterie Luxury Bamboo Duvet Cover Set — Sleep Cooler Tonight",
+  "client_slug": "bella-coterie",
+  "created_at": "2026-05-22",
+  "last_edited": "2026-05-22",
+  "content": {
+    "cta_url": "https://bellacoterie.com/products/bella-coterie-luxury-bamboo-queen-size-duvet-cover-set-organically-grown-ultra-soft-cooling-two-luxury-pillow-shams-viscose-bedding-made-from-bamboo-no-insert-charcoal-grey",
+    "promo": {
+      "code": "BESTDEAL",
+      "text": "Save 20% + Extra $20 Off",
+      "banner": "Cooler Sleep Starts Now — 20% OFF Bamboo Duvet Sets"
+    },
+    "hero": {
+      "headline": "The Cooling Duvet Cover 5,000+ Hot Sleepers Swear By",
+      "subheadline": "100% organically grown bamboo viscose. Silky-soft, naturally cooling, and free from 350+ harmful chemicals. Finally sleep through the night.",
+      "cta_text": "Shop the Duvet Set",
+      "secondary_cta_text": "See Why They Love It",
+      "secondary_cta_href": "#reviews",
+      "product_image": "/images/bella-coterie/duvet-hero.jpg",
+      "trust_signal": "Over 5,000+ Five-Star Reviews"
+    },
+    "trust_bar": [
+      { "icon": "shield", "text": "OEKO-TEX Certified" },
+      { "icon": "star", "text": "5,000+ Reviews" },
+      { "icon": "truck", "text": "Free US Shipping" },
+      { "icon": "refresh", "text": "100% Money-Back Guarantee" }
+    ],
+    "problem_section": {
+      "headline": "Tired of Waking Up Drenched in Sweat?",
+      "body": "Traditional duvet covers trap heat, leaving you tossing, turning, and kicking off the covers by 3 AM. Cotton gets heavy. Polyester suffocates. And that 'cooling' bedding you tried? It stopped working after the first wash.",
+      "pain_points": [
+        "Overheating that disrupts your deepest sleep cycles",
+        "Scratchy, stiff fabrics that feel worse with every wash",
+        "Hidden chemicals in your bedding that irritate sensitive skin",
+        "Duvet covers that bunch, shift, and never stay in place"
+      ],
+      "transition": "There's a reason luxury hotels are switching to bamboo."
+    },
+    "benefits": [
+      {
+        "title": "Naturally Cooling",
+        "headline": "Sleep 2-3 Degrees Cooler — All Night Long",
+        "body": "Bamboo viscose is naturally thermoregulating. It wicks moisture away from your body and releases heat instead of trapping it. No more flipping the pillow to the cool side — the entire duvet stays cool.",
+        "image": "cooling"
+      },
+      {
+        "title": "Impossibly Soft",
+        "headline": "Softer Than Silk. Smoother Than Sateen.",
+        "body": "400 thread count bamboo viscose with a sateen weave creates a buttery, silky hand-feel that actually gets softer with every wash. Customers say it feels like sleeping inside a cloud.",
+        "image": "softness"
+      },
+      {
+        "title": "Clean & Safe",
+        "headline": "Free From 350+ Harmful Chemicals",
+        "body": "OEKO-TEX Standard 100 certified — tested and verified free from PFAS, formaldehyde, lead, phthalates, synthetic dyes, and hundreds more. Because what touches your skin for 8 hours a night matters.",
+        "image": "certified"
+      }
+    ],
+    "product_details": {
+      "headline": "What's Inside the Box",
+      "items": [
+        "1x Luxury Bamboo Duvet Cover",
+        "2x Matching Pillow Shams"
+      ],
+      "features": [
+        { "label": "Material", "value": "100% Organically Grown Bamboo Viscose" },
+        { "label": "Thread Count", "value": "400 TC Sateen Weave" },
+        { "label": "Closure", "value": "Button Closure with Interior Ties" },
+        { "label": "Extras", "value": "Snap-Lock Ties to Keep Duvet in Place" },
+        { "label": "Care", "value": "Machine Washable & Dryer-Friendly" },
+        { "label": "Certification", "value": "OEKO-TEX Standard 100" }
+      ],
+      "colors": [
+        "Charcoal Gray", "Coastal Blue", "Dune", "Grey Mist", "Ivory",
+        "Sea Glass", "White", "Champagne", "Slate Blue", "Mocha", "Dusty Rose"
+      ],
+      "sizes": [
+        { "name": "Queen", "price": "$119.99", "original": "$149.99" },
+        { "name": "King", "price": "$129.99", "original": "$159.99" },
+        { "name": "California King", "price": "$129.99", "original": "$159.99" }
+      ]
+    },
+    "comparison": {
+      "headline": "Why Bamboo Beats Everything Else",
+      "columns": ["Feature", "Bella Coterie Bamboo", "Cotton", "Polyester", "Silk"],
+      "rows": [
+        ["Cooling", "Excellent", "Average", "Poor", "Good"],
+        ["Softness", "Ultra-Soft", "Stiff at First", "Scratchy", "Delicate"],
+        ["Hypoallergenic", "Yes", "No", "No", "Varies"],
+        ["Eco-Friendly", "Yes — Sustainable", "High Water Use", "Petroleum-Based", "Varies"],
+        ["Durability", "Gets Softer Over Time", "Wears Down", "Pills Quickly", "Fragile"],
+        ["Easy Care", "Machine Wash", "Machine Wash", "Machine Wash", "Dry Clean Only"],
+        ["Chemical-Free", "OEKO-TEX Certified", "Often Treated", "Often Treated", "Often Treated"],
+        ["Price", "From $119.99", "$80-200", "$30-60", "$200-500+"]
+      ]
+    },
+    "reviews": {
+      "headline": "Don't Take Our Word For It",
+      "subheadline": "Over 5,000 five-star reviews on Amazon. Here's what real sleepers say.",
+      "testimonials": [
+        {
+          "name": "Jane C.",
+          "rating": 5,
+          "title": "AMAZING!!!",
+          "body": "My boyfriend always runs hot and it makes me hot at night and we both end up being uncomfortable. These keep us both cool and we're sleeping so much better! I want to be in my bed 24/7 now.",
+          "variant": "Champagne, King",
+          "verified": true
+        },
+        {
+          "name": "Ashley P.",
+          "rating": 5,
+          "title": "Better than sheets three times their cost!",
+          "body": "I just bought a set by a recommendation from a friend for $400 and decided to buy this as a back up. I like this set much better than the expensive set. The expensive set has become the backup!",
+          "variant": "White, Queen",
+          "verified": true
+        },
+        {
+          "name": "Mina",
+          "rating": 5,
+          "title": "I rarely leave reviews but for this one I HAD to",
+          "body": "These are the best I have ever used. I have gone through LITERALLY about 12 sets in the last few years and each one was worse than the other UNTIL I bought these. They are so comfortable, chic, cooling and they just look amazing.",
+          "variant": "Grey Mist, King",
+          "verified": true
+        },
+        {
+          "name": "Lori",
+          "rating": 5,
+          "title": "Sleeping Cooler",
+          "body": "Being a woman of a certain age, being hot at night is a real struggle. These do seem to help keep me cooler, which does help me wake up less.",
+          "variant": "Coastal Blue, King",
+          "verified": true
+        },
+        {
+          "name": "Tristan",
+          "rating": 5,
+          "title": "Worth the money",
+          "body": "Absolute best I've ever slept on... we've had them for over a year and I still comment on how smooth and comfortable these are to sleep in.",
+          "variant": "White, Queen",
+          "verified": true
+        },
+        {
+          "name": "Anne",
+          "rating": 5,
+          "title": "The Best You'll Ever Own",
+          "body": "The quality is amazing, the comfort says ahhhhhh after a long day and the attention to detail is hands down the best. I've purchased a lot and these by far are the most comfortable!",
+          "variant": "Champagne, Queen",
+          "verified": true
+        }
+      ]
+    },
+    "safety_section": {
+      "headline": "What's NOT In Your Bella Coterie Bedding",
+      "subheadline": "OEKO-TEX Standard 100 — Every component tested and verified safe.",
+      "items": [
+        "No PFAS Materials",
+        "No Lead or Chromium",
+        "No Phthalates",
+        "No Chlorine Bleach",
+        "No AZO Dyes",
+        "No Solvents",
+        "No Formaldehyde",
+        "No Synthetic Dyes",
+        "No Synthetic Fibers",
+        "No Parabens",
+        "No Adhesives",
+        "No Benzene"
+      ]
+    },
+    "faq": {
+      "headline": "Questions? We've Got Answers.",
+      "items": [
+        {
+          "q": "What makes Bella Coterie bamboo bedding different?",
+          "a": "Our duvet covers are crafted from 100% organically grown bamboo viscose with a 400 thread count sateen weave. They're OEKO-TEX Standard 100 certified, meaning every component has been tested and verified free from over 350 harmful chemicals. Most importantly, they're naturally cooling and get softer with every wash."
+        },
+        {
+          "q": "Will this really help me sleep cooler?",
+          "a": "Yes. Bamboo viscose is naturally thermoregulating — it wicks moisture away from your body and releases heat instead of trapping it. Over 5,000 customers specifically mention sleeping cooler in their reviews."
+        },
+        {
+          "q": "What sizes and colors are available?",
+          "a": "Available in Queen ($119.99), King ($129.99), and California King ($129.99). Choose from 11 colors: Charcoal Gray, Coastal Blue, Dune, Grey Mist, Ivory, Sea Glass, White, Champagne, Slate Blue, Mocha, and Dusty Rose."
+        },
+        {
+          "q": "What's included in the set?",
+          "a": "Each set includes one luxury bamboo duvet cover and two matching pillow shams. The duvet cover features button closure and interior snap-lock ties to keep your duvet insert perfectly in place."
+        },
+        {
+          "q": "How do I wash and care for it?",
+          "a": "Machine wash on a gentle cycle with cold water and tumble dry on low. No special care needed. The bamboo viscose actually gets softer with each wash."
+        },
+        {
+          "q": "What if I don't love it?",
+          "a": "We offer a 100% no-questions-asked money-back guarantee. If you're not sleeping better, we'll make it right."
+        },
+        {
+          "q": "Is shipping free?",
+          "a": "Yes — free shipping on all US orders. International shipping is calculated at checkout."
+        },
+        {
+          "q": "Does the duvet cover come with an insert?",
+          "a": "No, this is a duvet cover set only (cover + 2 pillow shams). It's designed to fit over your existing duvet insert. The interior ties and snap-lock system keep any insert securely in place."
+        }
+      ]
+    },
+    "final_cta": {
+      "headline": "Your Best Sleep Is One Click Away",
+      "body": "Join 5,000+ happy sleepers who made the switch to bamboo. Free shipping, money-back guarantee, and a promo code that won't last forever.",
+      "cta_text": "Shop the Duvet Set Now",
+      "promo_reminder": "Use code BESTDEAL for 20% Off + Extra $20 Off"
+    },
+    "footer": {
+      "tagline": "Sleep should be enjoyed, not endured.",
+      "links": [
+        { "label": "Shop All Bedding", "href": "https://bellacoterie.com/collections/all" },
+        { "label": "FAQ", "href": "#faq" },
+        { "label": "Shipping & Returns", "href": "https://bellacoterie.com/policies/shipping-policy" },
+        { "label": "Contact Us", "href": "https://bellacoterie.com/pages/contact-us" }
+      ],
+      "copyright": "2026 Bella Coterie. All Rights Reserved."
+    }
+  },
+  "seo": {
+    "meta_title": "Bella Coterie Luxury Bamboo Duvet Cover Set — Cooling, Ultra-Soft, OEKO-TEX Certified",
+    "meta_description": "The cooling duvet cover 5,000+ hot sleepers swear by. 100% bamboo viscose, 400 TC sateen, OEKO-TEX certified. Free shipping. From $119.99. Use code BESTDEAL."
+  }
+}
