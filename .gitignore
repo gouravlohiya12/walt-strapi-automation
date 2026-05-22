@@ -30,3 +30,4 @@ strapi/package-lock.json
 
 # Local backups (not for git)
 backups/
+.vercel
