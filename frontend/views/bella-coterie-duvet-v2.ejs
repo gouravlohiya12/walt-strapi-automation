@@ -90,8 +90,8 @@
       --bc-champagne-dim: rgba(201, 169, 110, 0.15);
       --bc-champagne-hover: #B8974F;
       --bc-white: #FFFFFF;
-      --bc-muted: #999999;
-      --bc-muted-light: #CCCCCC;
+      --bc-muted: #6B6B6B;
+      --bc-muted-light: #999999;
       --bc-divider: rgba(18, 18, 18, 0.08);
 
       --font-display: 'Playfair Display', 'Georgia', serif;
@@ -410,7 +410,7 @@
       margin-bottom: 3rem;
       font-size: 1.05rem;
       line-height: 1.8;
-      color: var(--bc-muted);
+      color: #555555;
       opacity: 0;
       animation: heroFadeIn 1s var(--ease-out-expo) 1.2s forwards;
     }
@@ -523,7 +523,7 @@
       max-width: 540px;
       margin: 0 auto;
       font-size: 1.05rem;
-      color: var(--bc-muted);
+      color: #555555;
     }
 
 
@@ -662,7 +662,7 @@
 
     .pillar__body {
       max-width: 420px;
-      color: var(--bc-muted);
+      color: #555555;
     }
 
     .pillar__image-wrap {
@@ -1309,8 +1309,8 @@
     </div>
     <div class="hero__image-wrap">
       <img
-        src="/images/bella-coterie/lifestyle-2.jpg"
-        alt="Luxury bamboo duvet cover on bed"
+        src="/images/bella-coterie/hero-woman-sleeping.jpg"
+        alt="Woman sleeping peacefully in luxury bamboo bedding"
         class="hero__image"
         loading="eager"
       >
@@ -1443,8 +1443,8 @@
     </div>
     <div class="pillar__image-wrap">
       <img
-        src="/images/bella-coterie/lifestyle-5.jpg"
-        alt="Cool bamboo duvet fabric detail"
+        src="/images/bella-coterie/lifestyle-couple-coffee.jpg"
+        alt="Couple enjoying morning coffee in luxury bamboo bedding"
         class="pillar__image clip-reveal"
         loading="lazy"
       >
@@ -1485,8 +1485,8 @@
     </div>
     <div class="pillar__image-wrap">
       <img
-        src="/images/bella-coterie/lifestyle-3.jpg"
-        alt="Bella Coterie duvet in natural setting"
+        src="/images/bella-coterie/lifestyle-family-kids.jpg"
+        alt="Family enjoying Bella Coterie bamboo bedding together"
         class="pillar__image clip-reveal"
         loading="lazy"
       >
@@ -1747,7 +1747,7 @@
         });
 
 
-        /* Word reveal for hero headline */
+        /* Word reveal for hero headline — immediate on load */
         var wordContainers = document.querySelectorAll('[data-reveal-words]');
         wordContainers.forEach(function (container) {
           var text = container.textContent.trim();
@@ -1758,7 +1758,7 @@
             var span = document.createElement('span');
             span.className = 'reveal-word';
             span.textContent = word;
-            span.style.transitionDelay = (0.5 + i * 0.1) + 's';
+            span.style.transitionDelay = (0.3 + i * 0.08) + 's';
             container.appendChild(span);
 
             // Add space between words
@@ -1767,18 +1767,12 @@
             }
           });
 
-          var wordObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                container.querySelectorAll('.reveal-word').forEach(function (w) {
-                  w.classList.add('visible');
-                });
-                wordObserver.unobserve(entry.target);
-              }
+          // Force reveal immediately for hero (already in viewport)
+          requestAnimationFrame(function() {
+            container.querySelectorAll('.reveal-word').forEach(function (w) {
+              w.classList.add('visible');
             });
-          }, { threshold: 0.2 });
-
-          wordObserver.observe(container);
+          });
         });
 
       } else {
