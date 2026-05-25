@@ -1,0 +1,88 @@
+{
+  "slug": "luxury-bamboo-duvet-v2",
+  "template": "bella-coterie-duvet-v2",
+  "status": "published",
+  "title": "Bella Coterie Luxury Bamboo Duvet Cover Set — Crafted for Those Who Understand",
+  "client_slug": "bella-coterie",
+  "created_at": "2026-05-26",
+  "last_edited": "2026-05-26",
+  "content": {
+    "cta_url": "https://bellacoterie.com/products/bella-coterie-luxury-bamboo-queen-size-duvet-cover-set-organically-grown-ultra-soft-cooling-two-luxury-pillow-shams-viscose-bedding-made-from-bamboo-no-insert-charcoal-grey",
+    "hero": {
+      "headline": "Crafted for Those Who Understand the Difference",
+      "subheadline": "400 thread count. Thermoregulating. OEKO-TEX certified. Designed for the sleep you deserve.",
+      "cta_text": "Discover",
+      "cta_url": "https://bellacoterie.com/products/bella-coterie-luxury-bamboo-queen-size-duvet-cover-set-organically-grown-ultra-soft-cooling-two-luxury-pillow-shams-viscose-bedding-made-from-bamboo-no-insert-charcoal-grey",
+      "product_image": "/images/bella-coterie/lifestyle-2.jpg"
+    },
+    "product_details": {
+      "headline": "Luxury Bamboo Duvet Cover Set",
+      "items": [
+        "1x Luxury Bamboo Duvet Cover",
+        "2x Matching Pillow Shams"
+      ],
+      "features": [
+        { "label": "Material", "value": "100% Organically Grown Bamboo Viscose" },
+        { "label": "Thread Count", "value": "400 TC Sateen Weave" },
+        { "label": "Closure", "value": "Button Closure with Interior Ties" },
+        { "label": "Extras", "value": "Snap-Lock Ties to Keep Duvet in Place" },
+        { "label": "Care", "value": "Machine Washable & Dryer-Friendly" },
+        { "label": "Certification", "value": "OEKO-TEX Standard 100" }
+      ],
+      "colors": [
+        "Charcoal Gray", "Coastal Blue", "Dune", "Grey Mist", "Ivory",
+        "Sea Glass", "White", "Champagne", "Slate Blue"
+      ],
+      "sizes": [
+        { "name": "Queen", "price": "$119.99" },
+        { "name": "King", "price": "$129.99" },
+        { "name": "California King", "price": "$129.99" }
+      ]
+    },
+    "faq": {
+      "headline": "Questions",
+      "items": [
+        {
+          "q": "What makes Bella Coterie bamboo bedding different?",
+          "a": "Our duvet covers are crafted from 100% organically grown bamboo viscose with a 400 thread count sateen weave. They're OEKO-TEX Standard 100 certified, meaning every component has been tested and verified free from over 350 harmful chemicals. Most importantly, they're naturally cooling and get softer with every wash."
+        },
+        {
+          "q": "Will this really help me sleep cooler?",
+          "a": "Yes. Bamboo viscose is naturally thermoregulating — it wicks moisture away from your body and releases heat instead of trapping it. Over 5,000 customers specifically mention sleeping cooler in their reviews."
+        },
+        {
+          "q": "What sizes and colors are available?",
+          "a": "Available in Queen ($119.99), King ($129.99), and California King ($129.99). Choose from 9 colors including Charcoal Gray, Coastal Blue, Dune, Grey Mist, Ivory, Sea Glass, White, Champagne, and Slate Blue."
+        },
+        {
+          "q": "What's included in the set?",
+          "a": "Each set includes one luxury bamboo duvet cover and two matching pillow shams. The duvet cover features button closure and interior snap-lock ties to keep your duvet insert perfectly in place."
+        },
+        {
+          "q": "How do I wash and care for it?",
+          "a": "Machine wash on a gentle cycle with cold water and tumble dry on low. No special care needed. The bamboo viscose actually gets softer with each wash."
+        },
+        {
+          "q": "What if I don't love it?",
+          "a": "We offer a 100-night trial. If it is not the finest sleep you have experienced, we will arrange a complimentary pickup. No questions."
+        },
+        {
+          "q": "Is shipping free?",
+          "a": "Yes — free shipping on all US orders. International shipping is calculated at checkout."
+        },
+        {
+          "q": "Does the duvet cover come with an insert?",
+          "a": "No, this is a duvet cover set only (cover + 2 pillow shams). It's designed to fit over your existing duvet insert. The interior ties and snap-lock system keep any insert securely in place."
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Sleep should be enjoyed, not endured.",
+      "copyright": "2026 Bella Coterie. All Rights Reserved."
+    }
+  },
+  "seo": {
+    "meta_title": "Bella Coterie Luxury Bamboo Duvet Cover Set — Crafted for Those Who Understand",
+    "meta_description": "Organically grown bamboo viscose. 400 thread count. Thermoregulating. OEKO-TEX certified. The duvet cover set discerning sleepers choose. Free shipping."
+  }
+}

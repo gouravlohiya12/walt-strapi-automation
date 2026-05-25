@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page.seo?.meta_title || page.title %></title>
+  <meta name="description" content="<%= page.seo?.meta_description || '' %>">
+  <link rel="canonical" href="<%= baseUrl %>/<%= page.slug %>">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= page.seo?.meta_title || page.title %>">
+  <meta property="og:description" content="<%= page.seo?.meta_description || '' %>">
+  <meta property="og:url" content="<%= baseUrl %>/<%= page.slug %>">
+  <meta property="og:type" content="product">
+  <meta property="og:image" content="<%= page.content.hero.product_image %>">
+  <meta property="product:price:amount" content="119.99">
+  <meta property="product:price:currency" content="USD">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= page.seo?.meta_title || page.title %>">
+  <meta name="twitter:description" content="<%= page.seo?.meta_description || '' %>">
+  <meta name="twitter:image" content="<%= page.content.hero.product_image %>">
+
+  <link rel="icon" href="<%= client.favicon || '' %>" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Bella Coterie Luxury Bamboo Duvet Cover Set",
+    "description": "<%= page.seo?.meta_description || '' %>",
+    "image": "<%= page.content.hero.product_image %>",
+    "brand": { "@type": "Brand", "name": "Bella Coterie" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "119.99",
+      "highPrice": "129.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "offerCount": "3"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "5000",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      <% page.content.faq.items.forEach(function(item, i) { %>
+      {
+        "@type": "Question",
+        "name": "<%= item.q.replace(/"/g, '\\"') %>",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<%= item.a.replace(/"/g, '\\"') %>"
+        }
+      }<%= i < page.content.faq.items.length - 1 ? ',' : '' %>
+      <% }); %>
+    ]
+  }
+  </script>
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       BELLA COTERIE V2 — EDITORIAL LUXURY
+       Design language: Restraint. Confidence. Craft.
+    ═══════════════════════════════════════════════════ */
+
+    /* ── CUSTOM PROPERTIES ────────────────────────── */
+    :root {
+      --bc-ink: #121212;
+      --bc-warm-white: #FAF8F5;
+      --bc-champagne: #C9A96E;
+      --bc-champagne-dim: rgba(201, 169, 110, 0.15);
+      --bc-champagne-hover: #B8974F;
+      --bc-white: #FFFFFF;
+      --bc-muted: #999999;
+      --bc-muted-light: #CCCCCC;
+      --bc-divider: rgba(18, 18, 18, 0.08);
+
+      --font-display: 'Playfair Display', 'Georgia', serif;
+      --font-body: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+      --section-pad: clamp(4rem, 8vw, 12rem);
+      --section-pad-sm: clamp(3rem, 5vw, 6rem);
+      --content-max: 1400px;
+      --text-max: 680px;
+    }
+
+    /* ── RESET ────────────────────────────────────── */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y proximity;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--bc-ink);
+      background-color: var(--bc-warm-white);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle grain texture */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ── TYPOGRAPHY ───────────────────────────────── */
+    .t-display {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .t-display--xl {
+      font-size: clamp(2.5rem, 7vw, 8rem);
+    }
+
+    .t-display--lg {
+      font-size: clamp(2rem, 5vw, 5rem);
+    }
+
+    .t-display--md {
+      font-size: clamp(1.6rem, 3.5vw, 3.2rem);
+    }
+
+    .t-display--sm {
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+    }
+
+    .t-overline {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+    }
+
+    .t-body {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--bc-ink);
+    }
+
+    .t-body--muted {
+      color: var(--bc-muted);
+    }
+
+    .t-body--sm {
+      font-size: 0.95rem;
+    }
+
+    .t-serif-italic {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* ── LAYOUT HELPERS ──────────────────────────── */
+    .section {
+      position: relative;
+      padding: var(--section-pad) clamp(1.5rem, 5vw, 4rem);
+      scroll-snap-align: start;
+    }
+
+    .section--full {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section__inner {
+      width: 100%;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .section__narrow {
+      max-width: var(--text-max);
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--bc-divider);
+      margin: 2rem auto;
+    }
+
+    .divider--wide {
+      width: 100%;
+      max-width: var(--text-max);
+    }
+
+    /* ── CTA BUTTON ──────────────────────────────── */
+    .cta-btn {
+      display: inline-block;
+      padding: 1.1rem 3rem;
+      background: var(--bc-champagne);
+      color: var(--bc-white);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+      position: relative;
+      will-change: transform;
+    }
+
+    .cta-btn:hover {
+      background: var(--bc-champagne-hover);
+    }
+
+    .cta-btn--dark {
+      background: var(--bc-ink);
+    }
+
+    .cta-btn--dark:hover {
+      background: #2a2a2a;
+    }
+
+    .cta-btn--outline {
+      background: transparent;
+      border: 1px solid var(--bc-champagne);
+      color: var(--bc-champagne);
+    }
+
+    .cta-btn--outline:hover {
+      background: var(--bc-champagne);
+      color: var(--bc-white);
+    }
+
+    /* ── SCROLL REVEAL ANIMATIONS ────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal--delay-1 { transition-delay: 0.1s; }
+    .reveal--delay-2 { transition-delay: 0.2s; }
+    .reveal--delay-3 { transition-delay: 0.3s; }
+    .reveal--delay-4 { transition-delay: 0.4s; }
+    .reveal--delay-5 { transition-delay: 0.5s; }
+    .reveal--delay-6 { transition-delay: 0.6s; }
+
+    .reveal-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    }
+
+    .reveal-word.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .clip-reveal {
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 1.2s var(--ease-out-expo);
+    }
+
+    .clip-reveal.visible {
+      clip-path: inset(0 0 0 0);
+    }
+
+    .clip-reveal--bottom {
+      clip-path: inset(100% 0 0 0);
+    }
+
+    .clip-reveal--bottom.visible {
+      clip-path: inset(0 0 0 0);
+    }
+
+    /* prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal-word,
+      .clip-reveal,
+      .clip-reveal--bottom {
+        opacity: 1;
+        transform: none;
+        clip-path: none;
+        transition: none;
+      }
+      html {
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+      }
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 1: HERO
+    ═══════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+      overflow: hidden;
+      scroll-snap-align: start;
+    }
+
+    .hero__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 6vw, 8rem);
+      padding-right: clamp(2rem, 4vw, 5rem);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero__logo {
+      width: 140px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: heroFadeIn 1s var(--ease-out-expo) 0.2s forwards;
+    }
+
+    .hero__overline {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: heroFadeIn 1s var(--ease-out-expo) 0.4s forwards;
+    }
+
+    .hero__headline {
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .hero__headline .reveal-word {
+      line-height: 1;
+    }
+
+    .hero__subhead {
+      max-width: 480px;
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--bc-muted);
+      opacity: 0;
+      animation: heroFadeIn 1s var(--ease-out-expo) 1.2s forwards;
+    }
+
+    .hero__cta {
+      opacity: 0;
+      animation: heroFadeIn 1s var(--ease-out-expo) 1.4s forwards;
+    }
+
+    .hero__image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      animation: heroImageReveal 1.8s var(--ease-out-expo) 0.3s forwards;
+    }
+
+    .hero__image-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bc-warm-white);
+      transform-origin: right;
+      animation: heroWipe 1.4s var(--ease-out-expo) 0.1s forwards;
+    }
+
+    @keyframes heroFadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes heroImageReveal {
+      to { transform: scale(1); }
+    }
+
+    @keyframes heroWipe {
+      to { transform: scaleX(0); }
+    }
+
+    /* Hero word stagger animation */
+    .hero__headline .reveal-word:nth-child(1) { transition-delay: 0.5s; }
+    .hero__headline .reveal-word:nth-child(2) { transition-delay: 0.6s; }
+    .hero__headline .reveal-word:nth-child(3) { transition-delay: 0.7s; }
+    .hero__headline .reveal-word:nth-child(4) { transition-delay: 0.8s; }
+    .hero__headline .reveal-word:nth-child(5) { transition-delay: 0.9s; }
+    .hero__headline .reveal-word:nth-child(6) { transition-delay: 1.0s; }
+    .hero__headline .reveal-word:nth-child(7) { transition-delay: 1.05s; }
+    .hero__headline .reveal-word:nth-child(8) { transition-delay: 1.1s; }
+
+    /* ═══════════════════════════════════════════════
+       SECTION 2: PRESS BAR
+    ═══════════════════════════════════════════════ */
+    .press-bar {
+      padding: var(--section-pad-sm) clamp(1.5rem, 5vw, 4rem);
+      border-top: 1px solid var(--bc-divider);
+      border-bottom: 1px solid var(--bc-divider);
+      scroll-snap-align: start;
+    }
+
+    .press-bar__label {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .press-bar__logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      flex-wrap: wrap;
+    }
+
+    .press-bar__item {
+      font-family: var(--font-display);
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      font-weight: 400;
+      color: var(--bc-muted-light);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transition: color 0.4s ease;
+    }
+
+    .press-bar__item:hover {
+      color: var(--bc-muted);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 3: PHILOSOPHY
+    ═══════════════════════════════════════════════ */
+    .philosophy {
+      text-align: center;
+    }
+
+    .philosophy__quote {
+      font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+      line-height: 1.3;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .philosophy__body {
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: var(--bc-muted);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 4: MATERIAL STORY
+    ═══════════════════════════════════════════════ */
+    .material-story {
+      padding: var(--section-pad) 0;
+      overflow: hidden;
+    }
+
+    .material-story__header {
+      text-align: center;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      margin-bottom: clamp(3rem, 6vw, 6rem);
+    }
+
+    .material-story__track-wrapper {
+      position: relative;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .material-story__track-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .material-story__track {
+      display: flex;
+      gap: clamp(1.5rem, 3vw, 3rem);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      width: max-content;
+    }
+
+    .material-story__step {
+      flex: 0 0 auto;
+      width: clamp(280px, 30vw, 380px);
+      position: relative;
+    }
+
+    .material-story__step-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--bc-divider);
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .material-story__step-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    .material-story__step-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+
+    .material-story__step-text {
+      font-size: 0.95rem;
+      color: var(--bc-muted);
+      line-height: 1.7;
+    }
+
+    .material-story__connector {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      padding: 0 0.5rem;
+    }
+
+    .material-story__connector-line {
+      width: 60px;
+      height: 1px;
+      background: var(--bc-muted-light);
+      position: relative;
+    }
+
+    .material-story__connector-line::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: -3px;
+      width: 7px;
+      height: 7px;
+      border-right: 1px solid var(--bc-muted-light);
+      border-top: 1px solid var(--bc-muted-light);
+      transform: rotate(45deg);
+    }
+
+    .material-story__scroll-hint {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 5: THREE PILLARS
+    ═══════════════════════════════════════════════ */
+    .pillar {
+      min-height: 80vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: center;
+      padding: var(--section-pad-sm) 0;
+      border-top: 1px solid var(--bc-divider);
+      scroll-snap-align: start;
+    }
+
+    .pillar:last-of-type {
+      border-bottom: 1px solid var(--bc-divider);
+    }
+
+    .pillar__content {
+      padding: clamp(2rem, 5vw, 6rem);
+    }
+
+    .pillar__overline {
+      margin-bottom: 1rem;
+    }
+
+    .pillar__headline {
+      margin-bottom: 1.5rem;
+      max-width: 420px;
+    }
+
+    .pillar__body {
+      max-width: 420px;
+      color: var(--bc-muted);
+    }
+
+    .pillar__image-wrap {
+      height: 100%;
+      min-height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pillar__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 6s var(--ease-out-expo);
+    }
+
+    .pillar__image-wrap:hover .pillar__image {
+      transform: scale(1.03);
+    }
+
+    /* Alternate layout for even pillars */
+    .pillar--reverse {
+      direction: rtl;
+    }
+
+    .pillar--reverse > * {
+      direction: ltr;
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 6: PRODUCT DETAILS
+    ═══════════════════════════════════════════════ */
+    .product-details {
+      padding: var(--section-pad) clamp(1.5rem, 5vw, 4rem);
+      scroll-snap-align: start;
+    }
+
+    .product-details__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 8rem);
+      max-width: var(--content-max);
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .product-details__image-wrap {
+      position: sticky;
+      top: 2rem;
+      overflow: hidden;
+    }
+
+    .product-details__image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .product-details__image-secondary {
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .product-details__info {
+      padding-top: 2rem;
+    }
+
+    .product-details__overline {
+      margin-bottom: 1rem;
+    }
+
+    .product-details__title {
+      margin-bottom: 2rem;
+    }
+
+    .product-details__included {
+      margin-bottom: 3rem;
+    }
+
+    .product-details__included-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: var(--bc-muted);
+    }
+
+    .product-details__included-list {
+      list-style: none;
+    }
+
+    .product-details__included-list li {
+      font-size: 1.05rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--bc-divider);
+    }
+
+    .product-details__colors {
+      margin-bottom: 3rem;
+    }
+
+    .product-details__colors-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--bc-muted);
+    }
+
+    .product-details__swatches {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .product-details__swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--bc-divider);
+      cursor: pointer;
+      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .product-details__swatch:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 0 2px var(--bc-warm-white), 0 0 0 3px var(--bc-champagne);
+    }
+
+    .product-details__swatch::after {
+      content: attr(data-color);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--bc-muted);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .product-details__swatch:hover::after {
+      opacity: 1;
+    }
+
+    .product-details__sizes {
+      margin-bottom: 3rem;
+    }
+
+    .product-details__sizes-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--bc-muted);
+    }
+
+    .product-details__size-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .product-details__size-link {
+      font-size: 1rem;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      color: var(--bc-ink);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .product-details__size-link:hover {
+      color: var(--bc-champagne);
+    }
+
+    .product-details__cta {
+      margin-top: 2rem;
+    }
+
+    .product-details__features {
+      margin-top: 3rem;
+      border-top: 1px solid var(--bc-divider);
+      padding-top: 2rem;
+    }
+
+    .product-details__feature {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--bc-divider);
+      font-size: 0.95rem;
+    }
+
+    .product-details__feature-label {
+      color: var(--bc-muted);
+    }
+
+    .product-details__feature-value {
+      text-align: right;
+      font-weight: 500;
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 7: SOCIAL PROOF
+    ═══════════════════════════════════════════════ */
+    .social-proof {
+      text-align: center;
+    }
+
+    .social-proof__primary-quote {
+      font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+      line-height: 1.35;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .social-proof__primary-author {
+      font-size: 0.85rem;
+      color: var(--bc-muted);
+      margin-bottom: 1rem;
+    }
+
+    .social-proof__rating-line {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--bc-muted);
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+    }
+
+    .social-proof__rating-stars {
+      color: var(--bc-champagne);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+
+    .social-proof__secondary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .social-proof__quote-card {
+      padding: 2rem 0;
+      border-top: 1px solid var(--bc-divider);
+    }
+
+    .social-proof__quote-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      color: var(--bc-ink);
+    }
+
+    .social-proof__quote-author {
+      font-size: 0.8rem;
+      color: var(--bc-muted);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 8: GUARANTEE
+    ═══════════════════════════════════════════════ */
+    .guarantee {
+      text-align: center;
+    }
+
+    .guarantee__headline {
+      margin-bottom: 1.5rem;
+    }
+
+    .guarantee__body {
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      color: var(--bc-muted);
+      font-size: 1.05rem;
+    }
+
+    .guarantee__icons {
+      display: flex;
+      justify-content: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      flex-wrap: wrap;
+    }
+
+    .guarantee__icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .guarantee__icon-svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--bc-champagne);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .guarantee__icon-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 9: FINAL CTA
+    ═══════════════════════════════════════════════ */
+    .final-cta {
+      background: var(--bc-ink);
+      color: var(--bc-warm-white);
+      text-align: center;
+    }
+
+    .final-cta .t-overline {
+      color: var(--bc-champagne);
+    }
+
+    .final-cta__headline {
+      margin-bottom: 1.5rem;
+      color: var(--bc-warm-white);
+    }
+
+    .final-cta__subhead {
+      font-size: 1.05rem;
+      color: rgba(250, 248, 245, 0.5);
+      margin-bottom: 3rem;
+    }
+
+    .final-cta .cta-btn {
+      background: var(--bc-champagne);
+      color: var(--bc-ink);
+      font-weight: 600;
+    }
+
+    .final-cta .cta-btn:hover {
+      background: var(--bc-champagne-hover);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       SECTION 10: FOOTER
+    ═══════════════════════════════════════════════ */
+    .footer {
+      padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+      border-top: 1px solid var(--bc-divider);
+    }
+
+    .footer__logo {
+      width: 120px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--bc-muted);
+      margin-bottom: 2rem;
+    }
+
+    .footer__social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer__social-link {
+      width: 20px;
+      height: 20px;
+      color: var(--bc-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer__social-link:hover {
+      color: var(--bc-champagne);
+    }
+
+    .footer__copyright {
+      font-size: 0.75rem;
+      color: var(--bc-muted-light);
+      letter-spacing: 0.05em;
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       NAV (minimal floating)
+    ═══════════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.5s ease, padding 0.5s ease;
+    }
+
+    .nav--scrolled {
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .nav__logo {
+      height: 28px;
+      width: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .nav--scrolled .nav__logo {
+      opacity: 1;
+    }
+
+    .nav__cta {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bc-ink);
+      text-decoration: none;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--bc-ink);
+      transition: background 0.4s ease, color 0.4s ease, opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .nav--scrolled .nav__cta {
+      opacity: 1;
+    }
+
+    .nav__cta:hover {
+      background: var(--bc-ink);
+      color: var(--bc-warm-white);
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE: 1024px
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh auto;
+      }
+
+      .hero__content {
+        order: 2;
+        padding: clamp(2rem, 4vw, 4rem);
+      }
+
+      .hero__image-wrap {
+        order: 1;
+      }
+
+      .pillar {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .pillar--reverse {
+        direction: ltr;
+      }
+
+      .pillar__image-wrap {
+        min-height: 400px;
+      }
+
+      .product-details__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-details__image-wrap {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE: 768px
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-rows: 45vh auto;
+      }
+
+      .hero__logo {
+        width: 110px;
+        margin-bottom: 2rem;
+      }
+
+      .hero__subhead {
+        font-size: 0.95rem;
+      }
+
+      .social-proof__secondary {
+        grid-template-columns: 1fr;
+      }
+
+      .guarantee__icons {
+        gap: 2rem;
+      }
+
+      .press-bar__logos {
+        gap: 1.5rem;
+      }
+
+      .material-story__step {
+        width: 260px;
+      }
+
+      .pillar__image-wrap {
+        min-height: 350px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE: 480px
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero {
+        grid-template-rows: 40vh auto;
+      }
+
+      .hero__content {
+        padding: 2rem 1.25rem;
+      }
+
+      .hero__logo {
+        width: 100px;
+      }
+
+      .cta-btn {
+        padding: 1rem 2rem;
+        font-size: 0.75rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      .product-details__size-links {
+        gap: 1.5rem;
+      }
+
+      .press-bar__item {
+        font-size: 0.75rem;
+      }
+
+      .guarantee__icons {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .nav {
+        padding: 1rem;
+      }
+
+      .nav__cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.65rem;
+      }
+
+      .material-story__step {
+        width: 240px;
+      }
+
+      .pillar__content {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <img
+      src="<%= client.logo %>"
+      alt="Bella Coterie"
+      class="nav__logo"
+      loading="eager"
+    >
+    <a
+      href="<%= page.content.hero.cta_url || client.default_cta_url %>"
+      class="nav__cta"
+      target="_blank"
+      rel="noopener"
+    >Shop Now</a>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="hero__content">
+      <img
+        src="<%= client.logo %>"
+        alt="Bella Coterie"
+        class="hero__logo"
+        loading="eager"
+      >
+      <p class="t-overline hero__overline">Organically Grown Bamboo Viscose</p>
+      <h1 class="t-display t-display--xl hero__headline" data-reveal-words>
+        Crafted for Those Who Understand the Difference
+      </h1>
+      <p class="hero__subhead">
+        400 thread count. Thermoregulating. OEKO-TEX certified. Designed for the sleep you deserve.
+      </p>
+      <div class="hero__cta">
+        <a
+          href="<%= page.content.hero.cta_url || client.default_cta_url %>"
+          class="cta-btn"
+          id="heroCta"
+          target="_blank"
+          rel="noopener"
+        >Discover</a>
+      </div>
+    </div>
+    <div class="hero__image-wrap">
+      <img
+        src="/images/bella-coterie/lifestyle-2.jpg"
+        alt="Luxury bamboo duvet cover on bed"
+        class="hero__image"
+        loading="eager"
+      >
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: PRESS BAR
+  ═══════════════════════════════════════════ -->
+  <section class="press-bar" aria-label="Press features">
+    <p class="t-overline press-bar__label reveal">As Featured In</p>
+    <div class="press-bar__logos">
+      <span class="press-bar__item reveal reveal--delay-1">Living Magazine</span>
+      <span class="press-bar__item reveal reveal--delay-2">Oprah Daily</span>
+      <span class="press-bar__item reveal reveal--delay-3">Rachel Ray</span>
+      <span class="press-bar__item reveal reveal--delay-4">Good Housekeeping</span>
+      <span class="press-bar__item reveal reveal--delay-5">US Weekly</span>
+      <span class="press-bar__item reveal reveal--delay-6">NY Post</span>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: PHILOSOPHY
+  ═══════════════════════════════════════════ -->
+  <section class="section section--full philosophy" id="philosophy" aria-label="Brand philosophy">
+    <div class="section__narrow">
+      <div class="divider divider--wide reveal"></div>
+      <blockquote class="t-display t-display--md t-serif-italic philosophy__quote reveal reveal--delay-1">
+        "We don't make bedding. We craft the conditions for extraordinary rest."
+      </blockquote>
+      <p class="t-body philosophy__body reveal reveal--delay-2">
+        Every Bella Coterie piece begins with organically grown bamboo, cultivated without pesticides or synthetic fertilizers.
+        The result is a textile that feels considered at every step &mdash; from grove to bedroom.
+        Because sleep, at its finest, should feel effortless.
+      </p>
+      <div class="divider divider--wide reveal reveal--delay-3"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4: MATERIAL STORY
+  ═══════════════════════════════════════════ -->
+  <section class="section material-story" id="material-story" aria-label="Material provenance">
+    <div class="material-story__header">
+      <p class="t-overline reveal">The Journey</p>
+      <h2 class="t-display t-display--md reveal reveal--delay-1" style="margin-top: 1rem;">From Grove to Bedroom</h2>
+    </div>
+
+    <div class="material-story__track-wrapper" id="materialTrack">
+      <div class="material-story__track">
+        <!-- Step 1 -->
+        <div class="material-story__step reveal">
+          <div class="material-story__step-number">01</div>
+          <img src="/images/bella-coterie/lifestyle-5.jpg" alt="Bamboo grove" class="material-story__step-image clip-reveal" loading="lazy">
+          <h3 class="material-story__step-title">Bamboo Grove</h3>
+          <p class="material-story__step-text">Sustainably harvested from groves that require no irrigation, no pesticides, and regenerate within three years.</p>
+        </div>
+
+        <div class="material-story__connector" aria-hidden="true">
+          <div class="material-story__connector-line"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="material-story__step reveal reveal--delay-1">
+          <div class="material-story__step-number">02</div>
+          <img src="/images/bella-coterie/lifestyle-3.jpg" alt="Organic cultivation" class="material-story__step-image clip-reveal" loading="lazy">
+          <h3 class="material-story__step-title">Organic Cultivation</h3>
+          <p class="material-story__step-text">Grown without synthetic fertilizers. The raw bamboo is processed using a closed-loop system that recaptures and reuses solvents.</p>
+        </div>
+
+        <div class="material-story__connector" aria-hidden="true">
+          <div class="material-story__connector-line"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="material-story__step reveal reveal--delay-2">
+          <div class="material-story__step-number">03</div>
+          <img src="/images/bella-coterie/lifestyle-4.jpg" alt="Viscose processing" class="material-story__step-image clip-reveal" loading="lazy">
+          <h3 class="material-story__step-title">Viscose Processing</h3>
+          <p class="material-story__step-text">Transformed into ultra-fine viscose fibers, preserving the natural thermoregulating and moisture-wicking properties of bamboo.</p>
+        </div>
+
+        <div class="material-story__connector" aria-hidden="true">
+          <div class="material-story__connector-line"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="material-story__step reveal reveal--delay-3">
+          <div class="material-story__step-number">04</div>
+          <img src="/images/bella-coterie/duvet-detail-1.jpg" alt="400TC weaving" class="material-story__step-image clip-reveal" loading="lazy">
+          <h3 class="material-story__step-title">400TC Sateen Weave</h3>
+          <p class="material-story__step-text">Woven to a precise 400 thread count sateen construction, creating that signature silky drape and cool-to-the-touch surface.</p>
+        </div>
+
+        <div class="material-story__connector" aria-hidden="true">
+          <div class="material-story__connector-line"></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="material-story__step reveal reveal--delay-4">
+          <div class="material-story__step-number">05</div>
+          <img src="/images/bella-coterie/lifestyle-1.jpg" alt="Your bedroom" class="material-story__step-image clip-reveal" loading="lazy">
+          <h3 class="material-story__step-title">Your Bedroom</h3>
+          <p class="material-story__step-text">Delivered to your door. OEKO-TEX certified, free from 350+ harmful chemicals, ready to transform how you sleep.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="t-overline material-story__scroll-hint reveal" aria-hidden="true">Scroll to explore &rarr;</p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 5: THREE PILLARS
+  ═══════════════════════════════════════════ -->
+
+  <!-- Pillar 1: Thermoregulating -->
+  <section class="pillar" id="pillar-cooling" aria-label="Thermoregulating">
+    <div class="pillar__content">
+      <p class="t-overline pillar__overline reveal">Thermoregulating</p>
+      <h2 class="t-display t-display--md pillar__headline reveal reveal--delay-1">Sleep Two to Three Degrees Cooler</h2>
+      <p class="t-body pillar__body reveal reveal--delay-2">
+        Bamboo viscose wicks moisture and releases heat rather than trapping it.
+        No more waking at 3 AM to flip the pillow.
+        The entire surface stays cool, all night, every night.
+      </p>
+    </div>
+    <div class="pillar__image-wrap">
+      <img
+        src="/images/bella-coterie/lifestyle-5.jpg"
+        alt="Cool bamboo duvet fabric detail"
+        class="pillar__image clip-reveal"
+        loading="lazy"
+      >
+    </div>
+  </section>
+
+  <!-- Pillar 2: Softness -->
+  <section class="pillar pillar--reverse" id="pillar-softness" aria-label="Softness">
+    <div class="pillar__content">
+      <p class="t-overline pillar__overline reveal">Impossibly Soft</p>
+      <h2 class="t-display t-display--md pillar__headline reveal reveal--delay-1">Softer Than Silk, Smoother Than Egyptian Cotton</h2>
+      <p class="t-body pillar__body reveal reveal--delay-2">
+        A 400 thread count sateen weave creates a surface that is buttery, silky, and cool to the touch.
+        It does not pill. It does not scratch.
+        And it gets softer with every wash.
+      </p>
+    </div>
+    <div class="pillar__image-wrap">
+      <img
+        src="/images/bella-coterie/duvet-detail-2.jpg"
+        alt="Close up of silky bamboo fabric"
+        class="pillar__image clip-reveal"
+        loading="lazy"
+      >
+    </div>
+  </section>
+
+  <!-- Pillar 3: Consciously Crafted -->
+  <section class="pillar" id="pillar-crafted" aria-label="Consciously crafted">
+    <div class="pillar__content">
+      <p class="t-overline pillar__overline reveal">Consciously Crafted</p>
+      <h2 class="t-display t-display--md pillar__headline reveal reveal--delay-1">OEKO-TEX Certified. Free From 350+ Harmful Chemicals.</h2>
+      <p class="t-body pillar__body reveal reveal--delay-2">
+        Every component has been tested and verified free from PFAS, formaldehyde, lead, phthalates, and hundreds more.
+        Organically grown bamboo, processed responsibly.
+        Because what touches your skin for eight hours a night matters.
+      </p>
+    </div>
+    <div class="pillar__image-wrap">
+      <img
+        src="/images/bella-coterie/lifestyle-3.jpg"
+        alt="Bella Coterie duvet in natural setting"
+        class="pillar__image clip-reveal"
+        loading="lazy"
+      >
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 6: PRODUCT DETAILS
+  ═══════════════════════════════════════════ -->
+  <section class="product-details" id="product" aria-label="Product details">
+    <div class="product-details__grid">
+      <div class="product-details__image-wrap">
+        <img
+          src="/images/bella-coterie/product-main.jpg"
+          alt="Bella Coterie Luxury Bamboo Duvet Cover Set"
+          class="product-details__image clip-reveal--bottom"
+          loading="lazy"
+        >
+        <img
+          src="/images/bella-coterie/lifestyle-1.jpg"
+          alt="Duvet set with color swatches"
+          class="product-details__image product-details__image-secondary clip-reveal--bottom"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-details__info">
+        <p class="t-overline product-details__overline reveal">The Set</p>
+        <h2 class="t-display t-display--sm product-details__title reveal reveal--delay-1">Luxury Bamboo Duvet Cover Set</h2>
+
+        <div class="product-details__included reveal reveal--delay-2">
+          <p class="product-details__included-label">Includes</p>
+          <ul class="product-details__included-list">
+            <li>1 Luxury Bamboo Duvet Cover</li>
+            <li>2 Matching Pillow Shams</li>
+          </ul>
+        </div>
+
+        <div class="product-details__colors reveal reveal--delay-3">
+          <p class="product-details__colors-label">Available in 9 Colors</p>
+          <div class="product-details__swatches">
+            <span class="product-details__swatch" style="background: #4A4A4A;" data-color="Charcoal Gray" aria-label="Charcoal Gray"></span>
+            <span class="product-details__swatch" style="background: #5B7F95;" data-color="Coastal Blue" aria-label="Coastal Blue"></span>
+            <span class="product-details__swatch" style="background: #C4B39A;" data-color="Dune" aria-label="Dune"></span>
+            <span class="product-details__swatch" style="background: #B0B5B3;" data-color="Grey Mist" aria-label="Grey Mist"></span>
+            <span class="product-details__swatch" style="background: #F5F0E8;" data-color="Ivory" aria-label="Ivory"></span>
+            <span class="product-details__swatch" style="background: #A8C5B8;" data-color="Sea Glass" aria-label="Sea Glass"></span>
+            <span class="product-details__swatch" style="background: #FFFFFF;" data-color="White" aria-label="White"></span>
+            <span class="product-details__swatch" style="background: #E8D5B7;" data-color="Champagne" aria-label="Champagne"></span>
+            <span class="product-details__swatch" style="background: #7A8FA0;" data-color="Slate Blue" aria-label="Slate Blue"></span>
+          </div>
+        </div>
+
+        <div class="product-details__sizes reveal reveal--delay-4">
+          <p class="product-details__sizes-label">Available Sizes</p>
+          <div class="product-details__size-links">
+            <a href="<%= page.content.hero.cta_url || client.default_cta_url %>" class="product-details__size-link" target="_blank" rel="noopener">Queen</a>
+            <a href="<%= page.content.hero.cta_url || client.default_cta_url %>" class="product-details__size-link" target="_blank" rel="noopener">King</a>
+            <a href="<%= page.content.hero.cta_url || client.default_cta_url %>" class="product-details__size-link" target="_blank" rel="noopener">California King</a>
+          </div>
+        </div>
+
+        <div class="product-details__cta reveal reveal--delay-5">
+          <a
+            href="<%= page.content.hero.cta_url || client.default_cta_url %>"
+            class="cta-btn"
+            target="_blank"
+            rel="noopener"
+          >Shop the Collection</a>
+        </div>
+
+        <div class="product-details__features reveal">
+          <% page.content.product_details.features.forEach(function(feat) { %>
+          <div class="product-details__feature">
+            <span class="product-details__feature-label"><%= feat.label %></span>
+            <span class="product-details__feature-value"><%= feat.value %></span>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 7: SOCIAL PROOF
+  ═══════════════════════════════════════════ -->
+  <section class="section section--full social-proof" id="reviews" aria-label="Reviews">
+    <div class="section__narrow" style="max-width: 900px;">
+      <p class="t-overline reveal" style="margin-bottom: 2rem;">Voices</p>
+
+      <blockquote class="t-display t-serif-italic social-proof__primary-quote reveal reveal--delay-1">
+        "We've had them for over a year and I still comment on how smooth and comfortable these are to sleep in."
+      </blockquote>
+      <p class="social-proof__primary-author reveal reveal--delay-2">Tristan &mdash; White, Queen &mdash; Verified Purchase</p>
+
+      <p class="social-proof__rating-line reveal reveal--delay-3">
+        <span class="social-proof__rating-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        4.9 out of 5 from 5,000+ reviews
+      </p>
+
+      <div class="social-proof__secondary">
+        <div class="social-proof__quote-card reveal">
+          <p class="social-proof__quote-text">
+            "I just bought a set by a recommendation from a friend for $400 and decided to buy this as a back up. I like this set much better than the expensive set."
+          </p>
+          <p class="social-proof__quote-author">Ashley P. &mdash; White, Queen</p>
+        </div>
+        <div class="social-proof__quote-card reveal reveal--delay-1">
+          <p class="social-proof__quote-text">
+            "Being a woman of a certain age, being hot at night is a real struggle. These do seem to help keep me cooler, which does help me wake up less."
+          </p>
+          <p class="social-proof__quote-author">Lori &mdash; Coastal Blue, King</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 8: GUARANTEE
+  ═══════════════════════════════════════════ -->
+  <section class="section section--full guarantee" id="guarantee" aria-label="Guarantee">
+    <div class="section__narrow">
+      <p class="t-overline reveal" style="margin-bottom: 1.5rem;">Our Promise</p>
+      <h2 class="t-display t-display--md guarantee__headline reveal reveal--delay-1">100-Night Trial</h2>
+      <p class="guarantee__body reveal reveal--delay-2">
+        If it is not the finest sleep you have experienced, we will arrange a complimentary pickup. No questions.
+      </p>
+      <div class="guarantee__icons reveal reveal--delay-3">
+        <div class="guarantee__icon-item">
+          <svg class="guarantee__icon-svg" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="5" y="12" width="30" height="20" rx="2"/>
+            <path d="M5 18h30"/>
+            <circle cx="30" cy="26" r="2"/>
+          </svg>
+          <span class="guarantee__icon-label">Free Shipping</span>
+        </div>
+        <div class="guarantee__icon-item">
+          <svg class="guarantee__icon-svg" viewBox="0 0 40 40" aria-hidden="true">
+            <polyline points="8 22 16 30 32 14"/>
+          </svg>
+          <span class="guarantee__icon-label">Free Returns</span>
+        </div>
+        <div class="guarantee__icon-item">
+          <svg class="guarantee__icon-svg" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 6l4 8h9l-7 5.5 2.5 8.5L20 23l-8.5 5 2.5-8.5L7 14h9z"/>
+          </svg>
+          <span class="guarantee__icon-label">Satisfaction Guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 9: FINAL CTA
+  ═══════════════════════════════════════════ -->
+  <section class="section section--full final-cta" id="shop" aria-label="Shop">
+    <div class="section__narrow" style="max-width: 700px;">
+      <p class="t-overline reveal" style="margin-bottom: 1.5rem;">The Collection</p>
+      <h2 class="t-display t-display--lg final-cta__headline reveal reveal--delay-1">Experience the Difference</h2>
+      <p class="final-cta__subhead reveal reveal--delay-2">Join 40,000+ discerning sleepers.</p>
+      <div class="reveal reveal--delay-3">
+        <a
+          href="<%= page.content.hero.cta_url || client.default_cta_url %>"
+          class="cta-btn"
+          id="finalCta"
+          target="_blank"
+          rel="noopener"
+        >Shop the Collection &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 10: FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <img
+      src="<%= client.logo %>"
+      alt="Bella Coterie"
+      class="footer__logo"
+      loading="lazy"
+    >
+    <p class="footer__tagline"><%= client.tagline %></p>
+    <div class="footer__social">
+      <% if (client.social && client.social.facebook) { %>
+      <a href="<%= client.social.facebook %>" class="footer__social-link" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+          <path d="M11.5 19v-7.5h2.5l.4-2.9h-2.9V6.9c0-.8.2-1.4 1.4-1.4h1.5V2.8c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2.1H6.5v2.9h2.3V19h2.7z"/>
+        </svg>
+      </a>
+      <% } %>
+      <% if (client.social && client.social.instagram) { %>
+      <a href="<%= client.social.instagram %>" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+          <rect x="2" y="2" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="14.5" cy="5.5" r="1"/>
+        </svg>
+      </a>
+      <% } %>
+    </div>
+    <p class="footer__copyright">&copy; <%= page.content.footer?.copyright || '2026 Bella Coterie. All Rights Reserved.' %></p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+       Pure vanilla. No libraries.
+  ═══════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── Feature detection ─────────────────── */
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ── NAVIGATION SCROLL STATE ──────────── */
+      var nav = document.getElementById('nav');
+      var lastScroll = 0;
+
+      function updateNav() {
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        if (y > 80) {
+          nav.classList.add('nav--scrolled');
+        } else {
+          nav.classList.remove('nav--scrolled');
+        }
+        lastScroll = y;
+      }
+
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+
+
+      /* ── INTERSECTION OBSERVER: REVEAL ──── */
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+
+        /* Standard reveals */
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -60px 0px'
+        });
+
+        document.querySelectorAll('.reveal, .clip-reveal, .clip-reveal--bottom').forEach(function (el) {
+          revealObserver.observe(el);
+        });
+
+
+        /* Word reveal for hero headline */
+        var wordContainers = document.querySelectorAll('[data-reveal-words]');
+        wordContainers.forEach(function (container) {
+          var text = container.textContent.trim();
+          var words = text.split(/\s+/);
+          container.innerHTML = '';
+
+          words.forEach(function (word, i) {
+            var span = document.createElement('span');
+            span.className = 'reveal-word';
+            span.textContent = word;
+            span.style.transitionDelay = (0.5 + i * 0.1) + 's';
+            container.appendChild(span);
+
+            // Add space between words
+            if (i < words.length - 1) {
+              container.appendChild(document.createTextNode(' '));
+            }
+          });
+
+          var wordObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                container.querySelectorAll('.reveal-word').forEach(function (w) {
+                  w.classList.add('visible');
+                });
+                wordObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.2 });
+
+          wordObserver.observe(container);
+        });
+
+      } else {
+        /* Reduced motion or no IO support: show everything */
+        document.querySelectorAll('.reveal, .clip-reveal, .clip-reveal--bottom, .reveal-word').forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
+
+
+      /* ── MAGNETIC BUTTON EFFECT ────────── */
+      if (!prefersReducedMotion) {
+        var magneticBtns = document.querySelectorAll('#heroCta, #finalCta');
+
+        magneticBtns.forEach(function (btn) {
+          var radius = 15;
+
+          btn.addEventListener('mousemove', function (e) {
+            var rect = btn.getBoundingClientRect();
+            var centerX = rect.left + rect.width / 2;
+            var centerY = rect.top + rect.height / 2;
+            var dx = e.clientX - centerX;
+            var dy = e.clientY - centerY;
+
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            var maxDist = Math.max(rect.width, rect.height);
+
+            if (dist < maxDist) {
+              var pull = Math.min(radius, radius * (1 - dist / maxDist));
+              var moveX = (dx / dist) * pull || 0;
+              var moveY = (dy / dist) * pull || 0;
+              btn.style.transform = 'translate(' + moveX + 'px, ' + moveY + 'px)';
+            }
+          });
+
+          btn.addEventListener('mouseleave', function () {
+            btn.style.transform = 'translate(0, 0)';
+            btn.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            setTimeout(function () {
+              btn.style.transition = '';
+            }, 500);
+          });
+        });
+      }
+
+
+      /* ── HORIZONTAL SCROLL DRAG for Material Story ── */
+      var trackWrapper = document.getElementById('materialTrack');
+      if (trackWrapper) {
+        var isDown = false;
+        var startX;
+        var scrollLeft;
+
+        trackWrapper.addEventListener('mousedown', function (e) {
+          isDown = true;
+          trackWrapper.style.cursor = 'grabbing';
+          startX = e.pageX - trackWrapper.offsetLeft;
+          scrollLeft = trackWrapper.scrollLeft;
+        });
+
+        trackWrapper.addEventListener('mouseleave', function () {
+          isDown = false;
+          trackWrapper.style.cursor = 'grab';
+        });
+
+        trackWrapper.addEventListener('mouseup', function () {
+          isDown = false;
+          trackWrapper.style.cursor = 'grab';
+        });
+
+        trackWrapper.addEventListener('mousemove', function (e) {
+          if (!isDown) return;
+          e.preventDefault();
+          var x = e.pageX - trackWrapper.offsetLeft;
+          var walk = (x - startX) * 1.5;
+          trackWrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        trackWrapper.style.cursor = 'grab';
+      }
+
+
+      /* ── PARALLAX HERO IMAGE (subtle) ───── */
+      if (!prefersReducedMotion) {
+        var heroImg = document.querySelector('.hero__image');
+        if (heroImg) {
+          window.addEventListener('scroll', function () {
+            var y = window.pageYOffset;
+            if (y < window.innerHeight) {
+              heroImg.style.transform = 'scale(1) translateY(' + (y * 0.08) + 'px)';
+            }
+          }, { passive: true });
+        }
+      }
+
+
+      /* ── SMOOTH ANCHOR SCROLLING ─────── */
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var href = this.getAttribute('href');
+          if (href.length > 1) {
+            var target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
