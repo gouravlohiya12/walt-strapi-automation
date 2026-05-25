@@ -384,7 +384,12 @@
     }
 
     .hero__logo {
-      width: 140px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--bc-ink);
       margin-bottom: 3rem;
       opacity: 0;
       animation: heroFadeIn 1s var(--ease-out-expo) 0.2s forwards;
@@ -1029,8 +1034,15 @@
     }
 
     .footer__logo {
-      width: 120px;
+      display: block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--bc-warm-white);
       margin: 0 auto 1.5rem;
+      text-align: center;
     }
 
     .footer__tagline {
@@ -1090,8 +1102,13 @@
     }
 
     .nav__logo {
-      height: 28px;
-      width: auto;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bc-ink);
+      text-decoration: none;
       opacity: 0;
       transition: opacity 0.5s ease;
     }
@@ -1173,7 +1190,7 @@
       }
 
       .hero__logo {
-        width: 110px;
+        font-size: 1rem;
         margin-bottom: 2rem;
       }
 
@@ -1215,7 +1232,7 @@
       }
 
       .hero__logo {
-        width: 100px;
+        font-size: 0.9rem;
       }
 
       .cta-btn {
@@ -1264,12 +1281,7 @@
        NAVIGATION
   ═══════════════════════════════════════════ -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-    <img
-      src="<%= client.logo %>"
-      alt="Bella Coterie"
-      class="nav__logo"
-      loading="eager"
-    >
+    <span class="nav__logo">Bella Coterie</span>
     <a
       href="<%= page.content.hero.cta_url || client.default_cta_url %>"
       class="nav__cta"
@@ -1284,12 +1296,7 @@
   ═══════════════════════════════════════════ -->
   <section class="hero" id="hero" aria-label="Hero">
     <div class="hero__content">
-      <img
-        src="<%= client.logo %>"
-        alt="Bella Coterie"
-        class="hero__logo"
-        loading="eager"
-      >
+      <span class="hero__logo">Bella Coterie</span>
       <p class="t-overline hero__overline">Organically Grown Bamboo Viscose</p>
       <h1 class="t-display t-display--xl hero__headline" data-reveal-words>
         Crafted for Those Who Understand the Difference
@@ -1345,7 +1352,7 @@
       </blockquote>
       <p class="t-body philosophy__body reveal reveal--delay-2">
         Every Bella Coterie piece begins with organically grown bamboo, cultivated without pesticides or synthetic fertilizers.
-        The result is a textile that feels considered at every step &mdash; from grove to bedroom.
+        The result is a textile that feels considered at every step, from grove to bedroom.
         Because sleep, at its finest, should feel effortless.
       </p>
       <div class="divider divider--wide reveal reveal--delay-3"></div>
@@ -1582,7 +1589,7 @@
       <blockquote class="t-display t-serif-italic social-proof__primary-quote reveal reveal--delay-1">
         "We've had them for over a year and I still comment on how smooth and comfortable these are to sleep in."
       </blockquote>
-      <p class="social-proof__primary-author reveal reveal--delay-2">Tristan &mdash; White, Queen &mdash; Verified Purchase</p>
+      <p class="social-proof__primary-author reveal reveal--delay-2">Tristan, White, Queen, Verified Purchase</p>
 
       <p class="social-proof__rating-line reveal reveal--delay-3">
         <span class="social-proof__rating-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -1594,13 +1601,13 @@
           <p class="social-proof__quote-text">
             "I just bought a set by a recommendation from a friend for $400 and decided to buy this as a back up. I like this set much better than the expensive set."
           </p>
-          <p class="social-proof__quote-author">Ashley P. &mdash; White, Queen</p>
+          <p class="social-proof__quote-author">Ashley P., White, Queen</p>
         </div>
         <div class="social-proof__quote-card reveal reveal--delay-1">
           <p class="social-proof__quote-text">
             "Being a woman of a certain age, being hot at night is a real struggle. These do seem to help keep me cooler, which does help me wake up less."
           </p>
-          <p class="social-proof__quote-author">Lori &mdash; Coastal Blue, King</p>
+          <p class="social-proof__quote-author">Lori, Coastal Blue, King</p>
         </div>
       </div>
     </div>
@@ -1668,12 +1675,7 @@
        SECTION 10: FOOTER
   ═══════════════════════════════════════════ -->
   <footer class="footer" role="contentinfo">
-    <img
-      src="<%= client.logo %>"
-      alt="Bella Coterie"
-      class="footer__logo"
-      loading="lazy"
-    >
+    <span class="footer__logo">Bella Coterie</span>
     <p class="footer__tagline"><%= client.tagline %></p>
     <div class="footer__social">
       <% if (client.social && client.social.facebook) { %>
