@@ -815,56 +815,25 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
-      background-size: 200% 200%;
-      animation: gradientShift 6s ease-in-out infinite;
     }
     .benefit-visual.cooling {
-      background: linear-gradient(135deg, #dceeff 0%, #e8f4f8 40%, var(--bc-secondary) 70%, #f5e8dc 100%);
+      background: url('/images/bella-coterie/lifestyle-couple-coffee.jpg') center/cover no-repeat;
     }
     .benefit-visual.softness {
-      background: linear-gradient(135deg, var(--bc-secondary) 0%, #f5e0d0 40%, #fce8d8 70%, #fff8f2 100%);
+      background: url('/images/bella-coterie/lifestyle-family-kids.jpg') center/cover no-repeat;
     }
     .benefit-visual.certified {
-      background: linear-gradient(135deg, #e8f5e9 0%, #f0f8f0 40%, var(--bc-secondary) 70%, #f8ece4 100%);
+      background: url('/images/bella-coterie/hero-woman-sleeping.jpg') center/cover no-repeat;
     }
 
-    /* Animated floating particles inside benefit visuals */
+    /* Hide particles on photo backgrounds */
     .benefit-visual::before,
     .benefit-visual::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .benefit-visual::before {
-      width: 80px; height: 80px;
-      background: rgba(197,135,99,0.12);
-      top: 20%; left: 15%;
-      animation: particleDrift 5s ease-in-out infinite;
-    }
-    .benefit-visual::after {
-      width: 50px; height: 50px;
-      background: rgba(197,135,99,0.08);
-      bottom: 20%; right: 15%;
-      animation: particleDrift 7s ease-in-out infinite reverse;
+      display: none;
     }
 
     .benefit-icon-wrap {
-      width: 110px;
-      height: 110px;
-      background: rgba(255,255,255,0.55);
-      backdrop-filter: blur(12px);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--bc-accent);
-      box-shadow: 0 8px 32px rgba(197,135,99,0.2);
-      position: relative;
-      z-index: 1;
-    }
-    .benefit-icon-wrap svg {
-      animation: slowSpin 18s linear infinite;
+      display: none;
     }
 
     /* ════════════════════════════════════════════
