@@ -136,14 +136,37 @@
     details summary::-webkit-details-marker { display: none; }
     details summary { list-style: none; }
 
-    /* Mobile responsive font sizes (match live site) */
+    /* Mobile responsive */
     @media (max-width: 768px) {
-      .fs-72 { font-size: 48px; }
-      .fs-96 { font-size: 55px; }
-      .fs-48 { font-size: 30px; }
-      .fs-36 { font-size: 24px; }
-      .fs-24 { font-size: 20px; }
-      .fs-18 { font-size: 14px; }
+      /* Font scale */
+      .fs-96 { font-size: 36px; line-height: 115%; }
+      .fs-72 { font-size: 32px; line-height: 115%; }
+      .fs-48 { font-size: 26px; line-height: 125%; }
+      .fs-36 { font-size: 22px; line-height: 130%; }
+      .fs-24 { font-size: 18px; line-height: 140%; }
+      .fs-18 { font-size: 15px; line-height: 155%; }
+
+      /* Hero */
+      .hero-overlap { margin-top: -40px; }
+      .hero-sep { height: 80px; }
+
+      /* Prevent any overflow */
+      * { max-width: 100%; box-sizing: border-box; }
+      h1, h2, h3, p { white-space: normal !important; overflow: visible !important; }
+
+      /* Section padding */
+      section { padding-left: 20px !important; padding-right: 20px !important; }
+
+      /* Skew sections — reduce vertical padding so content isn't hidden behind clip */
+      .skew-both-ltr { padding-top: 80px !important; padding-bottom: 80px !important; clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%); -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%); }
+      .skew-top-rtl  { padding-top: 80px !important; clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%); -webkit-clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%); }
+      .skew-top-ltr  { padding-top: 80px !important; clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%); -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%); }
+
+      /* Roadmap number */
+      .roadmap-number { font-size: 24px; }
+
+      /* CTA button full width */
+      .cs-button { width: 100%; text-align: center; padding: 16px 20px !important; font-size: 12px !important; }
     }
 
     /* Roadmap number style (matches .roadmap-section .number) */
@@ -279,13 +302,13 @@
     <img src="/images/raising-kids/hero.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50">
     <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
     <div class="relative max-w-6xl mx-auto px-6 pt-32 pb-48 md:pt-40 md:pb-64 text-center">
-      <h1 class="fs-72 text-white font-extrabold mb-4" style="white-space:nowrap;">
+      <h1 class="fs-72 text-white font-extrabold mb-4">
         HOW TO DISCIPLE YOUR KIDS<br>IN BIBLICAL SEXUALITY
       </h1>
       <h3 class="fs-36 text-white mb-6" style="font-weight:300;">
         (Without the Fear, Shame, or Awkward Lectures)
       </h3>
-      <p class="fs-18 max-w-5xl mx-auto mb-8" style="color:#fff; font-family:'Source Sans Pro',sans-serif; white-space:nowrap; overflow:hidden;">
+      <p class="fs-18 max-w-5xl mx-auto mb-8" style="color:#fff; font-family:'Source Sans Pro',sans-serif;">
         The Step-By-Step System to Becoming the "First Voice" &amp; "Safety Anchor" for Your Child… Even if You Don't Feel Qualified.
       </p>
       <p class="mb-1">
