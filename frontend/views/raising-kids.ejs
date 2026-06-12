@@ -169,8 +169,14 @@
       /* Roadmap number */
       .roadmap-number { font-size: 24px; }
 
-      /* CTA button full width */
-      .cs-button { width: 100%; text-align: center; padding: 14px 16px !important; font-size: 11px !important; }
+      /* Header — compact on mobile */
+      header { padding-top: 0 !important; padding-bottom: 0 !important; }
+      header .max-w-7xl { padding-top: 10px !important; padding-bottom: 10px !important; padding-left: 16px !important; padding-right: 16px !important; }
+      header img { height: 32px !important; }
+      header .cs-button { width: auto !important; padding: 10px 16px !important; font-size: 11px !important; letter-spacing: 0.04em; }
+
+      /* CTA buttons elsewhere — full width */
+      .hero-shape .cs-button, .pricing-section .cs-button, section > p > .cs-button, section > .cs-button { width: 100% !important; text-align: center; padding: 14px 16px !important; font-size: 11px !important; }
     }
 
     /* Roadmap number style (matches .roadmap-section .number) */
