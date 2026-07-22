@@ -8,10 +8,10 @@
   <link rel="canonical" href="<%= baseUrl %>/raising-kids">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/images/raising-kids/logo.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/raising-kids/footer-logo.png">
-  <link rel="apple-touch-icon" href="/images/raising-kids/footer-logo.png">
+  <!-- Favicon (matches original christian-sexuality.com) -->
+  <link rel="icon" href="/images/raising-kids/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="/images/raising-kids/favicon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/raising-kids/apple-touch-icon.png">
   <meta name="theme-color" content="#1F2833">
 
   <!-- Open Graph -->
@@ -183,6 +183,9 @@
 
       /* CTA buttons elsewhere — full width */
       .hero-shape .cs-button, .pricing-section .cs-button, section > p > .cs-button, section > .cs-button { width: 100% !important; text-align: center; padding: 14px 16px !important; font-size: 11px !important; }
+
+      /* Video section — tighter padding on mobile */
+      .video-section { padding-top: 40px !important; padding-bottom: 40px !important; }
     }
 
     /* Roadmap number style (matches .roadmap-section .number) */
@@ -339,8 +342,22 @@
     <div class="hero-sep"></div>
   </section>
 
-  <!-- Yellow gold-standard section (skew_both skew_left_to_right + hero overlap) -->
-  <section class="hero-overlap relative skew-both-ltr py-32 md:py-40" style="background-color:#E9D985;">
+  <!-- Video section — sits below the hero, above the yellow gold-standard section -->
+  <section class="video-section py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="video-wrapper" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px; box-shadow:0 20px 40px rgba(31,40,51,0.15);">
+        <iframe
+          src="https://drive.google.com/file/d/1xIey_yl0ej-ipaRKOIISiEWbe9H_QsSq/preview"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="Christian Sexuality — Raising Kids intro video"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yellow gold-standard section (skew_both skew_left_to_right) -->
+  <section class="relative skew-both-ltr py-32 md:py-40" style="background-color:#E9D985;">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <p class="fs-48 text-cs-navy mb-10 max-w-5xl" style="font-family:'Poppins',sans-serif; font-weight:500;">
         Wherever our kids learn about something first becomes their "gold standard"—the authority they compare everything else to.
